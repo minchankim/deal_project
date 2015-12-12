@@ -55,7 +55,9 @@
 					return false;
 				}
 				$("#cashPrice").val("");
-				// 여기에 받는 유저아이디를 받아야한다.?
+				var scash=data.scash;
+				$("#myscash").html(scash);
+					// 여기에 받는 유저아이디를 받아야한다.?
 	    		alert("성공적으로 충전했습니다.");
 			},
 			error:function(e) {
@@ -109,6 +111,8 @@
 				}
 				$("#returnMoney").val("");
 				// 여기에 받는 유저아이디를 받아야한다.?
+				var scash2=data.scash2;
+				$("#myscash").html(scash2);
 	    		alert("성공적으로 환전했습니다했습니다.");
 			},
 			error:function(e) {

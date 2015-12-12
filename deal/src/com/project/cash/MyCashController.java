@@ -92,7 +92,7 @@ public void returnCash(HttpServletResponse resp, HttpSession session, Cash dto) 
 }
 	
 		String state = "false";
-	
+		int scash2=0;
 		try {
 			dto.setUserId(info.getUserId());
 			
@@ -101,7 +101,8 @@ public void returnCash(HttpServletResponse resp, HttpSession session, Cash dto) 
 			
 			
 			service.returnCash(dto);
-			
+			scash2 = service.readCash(info.getUserId());
+			session.setAttribute("cdto", scash2);
 			state="true";
 		} catch (Exception e) {
 			System.out.println(e.toString());
