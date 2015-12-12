@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="friend">
+     <select id="friendList"  parameterType="map"
+               resultType="com.project.friend.Friend">                          
+                         SELECT f.num,  m.userId, p.imageFilename, ifnull(cnt,0) cnt
+                           FROM  member m JOIN photo p ON m.userId=p.userId
+											left outer JOIN (SELECT   num, friendUserId, ifnull(count(friendUserId),0) cnt
+                        													FROM  friend 
+                     												    group by friendUserId) f 
+														 ON m.userId = f.friendUserId 
+	WHERE  m.userId  NOT IN  (#{userId})
+	ORDER BY rand()
+     </select>
+     
+     <insert id="insertFriend"  parameterType="com.project.friend.Friend">
+	  INSERT INTO friend( userId, friendUserId,
+	      state) VALUES ( #{userId},
+	      #{friendUserId}, 1)
+	</insert>
+	
+	
+	<select id="friendCheck"  parameterType="com.project.friend.Friend"
+               resultType="com.project.friend.Friend">
+             SELECT   friendUserId,COUNT(*) friendUserIdcount 
+                           FROM  friend
+                           WHERE userId #{userId} AND friendUserId   IN (#{friendUserId})
+     </select>
+     
+         <select id="myFriendList"  parameterType="String"
+               resultType="com.project.friend.Friend">
+              select  f.num, p.userId,  f.friendUserId, p.imageFilename, ifnull(cnt,0) cnt
+				 from  photo p JOIN   friend f ON p.userId=f.friendUserId
+											left outer JOIN (SELECT   num, friendUserId, ifnull(count(friendUserId),0) cnt
+                        													FROM  friend 
+                     												    group by friendUserId) fr
+														 ON p.userId = fr.friendUserId 
+					where f.userId=#{userId}
+					ORDER BY rand()
+     </select>
+     
+     	
+    <delete id="deleteFriend" parameterType="Integer">
+        DELETE FROM friend WHERE num=#{num}
+    </delete>	
+     
+     
+</mapper>
