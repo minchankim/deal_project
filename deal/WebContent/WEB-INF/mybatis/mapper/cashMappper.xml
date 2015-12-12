@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cash">
+
+	<!-- 캐시충전하기 -->
+	<insert id="insertCash" parameterType="com.project.cash.Cash">
+		INSERT INTO cash(userId, cash, returnDate)
+				VALUES (#{userId} , #{cash}, null)
+	</insert>
+	
+	<!-- 환전하기 -->
+	<insert id="returnCash" parameterType="com.project.cash.Cash">
+		INSERT INTO cash(userId, returnCash, returnDate, created)
+				VALUES (#{userId} , #{returnCash}, now(), null)
+	</insert> 
+	
+	
+	
+	<!-- 잔액 캐쉬만 아이디 받기 조회하기 -->
+	<select id="myCash" parameterType="String" resultType="Integer">
+	
+	select (sum(cash)-sum(returnCash)) cash from cash where userId=#{userId};
+	
+	</select>
+	
+	
+</mapper>
