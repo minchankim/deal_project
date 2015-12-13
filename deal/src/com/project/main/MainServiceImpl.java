@@ -32,4 +32,17 @@ public class MainServiceImpl implements MainService {
 		return list;
 	}
 
+	@Override
+	public List<Deal> listDeal2(Map<String, Object> map) {
+	List<Deal> list=null;
+		
+		try{
+			list=dao.getListData("main.listDeal2", map);
+		} catch(Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return list;
+	}
+
 }

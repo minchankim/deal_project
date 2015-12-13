@@ -20,12 +20,10 @@ $(document).ready(function() {
         $target.slideToggle();
     });
 }); 
-
 /* $.fn.ready(function (){
    $("p").fitText(2,{'minFontSize':1,'maxFontSize':50});
 }); */
 function gogo(){
-
    location.href="<%=cp%>/deal/article.do";
 }
 $(document).ready(function(){
@@ -50,14 +48,12 @@ $(document).ready(function(){
 		clickEvent = false;
 	});
 })
-
 $(window).load(function() {
     var boxheight = $('#myCarousel .carousel-inner').innerHeight();
     var itemlength = $('#myCarousel .item').length;
     var triggerheight = Math.round(boxheight/itemlength+1);
 	$('#myCarousel .list-group-item').outerHeight(triggerheight);
 });
-
 $(function () {
 	   $('.panel-google-plus > .panel-footer > .input-placeholder, .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > button[type="reset"]').on('click', function(event) {
 	        var $panel = $(this).closest('.panel-google-plus');
@@ -92,12 +88,8 @@ function sendReply(dealNum) {
 		login();
 		return false;
 	} */
-
-
 	
-
  	var content=$.trim($("#replyContent-"+dealNum).val());
-
 	var src=$("#imageFilename-"+dealNum).attr('src');
 	 
 	
@@ -108,7 +100,6 @@ function sendReply(dealNum) {
 	var params="dealNum="+dealNum;
 	params+="&content="+content;
 	params+="&imageFilename="+src;
-
 	$.ajax({
 		type:"POST"
 		,url:"<%=cp%>/deal/dealReplyCreated.do"
@@ -131,17 +122,13 @@ function sendReply(dealNum) {
 		}
 	});  
 }
-
 function listPage(dealNum) {
-
 	var url="<%=cp%>/deal/mainDealreplyList.do";
-
 	$.post(url, {dealNum:dealNum}, function(data){
 	 $("#listReply-"+dealNum).html(data); 
 	});
 }
 var dealNum,replyLike;
-
 function Like(dealNum,replyLike) {
 	
 	/*  var isLogin="${sessionScope.member.userId}";
@@ -151,10 +138,8 @@ function Like(dealNum,replyLike) {
 	} */
 	this.dealNum=dealNum;
 	this.replyLike=replyLike;
-
 	<%-- var params="dealNum="+dealNum;
 	params+="&replyLike="+replyLike;
-
 	$.ajax({
 		type:"POST"
 		,url:"<%=cp%>/deal/dealLike"
@@ -178,9 +163,7 @@ function Like(dealNum,replyLike) {
 		}
 	});
  --%>
-
 }
-
 $(document).ready(function() {              
     $('i.glyphicon-thumbs-up, i.glyphicon-thumbs-down').click(function(){    
         var $this = $(this),
@@ -190,7 +173,6 @@ $(document).ready(function() {
      
         var params="dealNum="+dealNum;
     	params+="&replyLike="+replyLike;
-
     	$.ajax({
     		type:"POST"
     		,url:"<%=cp%>/deal/dealLike.do"
@@ -232,13 +214,10 @@ $(document).ready(function() {
         $(this).ekkoLightbox();
     });                                        
 }); 
-
-
 function countLike(id,count){
 	
 	$('#'+id+'-bs3').html(count); 
 }
-
 function dealjoin(Num,mode){
 	
 	 var params="dealNum="+Num;
@@ -271,9 +250,7 @@ function dealjoin(Num,mode){
 			alert(e.responseText);
 		}
 	});
-
 }
-
 </script>
 
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
@@ -291,7 +268,6 @@ background-color:rgb(255,255,255);
 .panel-google-plus > .panel-heading > h5{
 color:rgb(0,0,0);
 }
-
 </style>
 <div class="right_col" role="main">
 
@@ -446,11 +422,165 @@ color:rgb(0,0,0);
 </div>
 
 <!--콘텐츠  -->
-<div class="container" >
-    <div class="row">
+<div class="container"  >
+    <div class="row col-md-4" >
         
-        <c:forEach  var="dto" items="${MainDealList}">
-        <div class="[ col-xs-12 col-sm-4 col-md-4] pull-left" >
+        <c:forEach  var="dto" items="${MainDealList1}">
+        <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
+            <div class="[ panel panel-default ] panel-google-plus" >
+                <div class="dropdown">
+                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="[ glyphicon glyphicon-chevron-down ]"></span>
+                    </span>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="panel-google-plus-tags">
+                    <ul>
+                        <li>#${dto.tag1}</li>
+                    </ul>
+                </div>
+                <div class="panel-heading" >
+                    <img class="[ img-circle pull-left ]" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="Mouse0270" />
+                    <h3 style="font-size:20px;">${dto.userId}</h3>
+                    <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
+                </div>
+                <div class="panel-body">
+                    <a href="<%=cp%>/deal/article.do?num=${dto.num}"><p style="font-size:20px;">${dto.subject}<!--  <a href="http://bootsnipp.com/snippets/MaWrA">http://bootsnipp.com/snippets/MaWrA</a> --></p></a>
+                    <%--  <c:forEach var="dealdto" items="${DealInList}">
+                    <c:if test="${dto.num==dealdto.dealNum}">
+                    <div>11111111</div>
+                    </c:if>
+                    </c:forEach>  --%>
+                    <a class="panel-google-plus-image" href="<%=cp%>/deal/article.do?num=${dto.num}">
+                        ${dto.image1}
+                    </a>
+                </div>
+                <div class="panel-footer col-md-12 col-sm-12 col-xs-12" style="padding-left:0px;padding-right:0px;">
+             <!--        <button type="button" class="[ btn btn-default ]">+1</button>
+                    <button type="button" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-share-alt ]"></span>
+                    </button> -->
+                    
+                    
+    <div class="text-center">      
+         <div class="" data-toggle="buttons">  
+         <c:set var="badId" value="0" />
+        <c:forEach var="dealdto" items="${DealInList}">
+         
+                    <c:if test="${dto.num==dealdto.dealNum}"> 
+                  <c:set var="badId" value="1" />
+                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success ">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+            </label>
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+            </label>     
+               </c:if>
+                    </c:forEach>  
+                
+                    
+                    <c:if test="${badId==0}">
+                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+            </label>
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+            </label>   
+            </c:if>
+                    
+
+        
+        
+           
+           
+        </div>
+   
+    
+    
+    </div>
+                    
+                    
+                     <span class="pull-right">
+                        <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i> 
+                       <%--  <i id="dislike${dto.num}"  style="font-size: 30px;" onclick="disLike(${dto.num});" class="glyphicon glyphicon-thumbs-down"><div style="font-size: 25px;" id="dislike${dto.num}-bs3">4</div></i> --%> 
+                    </span>
+                    <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
+                </div>
+                <div class="panel-google-plus-comment" style="padding:10px;">
+                    <c:if test="${pdto.imageFilename==null}">
+                   <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" /> 
+                    </c:if>
+                    <c:if test="${pdto.imageFilename!=null}">
+                    <img id="imageFilename-${dto.num}" class="img-circle" src="<%=cp%>/uploads/photo/${pdto.imageFilename}" style="width:55px;height:55px;padding-right:2px;" alt="User Image" />
+                    </c:if>
+                    <div class="panel-google-plus-textarea">
+                    
+                        <textarea id="replyContent-${dto.num}" style="padding:0px;" rows="5"></textarea>
+                        <button type="submit" class="[ btn btn-success disabled ]" onclick="sendReply('${dto.num}')">Post comment</button>
+                        <button type="reset" class="[ btn btn-default ]">Cancel</button>
+                    </div>
+                    <div class="clearfix"></div>
+               <ul id="listReply-${dto.num}" style="padding:0px;">
+                  <!--   <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                               <h5 class="time pull-right">5 minutes ago</h5><h4 class="user">Gavino Free</h4>
+                               
+                            </div>
+                            <p style="word-break:break-all;margin-left:40px;">Sure, oooooooooooooooohhhhhhhhhhhhhhhhddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                        </div>
+                        <ul class="comments-list">
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="http://bootdey.com/img/Content/user_3.jpg" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">Ryan Haywood</h4>
+                                        <h5 class="time">3 minutes ago</h5>
+                                    </div>
+                                    <p>Relax my friend</p>
+                                </div>
+                            </li> 
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="http://bootdey.com/img/Content/user_2.jpg" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">Gavino Free</h4>
+                                        <h5 class="time">3 minutes ago</h5>
+                                    </div>
+                                    <p>Ok, cool.</p>
+                                </div>
+                            </li> 
+                        </ul>
+                    </li> -->
+                       </ul>
+                </div>
+                
+            </div>
+        </div>
+        </c:forEach>   
+    </div><!-- row -->
+    
+     <div class="row col-md-4" >
+        
+        <c:forEach  var="dto" items="${MainDealList2}">
+        <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
             <div class="[ panel panel-default ] panel-google-plus" >
                 <div class="dropdown">
                     <span class="dropdown-toggle" type="button" data-toggle="dropdown">
@@ -599,18 +729,171 @@ color:rgb(0,0,0);
             </div>
         </div>
         </c:forEach>
+    </div><!-- row -->
+    
+    
+    
+    
+    
+    
+       <div class="row col-md-4" >
         
-        
-        
-        
-        
+        <c:forEach  var="dto" items="${MainDealList3}">
+        <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
+            <div class="[ panel panel-default ] panel-google-plus" >
+                <div class="dropdown">
+                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="[ glyphicon glyphicon-chevron-down ]"></span>
+                    </span>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="panel-google-plus-tags">
+                    <ul>
+                        <li>#${dto.tag1}</li>
+                    </ul>
+                </div>
+                <div class="panel-heading" >
+                    <img class="[ img-circle pull-left ]" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="Mouse0270" />
+                    <h3 style="font-size:20px;">${dto.userId}</h3>
+                    <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
+                </div>
+                <div class="panel-body">
+                    <a href="<%=cp%>/deal/article.do?num=${dto.num}"><p style="font-size:20px;">${dto.subject}<!--  <a href="http://bootsnipp.com/snippets/MaWrA">http://bootsnipp.com/snippets/MaWrA</a> --></p></a>
+                    <%--  <c:forEach var="dealdto" items="${DealInList}">
+                    <c:if test="${dto.num==dealdto.dealNum}">
+                    <div>11111111</div>
+                    </c:if>
+                    </c:forEach>  --%>
+                    <a class="panel-google-plus-image" href="<%=cp%>/deal/article.do?num=${dto.num}">
+                        ${dto.image1}
+                    </a>
+                </div>
+                <div class="panel-footer col-md-12 col-sm-12 col-xs-12" style="padding-left:0px;padding-right:0px;">
+             <!--        <button type="button" class="[ btn btn-default ]">+1</button>
+                    <button type="button" class="[ btn btn-default ]">
+                        <span class="[ glyphicon glyphicon-share-alt ]"></span>
+                    </button> -->
+                    
+                    
+    <div class="text-center">      
+         <div class="" data-toggle="buttons">  
+         <c:set var="badId" value="0" />
+        <c:forEach var="dealdto" items="${DealInList}">
          
+                    <c:if test="${dto.num==dealdto.dealNum}"> 
+                  <c:set var="badId" value="1" />
+                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success ">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+            </label>
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+            </label>     
+               </c:if>
+                    </c:forEach>  
+                
+                    
+                    <c:if test="${badId==0}">
+                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+            </label>
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+            </label>   
+            </c:if>
+                    
+
         
-         
         
-        
-        
+           
+           
+        </div>
+   
+    
+    
     </div>
+                    
+                    
+                     <span class="pull-right">
+                        <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i> 
+                       <%--  <i id="dislike${dto.num}"  style="font-size: 30px;" onclick="disLike(${dto.num});" class="glyphicon glyphicon-thumbs-down"><div style="font-size: 25px;" id="dislike${dto.num}-bs3">4</div></i> --%> 
+                    </span>
+                    <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
+                </div>
+                <div class="panel-google-plus-comment" style="padding:10px;">
+                    <c:if test="${pdto.imageFilename==null}">
+                   <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" /> 
+                    </c:if>
+                    <c:if test="${pdto.imageFilename!=null}">
+                    <img id="imageFilename-${dto.num}" class="img-circle" src="<%=cp%>/uploads/photo/${pdto.imageFilename}" style="width:55px;height:55px;padding-right:2px;" alt="User Image" />
+                    </c:if>
+                    <div class="panel-google-plus-textarea">
+                    
+                        <textarea id="replyContent-${dto.num}" style="padding:0px;" rows="5"></textarea>
+                        <button type="submit" class="[ btn btn-success disabled ]" onclick="sendReply('${dto.num}')">Post comment</button>
+                        <button type="reset" class="[ btn btn-default ]">Cancel</button>
+                    </div>
+                    <div class="clearfix"></div>
+               <ul id="listReply-${dto.num}" style="padding:0px;">
+                  <!--   <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                               <h5 class="time pull-right">5 minutes ago</h5><h4 class="user">Gavino Free</h4>
+                               
+                            </div>
+                            <p style="word-break:break-all;margin-left:40px;">Sure, oooooooooooooooohhhhhhhhhhhhhhhhddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                        </div>
+                        <ul class="comments-list">
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="http://bootdey.com/img/Content/user_3.jpg" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">Ryan Haywood</h4>
+                                        <h5 class="time">3 minutes ago</h5>
+                                    </div>
+                                    <p>Relax my friend</p>
+                                </div>
+                            </li> 
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="http://bootdey.com/img/Content/user_2.jpg" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">Gavino Free</h4>
+                                        <h5 class="time">3 minutes ago</h5>
+                                    </div>
+                                    <p>Ok, cool.</p>
+                                </div>
+                            </li> 
+                        </ul>
+                    </li> -->
+                       </ul>
+                </div>
+                
+            </div>
+        </div>
+        </c:forEach>
+    </div><!-- row -->
+    
+    
+    
+    
+    
 </div>
 <!--콘텐츠  -->
 

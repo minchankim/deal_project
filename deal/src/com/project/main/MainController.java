@@ -51,8 +51,12 @@ public class MainController {
 			System.out.println(e.toString()+"로그인 안하면 생기는 NULL이니 상관 ㄴㄴMAINCONTROLLER임");
 		}
 		
-		
-		 
+			map.put("start", 0);
+		 List<Deal> mainList1 = service.listDeal2(map);
+		 map.put("start", 30);
+		 List<Deal> mainList2 = service.listDeal2(map);
+		 map.put("start", 60);
+		 List<Deal> mainList3 = service.listDeal2(map);
 		 
 		
 		 
@@ -60,7 +64,10 @@ public class MainController {
 		
 	
 		mav.addObject("MainDealList", mainList);
-	
+		
+		mav.addObject("MainDealList1", mainList1);
+		mav.addObject("MainDealList2", mainList2);
+		mav.addObject("MainDealList3", mainList3);
 		
 		return mav;
 	}
