@@ -107,31 +107,46 @@ public void returnCash(HttpServletResponse resp, HttpSession session, Cash dto) 
 		JSONObject job = new JSONObject();
 		job.put("jsLogin", "true");
 		job.put("state", state);
-		job.put("scash", scash2);
+		job.put("scash2", scash2);
 System.out.println("환전금액"+scash2);
 		resp.setContentType("text/html; charset=utf-8");
 		PrintWriter out = resp.getWriter();
 		out.print(job.toString());
 }
 	
-	// 아이디 별로 잔액 캐쉬 나오는 기능 -- 바로 세션으로 넘김?
-/*		@RequestMapping(value="/cahs/myCash", method=RequestMethod.POST)
-		public ModelAndView myCash(HttpServletResponse resp, HttpSession session, Cash dto) throws Exception{
-			
-			
-			SessionInfo info = (SessionInfo)session.getAttribute("member");
+	
+	/*@RequestMapping(value="/cash/list")
+	public ModelAndView list(HttpServletResponse resp, HttpSession session,
+			Cash dto
+		
+			) throws Exception{
+		
+		//보낸쪽지리스트
+		
+		//로그인 정보를 알아내기위한 방법
+				SessionInfo info = (SessionInfo)session.getAttribute("member");
 
-			if (info == null) {
-				return new ModelAndView(".member.login");
-			}
-			
-			List<Cash> list = null;
-			list=service.listCash(info.getUserId());
-			
-			ModelAndView mav = new ModelAndView(".cash.myCash");
-			mav.addObject("list",list);
-			return mav;
-		}
+						if (info == null) {
+							return new ModelAndView(".member.login");
+						}
+		
+		List<Cash> list1 = null;
+		List<Cash> list2 = null;
+		List<Cash> list3 = null;
+		
+		list1=service.listinsertCash(info.getUserId());
+		list2=service.listBuy(info.getUserId());
+		list3=service.listReturn(info.getUserId());
+		
+		ModelAndView mav=new  ModelAndView(".cash.myCash");
+
+			mav.addObject("list1", list1);
+			mav.addObject("list2", list2);
+			mav.addObject("list3", list3);
+		
+			return  mav;
+	
+	}
 	*/
 	
 }

@@ -41,6 +41,19 @@
 	
  }
  
+function renoteForm(id) {
+ 	
+	 receiveUserId=id;
+	 $('#ModalArticle').modal('hide');
+		 
+	 $('#contact').modal('show');
+	
+			var s = receiveUserId;
+			$("#idWrite").change();
+			$("#idWrite").text(s); 
+	
+ }
+ 
  function sendLetter() {
 		var content=$.trim($("#letterContent").val());
 		
@@ -80,6 +93,7 @@
 			    		alert(e.responseText);
 			    	}
 			    });
+			 $('#contact').modal('hide');
 	}
  
 	
@@ -109,14 +123,14 @@
 			
 		}, "json");
 		
-	 $("#ModalArticle").click(function(){
+
 			
-			$(".btn btn-success").click(function(){
+			$("#letterClose").click(function(){
 				 
 				 $('#ModalArticle').modal('hide');
 			 });
 		
-			});
+	
  }
  
 		
@@ -209,7 +223,7 @@ Licensed under MIT
                             </div>
                         </div>  
                         <div class="panel-footer" style="margin-bottom:-14px;">
-                            <input class="btn btn-success" value="답장" onclick="noteForm('${dto.sendUserId}');"/>
+                            <input class="btn btn-success" value="답장" onclick="renoteForm('${dto.sendUserId}');"/>
                             <button style="float: right;" type="button" class="btn btn-default btn-close" data-dismiss="modal">닫기</button>
                         </div>
                     </div>

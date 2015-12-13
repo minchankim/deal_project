@@ -15,8 +15,6 @@
 				VALUES (#{userId} , #{returnCash}, now(), null)
 	</insert> 
 	
-	
-	
 	<!-- 잔액 캐쉬만 아이디 받기 조회하기 -->
 	<select id="myCash" parameterType="String" resultType="Integer">
 	
@@ -24,5 +22,23 @@
 	
 	</select>
 	
+		<!--  <select id="listInsertCash" parameterType="String" resultType="com.project.cash.Cash">
+		    SELECT  userId
+		    , DATE_FORMAT(created, '%Y-%m-%d') AS created
+                   FROM cash JOIN member ON userId=userId
+           
+	     	      <where>
+	     	     userId = #{userId}
+	     	      </where>
+	     </select> -->
 	
+		<!-- <select id="listReturn" parameterType="String" resultType="com.project.cash.Cash">
+		    SELECT  userId
+		    , DATE_FORMAT(retrunDate, '%Y-%m-%d') AS returnDate
+                   FROM cash JOIN member ON userId=userId
+           
+	     	      <where>
+	     	     userId = #{userId}
+	     	      </where>
+	     </select>  -->
 </mapper>
