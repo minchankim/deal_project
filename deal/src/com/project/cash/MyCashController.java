@@ -23,7 +23,7 @@ public class MyCashController {
 	
 	@RequestMapping(value="/cash/myCash",method=RequestMethod.GET)
 	public ModelAndView method() {
-		ModelAndView mav = new ModelAndView(".cash.myCash");
+		 ModelAndView mav = new ModelAndView(".cash.myCash");
 		return mav;
 	}
 	
