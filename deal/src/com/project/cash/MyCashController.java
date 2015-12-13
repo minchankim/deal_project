@@ -67,7 +67,7 @@ public void insertCash(HttpServletResponse resp, HttpSession session, Cash dto) 
 		job.put("jsLogin", "true");
 		job.put("state", state);
 		job.put("scash", scash);
-System.out.println("sssssss"+scash);
+System.out.println("충전금액"+scash);
 		resp.setContentType("text/html; charset=utf-8");
 		PrintWriter out = resp.getWriter();
 		out.print(job.toString());
@@ -97,9 +97,6 @@ public void returnCash(HttpServletResponse resp, HttpSession session, Cash dto) 
 			dto.setUserId(info.getUserId());
 			
 			// 환전 신청 아디이
-			
-			
-			
 			service.returnCash(dto);
 			scash2 = service.readCash(info.getUserId());
 			session.setAttribute("cdto", scash2);
@@ -110,7 +107,8 @@ public void returnCash(HttpServletResponse resp, HttpSession session, Cash dto) 
 		JSONObject job = new JSONObject();
 		job.put("jsLogin", "true");
 		job.put("state", state);
-
+		job.put("scash", scash2);
+System.out.println("환전금액"+scash2);
 		resp.setContentType("text/html; charset=utf-8");
 		PrintWriter out = resp.getWriter();
 		out.print(job.toString());
