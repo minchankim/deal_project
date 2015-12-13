@@ -23,6 +23,20 @@ SELECT num,d.userId,userName,subject,price,instantPrice,discountRate,category1,c
 					GROUP BY num
 						ORDER BY num DESC
 	</select>
+	
+	
+	<select id="listDeal2" parameterType="map"
+	            resultType="com.project.deal.Deal">
+		SELECT  num,d.userId,userName,subject,price,instantPrice,discountRate,category1,category2,
+					people,approveCheck,start_date,end_date,content,saveFilename,originalFilename
+					,region1,region2,tag1,tag2,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10
+				 ,COUNT(dealNum) countLike FROM deal d
+					LEFT JOIN dealLike l ON d.num=l.dealNum
+					GROUP BY num
+						ORDER BY num DESC
+ 		LIMIT #{start}, 30
+	</select>
+	
 
 
 </mapper>
