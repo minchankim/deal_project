@@ -57,7 +57,9 @@ SELECT num,d.userId,userName,subject,price,instantPrice,discountRate,category1,c
 			SELECT d.num,d.userId,userName,subject,price,instantPrice,discountRate,category1,category2,
 					people,approveCheck,start_date,end_date,content,saveFilename,originalFilename
 					,region1,region2,tag1,tag2,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10
-				 	,COUNT(dealNum) countLike, p.imageFilename FROM deal d
+				 	,COUNT(dealNum) countLike, p.imageFilename 
+				 	,(SELECT alarmNotice FROM dealjoin j WHERE userId=#{userId} AND j.dealNum=d.num ) alarmNotice
+				 	FROM deal d
 					LEFT JOIN dealLike l ON d.num=l.dealNum
 					LEFT JOIN photo p ON d.userId=p.userId
 					WHERE d.num IN (select dealNum from dealjoin WHERE userId=#{userId})

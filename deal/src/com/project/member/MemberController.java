@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.cash.CashService;
+import com.project.deal.DealService;
 
 
 
@@ -32,6 +33,9 @@ public class MemberController {
 	
 	@Autowired
 	private CashService cservice;
+	
+	@Autowired
+	private DealService dservice;
 
 	
 	
@@ -106,6 +110,7 @@ public class MemberController {
 			) throws Exception{
 		
 		Member dto = service.readMember(userId);
+		
 		int cdto = cservice.readCash(userId);
 		
 		if(dto == null){
@@ -116,9 +121,13 @@ public class MemberController {
 		}
 		
 		System.out.println(cdto);
+		
 		SessionInfo info = new SessionInfo();
 		info.setUserId(dto.getUserId());
 		info.setUserName(dto.getUserName());
+		info.setDealInNoticeCount(dservice.readDealJoinCount(userId));
+		
+		info.setMyDealTotal(dservice.readDealJoinCount(userId));
 		
 	
 		Photo pdto = pservice.readPhoto(dto.getUserId());

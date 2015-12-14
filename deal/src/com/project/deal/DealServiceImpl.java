@@ -56,10 +56,8 @@ public class DealServiceImpl implements DealService{
 	
 		try{
 			
-			result=dao.insertData("deal.insertDealReply", dto);
-			
-			dto.setAlarmCount(dao.getReadData("deal.alarmCount", dto));
-			dao.updateData("deal.updateAlramCount", dto);
+			result=dao.insertData("deal.insertDealReply", dto);		
+			dao.updateData("deal.updateAlarmCount", dto);
 		} catch(Exception e) {
 			System.out.println(e.toString());
 		}
@@ -178,6 +176,17 @@ public class DealServiceImpl implements DealService{
 			System.out.println(e.toString());
 		}
 		return list;
+	}
+
+	@Override
+	public int readDealJoinCount(String userId) {
+		int result=0;
+		try {
+			result=dao.getReadData("deal.readDealJoinCount", userId);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return result;
 	}
 
 

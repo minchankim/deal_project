@@ -15,14 +15,15 @@ public class Deal {
 		private String originalFilename;
 		private int countLike,smillarNum;
 		private int dealmonth,avgprice;
-		private int alarmCount;
+		private int alarmNotice;
 		
 		
-		public int getAlarmCount() {
-			return alarmCount;
+	
+		public int getAlarmNotice() {
+			return alarmNotice;
 		}
-		public void setAlarmCount(int alarmCount) {
-			this.alarmCount = alarmCount;
+		public void setAlarmNotice(int alarmNotice) {
+			this.alarmNotice = alarmNotice;
 		}
 		public int getDealNum() {
 			return dealNum;

@@ -57,7 +57,7 @@ float:left;
                                                               	
                                                            			 <div class="message_wrapper">
                                                            			  ${dto.image1}
-                                                               		 <h4  class="heading">${dto.subject}</h4>
+                                                               		 <h4  class="heading">${dto.subject}<span  id="myDealTotal" class="badge bg-red">${dto.alarmNotice}</span> </h4>
                                                                		 
                                                                 	<div class="cam col-sm-12 col-md-12 col-xs-12" >참여 기간 : 2015. 11. 03 ~ 2015. 11.30</div>
                                                                 
@@ -132,7 +132,7 @@ float:left;
                                                   	</tr>
                                                   	<tr>
                                                   		<td  colspan="2">
-                                                  			<a class="uptitle">${dto.subject}</a> 
+                                                  			<a class="uptitle">${dto.subject}</a>
                                                   		</td>
                                                   		<td align="right" width="60px">
                                                   			<br><br>

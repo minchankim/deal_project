@@ -297,14 +297,19 @@ public class DealController {
 				dto.setUserId(info.getUserId());
 				dto.setUserName(info.getUserName());
 				int result=service.insertDealReply(dto);
-		
+							
 				if(result==0)
 					state="false";
 			}
+			info.setDealInNoticeCount(service.readDealJoinCount(info.getUserId()));
+			info.setMyDealTotal(service.readDealJoinCount(info.getUserId()));
+			
+			session.setAttribute("DealInNoticeCount", info.getDealInNoticeCount());
 			
 			// 작업 결과를 json으로 전송
 			JSONObject job=new JSONObject();
 			job.put("state", state);
+			job.put("DealInNoticeCount", info.getDealInNoticeCount());
 			
 			resp.setContentType("text/html;charset=utf-8");
 			PrintWriter out=resp.getWriter();

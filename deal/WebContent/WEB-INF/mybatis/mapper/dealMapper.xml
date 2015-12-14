@@ -101,13 +101,22 @@ INSERT  INTO dealjoin(dealNum, userId) VALUES (#{num},#{userId});
 	<!-- <update id="updateAlramCount" parameterType="com.project.deal.DealReply">
 	update dealjoin set alarmNotice= @alarmTest+1 WHERE dealNum=#{dealNum} AND userId=#{userId}
 
-	</update>
-	<select id="alarmCount" resultType="Integer" 
-	          parameterType="DealReply">
-		SELECT dealNum,userId FROM dealjoin WHERE userId=#{userId}
-	</select> -->
+	</update>-->
+<!-- 	<select id="alarmCount" resultType="Integer" 
+	          parameterType="com.project.deal.DealReply">
+		SELECT alarmNotice FROM dealjoin WHERE userId=#{userId} AND dealNum=#{dealNum}
+		
+	</select>  -->
+	
+	<update id="updateAlarmCount" parameterType="com.project.deal.DealReply">
+	update dealjoin set alarmNotice=(alarmNotice)+1 where dealNum IN (#{dealNum})
 
+	</update> 
 
+<select id="readDealJoinCount" resultType="Integer" 
+	          parameterType="String">
+		SELECT SUM(alarmNotice) FROM dealjoin WHERE userId=#{userId}
+	</select>
 
 
 </mapper>

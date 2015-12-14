@@ -496,24 +496,24 @@ function sendLogin() {
                             
                              <li style="padding-top: 10px;" class="">
                                 <a href="javascript:;" style="padding:0px;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-									마이딜<span class="badge bg-red">6</span>
+									마이딜<span id="myDealTotal" class="badge bg-red">${sessionScope.member.myDealTotal}</span>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
                                     <li><a href="<%=cp%>/myDeal/myDeal.do">
-                                    <span class="badge bg-red pull-right">2</span>
+                                    <span id="joinCount" class="badge bg-red pull-right">${sessionScope.member.dealInNoticeCount}</span>
                                             <span>참여 딜 목록</span>
                                     </a>
                                     </li>
                                     <li>
                                         <a href="<%=cp%>/myDeal/myDeal.do">
-                                            <span class="badge bg-red pull-right">2</span>
+                                            <!-- <span class="badge bg-red pull-right">2</span> -->
                                             <span>찜한 딜 목록</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="<%=cp%>/myDeal/myDeal.do">
-                                         <span class="badge bg-red pull-right">2</span>
+                                         <!-- <span class="badge bg-red pull-right">2</span> -->
                                             <span>올린 딜 목록</span>
                                         </a>
                                     </li>

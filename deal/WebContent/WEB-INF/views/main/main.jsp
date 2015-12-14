@@ -116,6 +116,15 @@ function sendReply(dealNum) {
 			} else if(state=="loginFail") {
 				alert("로그인하세여");
 			}
+			
+			$("#joinCount").text("");
+			 var ncount=data.DealInNoticeCount;
+			$("#joinCount").html(ncount); 
+			$("#myDealTotal").text("");
+			$("#myDealTotal").html(ncount); 
+			
+	
+		
 		}
 		,error:function(e) {
 			alert(e.responseText);

@@ -4,6 +4,42 @@ package com.project.member;
 public class SessionInfo {
 	private String userName, userId;
 	private int cash;
+	private int dealInNoticeCount,favoriteNoticeCount,uploadNoticeCount;
+	private int myDealTotal;
+	
+	
+
+	public int getMyDealTotal() {
+		return myDealTotal;
+	}
+
+	public void setMyDealTotal(int myDealTotal) {
+		this.myDealTotal = myDealTotal;
+	}
+
+	public int getDealInNoticeCount() {
+		return dealInNoticeCount;
+	}
+
+	public void setDealInNoticeCount(int dealInNoticeCount) {
+		this.dealInNoticeCount = dealInNoticeCount;
+	}
+
+	public int getFavoriteNoticeCount() {
+		return favoriteNoticeCount;
+	}
+
+	public void setFavoriteNoticeCount(int favoriteNoticeCount) {
+		this.favoriteNoticeCount = favoriteNoticeCount;
+	}
+
+	public int getUploadNoticeCount() {
+		return uploadNoticeCount;
+	}
+
+	public void setUploadNoticeCount(int uploadNoticeCount) {
+		this.uploadNoticeCount = uploadNoticeCount;
+	}
 
 	public String getUserName() {
 		return userName;
