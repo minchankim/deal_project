@@ -151,7 +151,7 @@ function memberOk() {
 
 function memberCheck() {
 	
-
+	alert("dd");
 	var f = document.memberForm;
 	var str;
 	str=f.gender.value;
@@ -186,7 +186,13 @@ function memberCheck() {
         return;
     }
 
-
+    str = f.cardNum.value;
+    alert(str);
+    if(str.length!=16){
+    	alert("카드번호는'-'없이 16자리 입니다.");
+    	f.cardNum.focus();
+        return;
+     }
 }
 
     
