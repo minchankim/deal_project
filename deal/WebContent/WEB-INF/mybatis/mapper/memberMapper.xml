@@ -5,8 +5,8 @@
 
 
 	<insert id="insertMember" parameterType="com.project.member.Member">
-	INSERT INTO member (userId, userPwd, userName, birth,tel,addr,cardNum,cardPwd,email,businessNum ) 
-				VALUES (#{userId},#{userPwd}, #{userName} ,#{birth},#{tel},#{addr},#{cardNum},#{cardPwd} ,#{email},#{businessNum} )
+	INSERT INTO member (userId, userPwd, userName, birth,tel,addr,cardNum,cardPwd,email,businessNum,gender ) 
+				VALUES (#{userId},#{userPwd}, #{userName} ,#{birth},#{tel},#{addr},#{cardNum},#{cardPwd} ,#{email},#{businessNum},#{gender} )
 		
 	</insert>
 

@@ -3,7 +3,15 @@ package com.project.member;
 public class Member {
 	
 	private String userId,userPwd,userName,birth,tel,email,addr,created_date,modify_date ,imageFilename;
-	private int  businessNum,success_money,success_count,badReport,cardNum,cardPwd;
+	private int  businessNum,success_money,success_count,badReport,cardNum,cardPwd,gender;
+	
+	
+	public int getGender() {
+		return gender;
+	}
+	public void setGender(int gender) {
+		this.gender = gender;
+	}
 	public String getUserId() {
 		return userId;
 	}
