@@ -34,10 +34,19 @@
 	    	</if>
 	    </where>
 	</select>
+<!-- 	
+	<select id="replyCount" resultType="Integer" parameterType="map">
+		SELECT ifnull(COUNT(*), 0) from board b
+		JOIN bbsreply r ON r.num = b.num
+		where r.num = b.num
+		
+	
+	</select> -->
+	
 	
 	
 
-<select id="listBoard" parameterType="map" resultType="com.project.board.Board">
+<!-- <select id="listBoard" parameterType="map" resultType="com.project.board.Board">
 
 select num, b.userId, subject, userName, content, DATE_FORMAT(created, '%Y-%m-%d') AS created, hitCount
 from board b
@@ -50,7 +59,34 @@ Join member m ON b.userId = m.userId
 ORDER BY num DESC
 LIMIT #{start}, 10
 
+</select> -->
+
+<select id="listBoard" parameterType="map" resultType="com.project.board.Board">
+
+select nb.num, userId, subject, userName, content, DATE_FORMAT(created, '%Y-%m-%d') AS created, hitCount, ifnull(replyCount, 0) AS replyCount 
+from (
+	(
+		SELECT b.num, b.userId, userName, subject, b.created, hitCount, content
+		FROM board b
+		JOIN member m ON b.userId = m.userId
+	)nb
+	LEFT OUTER JOIN
+	(
+	SELECT num, COUNT(*) replyCount 
+	FROM bbsreply GROUP BY num 
+	)nc
+	ON nb.num = nc.num
+)
+ <where>
+		<if test="searchValue!=null and searchValue!='' ">
+			 <include refid="where-list"/>
+		</if>
+</where>
+ORDER BY num DESC
+LIMIT #{start}, 10
 </select>
+
+
 
 
   <select id="readBoard" parameterType="Integer"
@@ -132,8 +168,12 @@ LIMIT #{start}, 10
 				LIMIT #{start}, 10
 	</select>
 	
+	
+	
 	<delete id="deleteReply" parameterType="Integer">
 		DELETE FROM bbsreply WHERE replyNum=#{replyNum}
 	</delete>
+	
+
 	
 </mapper>

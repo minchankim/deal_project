@@ -101,7 +101,10 @@ function searchList() {
                                 <tr class="even pointer">
                                     <td class="a-center ">
                                     <td class=" " style="font-weight: bold; color: red;">공지</td>
-                                    <td class=" "><a href="${urlArticle}&num=${dto.num}">${dto.subject}</a></td>
+                                    <td class=" "><a href="${urlArticle}&num=${dto.num}">${dto.subject}</a>
+                                    
+                                    </td>
+                                 
                                     <td class=" ">${dto.userName}</td>
                                     <td class=" ">${dto.created}</td>
                                     <td class=" ">${dto.hitCount}</td>
@@ -114,7 +117,11 @@ function searchList() {
                                 <tr class="even pointer">
                                     <td class="a-center ">
                                     <td class=" ">${dto.num}</td>
-                                    <td class=" "><a href="${urlArticle}&num=${dto.num}">${dto.subject}</a></td>
+                                    <td class=" "><a href="${urlArticle}&num=${dto.num}">${dto.subject}</a>
+                                      <c:if test="${dto.replyCount!=0}">
+                                     &nbsp; <small>[${dto.replyCount}]</small>
+                                     </c:if>
+                                    </td>
                                     <td class=" ">${dto.userName}</td>
                                     <td class=" ">${dto.created}</td>
                                     <td class=" ">${dto.hitCount}</td>

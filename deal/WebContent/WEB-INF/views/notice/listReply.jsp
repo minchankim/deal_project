@@ -10,8 +10,9 @@
  <div class="panel-body">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <div class="row">
+                  
                         <c:forEach var="vo" items="${listReply}">
+                              <div class="row">
                             <div class="col-xs-2 col-md-1">
                                <img src="<%=cp%>/uploads/photo/${vo.imageFilename}" class="img-circle img-responsive" alt="" /></div>
                             <div class="col-xs-10 col-md-11">
@@ -35,9 +36,10 @@
                                     </c:if>
                                 </div>
                             </div>
+                               </div>
                             </c:forEach>
                             
-                        </div>
+                     
 
                     </li>
                	<div height='30'>

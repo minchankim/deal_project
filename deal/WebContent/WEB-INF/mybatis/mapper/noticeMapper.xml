@@ -36,9 +36,20 @@
 	
 <select id="listNotice" parameterType="map" resultType="com.project.notice.Notice">
 
-select num, n.userId, notice, subject, userName, content, DATE_FORMAT(created, '%Y-%m-%d') AS created, hitCount
-from notice n
-Join member m ON n.userId = m.userId 
+select nb.num, userId, notice, subject, userName, content, DATE_FORMAT(created, '%Y-%m-%d') AS created, hitCount, ifnull(replyCount, 0) AS replyCount 
+from (
+	(
+		SELECT n.num, notice, n.userId, userName, subject, n.created, hitCount, content
+		FROM notice n
+		JOIN member m ON n.userId = m.userId
+	)nb
+	LEFT OUTER JOIN
+	(
+	SELECT num, COUNT(*) replyCount 
+	FROM noticereply GROUP BY num 
+	)nc
+	ON nb.num = nc.num
+)
  <where>
 		<if test="searchValue!=null and searchValue!='' ">
 			 <include refid="where-list"/>
@@ -46,7 +57,6 @@ Join member m ON n.userId = m.userId
 </where>
 ORDER BY num DESC
 LIMIT #{start}, 10
-
 </select>
 
 	
