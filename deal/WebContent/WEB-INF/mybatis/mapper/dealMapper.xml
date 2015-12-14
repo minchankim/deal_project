@@ -97,6 +97,16 @@ INSERT  INTO dealjoin(dealNum, userId) VALUES (#{num},#{userId});
 		SELECT dealNum,userId FROM dealjoin WHERE userId=#{userId}
 	</select>
 	
+	
+	<update id="updateAlramCount" parameterType="com.project.deal.DealReply">
+	update dealjoin set alarmNotice= @alarmTest+1 WHERE dealNum=#{dealNum} AND userId=#{userId}
+
+	</update>
+	<select id="alarmCount" resultType="Integer" 
+	          parameterType="DealReply">
+		SELECT dealNum,userId FROM dealjoin WHERE userId=#{userId}
+	</select>
+
 
 
 

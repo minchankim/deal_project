@@ -3,10 +3,19 @@ package com.project.deal;
 public class DealReply {
 	private int dealNum,num;
 	private String userId,userName,created,content,imageFilename;
+	private int alarmCount;
 
 	
 	
 	
+	public int getAlarmCount() {
+		return alarmCount;
+	}
+
+	public void setAlarmCount(int alarmCount) {
+		this.alarmCount = alarmCount;
+	}
+
 	public String getImageFilename() {
 		return imageFilename;
 	}

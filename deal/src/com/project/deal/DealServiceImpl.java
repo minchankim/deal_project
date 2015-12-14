@@ -53,9 +53,13 @@ public class DealServiceImpl implements DealService{
 	@Override
 	public int insertDealReply(DealReply dto) {
 		int result=0;
+	
 		try{
 			
 			result=dao.insertData("deal.insertDealReply", dto);
+			
+			dto.setAlarmCount(dao.getReadData("deal.alarmCount", dto));
+			dao.updateData("deal.updateAlramCount", dto);
 		} catch(Exception e) {
 			System.out.println(e.toString());
 		}

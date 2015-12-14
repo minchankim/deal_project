@@ -297,6 +297,7 @@ public class DealController {
 				dto.setUserId(info.getUserId());
 				dto.setUserName(info.getUserName());
 				int result=service.insertDealReply(dto);
+		
 				if(result==0)
 					state="false";
 			}
