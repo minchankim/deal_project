@@ -448,8 +448,8 @@ color:rgb(0,0,0);
                         <li>#${dto.tag1}</li>
                     </ul>
                 </div>
-                <div class="panel-heading" >
-                    <img class="[ img-circle pull-left ]" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="Mouse0270" />
+                <div class="panel-heading" style=" padding-bottom: 15px;" >
+                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" />
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
                 </div>
@@ -604,8 +604,8 @@ color:rgb(0,0,0);
                         <li>#${dto.tag1}</li>
                     </ul>
                 </div>
-                <div class="panel-heading" >
-                    <img class="[ img-circle pull-left ]" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="Mouse0270" />
+                <div class="panel-heading" style=" padding-bottom: 15px;" >
+                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}"  style="width:60px;height:70px;" />
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
                 </div>
@@ -763,8 +763,8 @@ color:rgb(0,0,0);
                         <li>#${dto.tag1}</li>
                     </ul>
                 </div>
-                <div class="panel-heading" >
-                    <img class="[ img-circle pull-left ]" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="Mouse0270" />
+                <div class="panel-heading" style=" padding-bottom: 15px;" >
+                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" alt="Mouse0270"  style="width:60px;height:70px;" />
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
                 </div>
