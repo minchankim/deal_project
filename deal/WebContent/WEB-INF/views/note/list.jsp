@@ -13,9 +13,8 @@
  
  // 출력해주기
 		 
-		 
-  	var receiveUserId;
-	var sendUserId=0;
+  	var receiveUserId;  // 답장을 받을 아이디
+	var sendUserId;
 	var sendDay;
 	var readNum;
 	var content;
@@ -23,35 +22,36 @@
 
  function noteForm(id) {
  	
-	 
+	
 	 receiveUserId=id;
 	 $('#contact').modal('show');
 	
 			var s = receiveUserId;
 			$("#idWrite").change();
 			$("#idWrite").text(s); 
-		
-		
-	/* 	$(".ui-dialog-titlebar-close").click(function(){
-			
-			$("#idWrite").text("");
-				
-		}); */
-		
 	
+			// 보내는 날짜 찍기
+			var newDate = new Date();
+			var yy = newDate.getFullYear();
+			var mm = newDate.getMonth()+1;
+			var dd = newDate.getDate();
+			var toDay = yy + "-" + mm + "-" + dd;
+			
+			$("#sendDay").change();
+			$("#sendDay").text(toDay); 
+		
  }
  
 function renoteForm(id) {
  	
 	 receiveUserId=id;
+	
+
 	 $('#ModalArticle').modal('hide');
 		 
 	 $('#contact').modal('show');
 	
-			var s = receiveUserId;
-			$("#idWrite").change();
-			$("#idWrite").text(s); 
-	
+		
  }
  
  function sendLetter() {
@@ -84,6 +84,7 @@ function renoteForm(id) {
 						// var state=data.state;
 			    		$("#letterContent").val("");
 						$("#idWrite").text("");
+						$("#sendDay").text(""); 
 						// 여기에 받는 유저아이디를 받아야한다.?
 			    		alert("메시지를 전송 했습니다.");
 						 $('#contact').modal('hide');
@@ -96,11 +97,14 @@ function renoteForm(id) {
 			 $('#contact').modal('hide');
 	}
  
-	
- function readForm(sendUserId ,sendDay, readNum, content){
-	
-	 $("#ModalArticle").modal('show');
+
+	var resendUserId;	//답장받기 아이디
+ 	function readForm(sendUserId ,sendDay, readNum, content){
+
 	 
+	 $("#ModalArticle").modal('show');
+	 	this.resendUserId=sendUserId;
+	
 		this.sendUserId=sendUserId;				
 	 	this.sendDay=sendDay;
 	 	this.readNum=readNum;
@@ -115,12 +119,15 @@ function renoteForm(id) {
 			$("#idWrite2").text(sendUserId); 
 			$("#idWrite2").change();
 			
+			$("#idWrite").text(sendUserId); 
+			$("#idWrite").change();
+			
 			 $("#dateWrite").text(sendDay);
 			$("#dateWrite").change(); 
 
 			 $("#letterContent2").text(content);
 			 $("#letterContent2").change();
-			
+			 
 		}, "json");
 		
 
@@ -164,7 +171,7 @@ Licensed under MIT
                             	 <div> 받는사람 </div> 
                                 </div> 
                             
-                                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px;">
+                                <div class="col-lg-5 col-md-5 col-sm-5" style="padding-bottom: 10px;">
                             	 <div style="margin-right: 20px;" class="form-control" id="idWrite">  </div> 
                                 </div>
                                 	</div>
@@ -189,7 +196,8 @@ Licensed under MIT
 <!-- 쪽지보내기창 -->
 
   <!--받은 쪽지 확인창-->
-                               <div class="modal fade" id="ModalArticle"  role="dialog" aria-labelledby="receiveLabel" aria-hidden="true">
+ 
+            <div class="modal fade" id="ModalArticle"  role="dialog" aria-labelledby="receiveLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="panel panel-primary">
                      <div class="panel-heading">
@@ -218,17 +226,18 @@ Licensed under MIT
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <div  style="resize:vertical;" class="form-control" id="letterContent2"></div>
+                                    <div style="resize:vertical; height: 200px" class="form-control" id="letterContent2"></div>
                                 </div>
                             </div>
                         </div>  
                         <div class="panel-footer" style="margin-bottom:-14px;">
-                            <input class="btn btn-success" value="답장" onclick="renoteForm('${dto.sendUserId}');"/>
+                            <input class="btn btn-success" value="답장" onclick="renoteForm(resendUserId);"/>
                             <button style="float: right;" type="button" class="btn btn-default btn-close" data-dismiss="modal">닫기</button>
                         </div>
                     </div>
                 </div>
             </div>
+       
             <!--  받은 쪽지 확인 종료 -->
 
 
