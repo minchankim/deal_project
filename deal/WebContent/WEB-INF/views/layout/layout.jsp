@@ -22,6 +22,8 @@
 <link href="<%=cp%>/res/template/css/custom.css" rel="stylesheet">
 <link href="<%=cp%>/res/template/css/animate.min.css" rel="stylesheet">
 <link href="<%=cp%>/res/template/css/icheck/flat/green.css" rel="stylesheet">
+<link href="<%=cp%>/res/template/css/select/select2.min.css" rel="stylesheet">
+
 
 <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">

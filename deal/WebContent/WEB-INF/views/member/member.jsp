@@ -5,7 +5,7 @@
    request.setCharacterEncoding("utf-8");
    String cp = request.getContextPath();
 %>
-
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script>
 //nice form step wizard
 $(document).ready(function () {
@@ -149,13 +149,57 @@ function memberOk() {
 
 
 
-function checkBox() {
+function memberCheck() {
 	
-     
+	alert("dd");
+	var f = document.memberForm;
+	var str;
+	str=f.gender.value;
+	alert(str);
+	
+	str = f.userId.value;
+	if(!/^[a-z][a-z0-9_]{4,9}$/i.test(str)) { 
+		alert("아이디는 5~10자이며 첫글자는 영문자이어야 합니다.");
+		f.userId.focus();
+		return;
+	}
+	
+	
+	str = f.userPwd.value;
+	if(!/^(?=.*[a-z])(?=.*[!@#$%^*+=-]|.*[0-9]).{5,10}$/i.test(str)) { 
+		alert("패스워드는 5~10자이며 하나 이상의 숫자나 특수문자가 포함되어야 합니다.");
+		f.userPwd.focus();
+		return;
+	}
+	
+    str = f.userName.value;
+    if(!str) {
+        alert("\n이름을 입력하세요. ");
+        f.userName.focus();
+        return;
+    }
+
+    str = f.birth.value;
+    if(!str || !isValidDateFormat(str)) {
+        alert("\n생년월일를 입력하세요[YYYY-MM-DD]. ");
+        f.birth.focus();
+        return;
+    }
+
+    str = f.cardNum.value;
+    alert(str);
+    if(str.length!=16){
+    	alert("카드번호는'-'없이 16자리 입니다.");
+    	f.cardNum.focus();
+        return;
+     }
 }
 
     
-    
+$('.btn-success>input').click(function() {/*gender  */
+    alert('test');
+    $('input[type="radio"][name="options"]').not(':checked').prop("checked", true);
+});
 
 </script>
 
@@ -227,6 +271,14 @@ function checkBox() {
 .add-top {
     margin-top:20px;
 }
+
+
+.btn span.glyphicon {    			
+	opacity: 0;				
+}
+.btn.active span.glyphicon {				
+	opacity: 1;				
+}
 </style>
 
 
@@ -281,7 +333,7 @@ function checkBox() {
                             <label class="col-sm-2 control-label" for="textinput">Password</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                  <input name="userPwd" autocomplete="on" type="text" placeholder="Full Name" class="form-control" required>
+                                  <input name="userPwd" autocomplete="on" type="password" placeholder="Full Name" class="form-control" required>
                                   <span class="input-group-addon label-danger"><i class="fa fa-user fa-lg text-white"></i></span>
                                 </div>
                             </div>
@@ -297,13 +349,41 @@ function checkBox() {
                                 </div>
                             </div>
                           </div>
+                            <!-- Gender input-->
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Gender</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                 
+                                 
+                                 
+		
+		<div class="btn-group" data-toggle="buttons">
+			
+			<label class="btn btn-success active" style="background-color:rgba(76, 168, 248, 0.79); border-color:#3276B1;">
+				<input type="radio" name="gender" id="option1" autocomplete="off" value="1"  checked>
+				<span class="glyphicon">M</span>
+			</label>
+
+			<label class="btn btn-danger"  style="background-color:rgba(255, 136, 132, 0.94) ; "  >
+				<input type="radio" name="gender" id="option2" value="0"  autocomplete="off">
+				<span class="glyphicon ">W</span>
+			</label>
+		
+		</div>
+                                 
+                                 
+                                  <span class="input-group-addon label-danger"><i class="fa fa-user fa-lg text-white"></i></span>
+                                </div>
+                            </div>
+                          </div>
                           
                             <!-- birth input-->
                           <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">birth</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                  <input name="birth" autocomplete="on" type="text" placeholder="Full Name" class="form-control" required>
+                                  <input name="birth" autocomplete="on" type="text" placeholder="XXXX-XX-XX" class="form-control" required>
                                   <span class="input-group-addon label-danger"><i class="fa fa-user fa-lg text-white"></i></span>
                                 </div>
                             </div>
@@ -314,7 +394,7 @@ function checkBox() {
                             <label class="col-sm-2 control-label" for="textinput">Tel</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                  <input name="tel" autocomplete="on" type="text" placeholder="Full Name" class="form-control" required>
+                                  <input name="tel" autocomplete="on" type="text" placeholder="000-0000-0000" class="form-control" required>
                                   <span class="input-group-addon label-danger"><i class="fa fa-user fa-lg text-white"></i></span>
                                 </div>
                             </div>
@@ -339,7 +419,7 @@ function checkBox() {
                             <label class="col-sm-2 control-label" for="textinput">Addr</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                  <input name="addr" autocomplete="on" type="text" placeholder="Full Name" class="form-control" required>
+                                  <input name="addr" autocomplete="on" type="text" placeholder="주소를 입력하시오" class="form-control" required>
                                   <span class="input-group-addon label-danger"><i class="fa fa-user fa-lg text-white"></i></span>
                                 </div>
                             </div>
@@ -352,7 +432,7 @@ function checkBox() {
                             <label class="col-sm-2 control-label" for="textinput">CardNum</label>
                             <div class="col-sm-4">
                                 <div class="input-group">
-                                  <input name="cardNum" type="tel" placeholder="Main Contact #" class="form-control" required>
+                                  <input name="cardNum" type="text" placeholder=" 16자리" class="form-control" >
                                   <span class="input-group-addon bg-success"><i class="fa fa-phone fa-lg text-white"></i></span>
                                 </div>
                             </div>
@@ -360,7 +440,7 @@ function checkBox() {
                             <label class="col-sm-2 control-label" for="textinput">CardPwd</label>
                             <div class="col-sm-4">
                                 <div class="input-group">
-                                  <input name="cardPwd" id="postcode" type="text" placeholder="Post Code" class="form-control" required>
+                                  <input name="cardPwd" id="postcode" type="password" placeholder="Card Pwd" class="form-control" >
                                   <span class="input-group-addon bg-success"><i class="fa fa-map-marker fa-lg text-white"></i></span>
                                 </div>
                             </div>
@@ -393,7 +473,7 @@ function checkBox() {
                         
                             
                             <p style="display:inline;" class="small col-xs-9 col-sm-offset-2 col-sm-7 text-SI-grey">this is a block of copy for you to write some blurb.</p>
-                            <button class="btn btn-primary nextBtn1 col-xs-3 pull-right" type="button" >Next Step <i class="fa fa-angle-double-right"></i> </button>
+                            <button class="btn btn-primary nextBtn1 col-xs-3 pull-right" type="button" onclick="memberCheck()" >Next Step <i class="fa fa-angle-double-right"></i> </button>
                         </div>
                     </div>
                   

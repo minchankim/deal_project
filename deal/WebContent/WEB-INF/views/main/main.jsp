@@ -258,6 +258,9 @@ function dealjoin(Num,mode){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style>
+.stat-item:click{
+background-color:black !important;
+}
 .btn.active {                
 	display: none;		
 }
@@ -511,8 +514,10 @@ color:rgb(0,0,0);
                     
                     
                      <span class="pull-right">
-                        <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i> 
+                      <a class="btn btn-default stat-item " style="font-size:25px; padding-bottom: 5px;padding-right:5px; ">
+                        <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;padding-left: 5px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i></a> 
                        <%--  <i id="dislike${dto.num}"  style="font-size: 30px;" onclick="disLike(${dto.num});" class="glyphicon glyphicon-thumbs-down"><div style="font-size: 25px;" id="dislike${dto.num}-bs3">4</div></i> --%> 
+           
                     </span>
                     <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
                 </div>
@@ -826,7 +831,9 @@ color:rgb(0,0,0);
                      <span class="pull-right">
                         <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i> 
                        <%--  <i id="dislike${dto.num}"  style="font-size: 30px;" onclick="disLike(${dto.num});" class="glyphicon glyphicon-thumbs-down"><div style="font-size: 25px;" id="dislike${dto.num}-bs3">4</div></i> --%> 
+                       
                     </span>
+                    
                     <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
                 </div>
                 <div class="panel-google-plus-comment" style="padding:10px;">
