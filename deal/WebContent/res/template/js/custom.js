@@ -69,9 +69,9 @@ $(function () {
     })
     /** ******  /tooltip  *********************** **/
     /** ******  progressbar  *********************** **/
-if ($(".progress .progress-bar")[0]) {
+/*if ($(".progress .progress-bar")[0]) {
     $('.progress .progress-bar').progressbar(); // bootstrap 3
-}
+}*/
 /** ******  /progressbar  *********************** **/
 /** ******  switchery  *********************** **/
 if ($(".js-switch")[0]) {
@@ -308,10 +308,10 @@ $(function () {
 /** ******  scrollview  *********************** **/
 $(document).ready(function () {
   
-            $(".scroll-view").niceScroll({
+     /*       $(".scroll-view").niceScroll({
                 touchbehavior: true,
                 cursorcolor: "rgba(42, 63, 84, 0.35)"
-            });
+            });*/
 
 });
 /** ******  /scrollview  *********************** **/

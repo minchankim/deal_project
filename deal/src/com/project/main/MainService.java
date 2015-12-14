@@ -9,5 +9,6 @@ public interface MainService {
 	
 	public List<Deal> listDeal(Map<String, Object> map);
 	public List<Deal> listDeal2(Map<String, Object> map);
-
+	public List<Deal> dealInList(Map<String, Object> map);
+	public List<Deal> dealUploadList(Map<String, Object> map);
 }

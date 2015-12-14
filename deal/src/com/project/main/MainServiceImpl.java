@@ -45,4 +45,30 @@ public class MainServiceImpl implements MainService {
 		return list;
 	}
 
+	@Override
+	public List<Deal> dealInList(Map<String, Object> map) {
+		List<Deal> list=null;
+	
+		try{
+			list=dao.getListData("main.dealInList", map);
+		} catch(Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return list;
+	}
+
+	@Override
+	public List<Deal> dealUploadList(Map<String, Object> map) {
+		List<Deal> list=null;
+		
+		try{
+			list=dao.getListData("main.dealUploadList", map);
+		} catch(Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return list;
+	}
+
 }

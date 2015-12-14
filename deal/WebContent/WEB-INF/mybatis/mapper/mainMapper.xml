@@ -50,6 +50,36 @@ SELECT num,d.userId,userName,subject,price,instantPrice,discountRate,category1,c
 						ORDER BY num DESC
  		LIMIT  #{start}, 30
  			</select>
+ 			
+ 			
+ 		<select id="dealInList" parameterType="map"
+	            resultType="com.project.deal.Deal">
+			SELECT d.num,d.userId,userName,subject,price,instantPrice,discountRate,category1,category2,
+					people,approveCheck,start_date,end_date,content,saveFilename,originalFilename
+					,region1,region2,tag1,tag2,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10
+				 	,COUNT(dealNum) countLike, p.imageFilename FROM deal d
+					LEFT JOIN dealLike l ON d.num=l.dealNum
+					LEFT JOIN photo p ON d.userId=p.userId
+					WHERE d.num IN (select dealNum from dealjoin WHERE userId=#{userId})
+					GROUP BY num
+					ORDER BY num DESC
+ 					LIMIT #{start}, 200
+ 			</select>
+ 			
+ 			<select id="dealUploadList" parameterType="map"
+	            resultType="com.project.deal.Deal">
+				SELECT d.num,d.userId,userName,subject,price,instantPrice,discountRate,category1,category2,
+					people,approveCheck,start_date,end_date,content,saveFilename,originalFilename
+					,region1,region2,tag1,tag2,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10
+				 	,COUNT(dealNum) countLike, p.imageFilename FROM deal d
+					LEFT JOIN dealLike l ON d.num=l.dealNum
+					LEFT JOIN photo p ON d.userId=p.userId
+					WHERE d.userId=#{userId}
+					GROUP BY num
+					ORDER BY num DESC
+ 					LIMIT #{start}, 200
+ 			</select>
+ 		
 	
 
 
