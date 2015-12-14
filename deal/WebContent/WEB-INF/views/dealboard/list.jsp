@@ -17,8 +17,92 @@
 	border-top: 1px solid #E6E9ED;
 }
 </style>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  
+<script type="text/javascript">
+<!--
+
+//-->
+
+function readProfile(userId, userName ,businessNum, tel, email, addr){
+	
+	 $("#myModal2").modal('show');
+	 
+		this.userId=userId;
+	 	this.userName=userName;
+	 	this.businessNum=businessNum;
+	 	this.tel=tel;
+	 	this.email=email;
+	 	this.addr=addr;
+	 	
+	 	// 읽은 상태로 만들기 Ajax 처리
+	 	var url="<%=cp%>/dealboard/list.do";
+	 	
+		$.post(url, {userId:userId}, function(data){
+			$("#myModalName").text(userName);
+			$("#myModalName").change();
+			
+			$("#myModalBnum").text(businessNum);
+			$("#myModalBnum").change();
+			
+			$("#myModalTel").text(tel);
+			$("#myModalTel").change();
+			
+			$("#myModalEmail").text(email);
+			$("#myModalEmail").change(); 
+
+			$("#myModalAddr").text(addr);
+			$("#myModalAddr").change();
+			
+		}, "json");
+		
+	 $("#myModal2").click(function(){
+			
+			$(".btn btn-success").click(function(){
+				 
+				 $('#myModal2').modal('hide');
+			 });
+		
+			});
+}
+
+</script>  
+
+<!-- Modal -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h3 class="modal-title" id="myModalLabel">More about Company</h3>
+                    </div>
+                <div class="modal-body">
+                    
+                    <img src="<%=cp%>/uploads/photo/${dto.imageFilename}"  name="aboutme" width="140" height="140" border="0" class="img-circle1"><br><br>
+                    <h4 class="media-heading" style="text-align: center;" id="myModalName">  <small>USA</small></h4>
+                    <span><strong>Tags: </strong></span>
+                        <span class="label label-warning">HTML5/CSS</span>
+                        <span class="label label-info">Adobe CS 5.5</span>
+                        <span class="label label-info">Microsoft Office</span>
+                        <span class="label label-success">Windows XP, Vista, 7</span>
+                    
+                    <hr>
+                    
+                    <p class="text-left"><strong>Bio: </strong><br>
+                        <p style="text-align: center;" id="">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+                    <br>
+                    
+                </div>
+                <div class="modal-footer">
+                   
+                    <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Joe</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
 <div class="right_col" role="main">
    
@@ -65,8 +149,8 @@
 	                        <div class="col-xs-12 col-sm-6 emphasis">
 	                        	<button type="button" class="btn btn-success btn-xs" onclick="noteForm('');" data-original-title> 
 	                        	<i class="fa fa-user"></i> 쪽지 보내기 </button>
-	                        	<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal2"> 
-	                        	<i class="fa fa-user"></i> 프로필 보기 </button>
+	                        	<a onclick="readProfile('${dto.userId}','${dto.userName}' ,'${dto.businessNum}', '${dto.tel}', '${dto.email}', '${dto.addr}')"><button type="button" class="btn btn-primary btn-xs" data-toggle="modal">
+	                        	<i class="fa fa-user"></i>프로필 보기</button> </a>
 	                        </div>
                      	</div>
                      	</div>
@@ -110,44 +194,4 @@
 
 </div>
 
-
-
-    
-    
-    
- 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel">More About userName</h4>
-                    </div>
-                <div class="modal-body">
-                    
-                    <img src="<%=cp %>/res/images/img.jpg"  name="aboutme" width="140" height="140" border="0" class="img-circle1"><br><br>
-                    <h3 class="media-heading" style="text-align: center;">${dto.userName} <small>USA</small></h3>
-                    <span><strong>Tags: </strong></span>
-                        <span class="label label-warning">HTML5/CSS</span>
-                        <span class="label label-info">Adobe CS 5.5</span>
-                        <span class="label label-info">Microsoft Office</span>
-                        <span class="label label-success">Windows XP, Vista, 7</span>
-                    
-                    <hr>
-                    
-                    <p class="text-left"><strong>Bio: </strong><br>
-                        <p style="text-align: center;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
-                    <br>
-                    
-                </div>
-                <div class="modal-footer">
-                   
-                    <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Joe</button>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
 

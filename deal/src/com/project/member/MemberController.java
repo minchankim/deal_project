@@ -1,7 +1,11 @@
 package com.project.member;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -136,5 +140,15 @@ public class MemberController {
 		session.invalidate();
 		
 		return "redirect:/";
+	}
+	
+	//∞°∞›»Ô¡§
+	@RequestMapping(value="/dealboard/list")
+	public ModelAndView list(HttpServletRequest req)throws Exception{
+		Map<String, Object> map=new HashMap<String, Object>();
+		List<Member> list=service.listBusiness(map);
+		ModelAndView mav=new ModelAndView(".dealboard.list");
+		mav.addObject("list",list);
+		return mav;
 	}
 }
