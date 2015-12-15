@@ -5,7 +5,15 @@
 	request.setCharacterEncoding("utf-8");
    String cp = request.getContextPath();
 %>
-
+<style>
+body.nav-sm .nav.side-menu li a{
+	height:60px;
+	width:90px;
+}
+body.nav-sm ul.nav.child_menu{
+	left:125%;
+}
+</style>
 
 
             <div class="col-md-3 left_col">
@@ -19,7 +27,7 @@
                    
                     <!-- /menu prile quick info -->
 
-                    <br />
+                    
 
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -27,7 +35,7 @@
                         <div class="menu_section">
                             
                             <ul class="nav side-menu">
-                                   <li><a style="text-align:center;" href="<%=cp%>/deal/created.do"><i class="fa fa-plus"></i></a>
+                                   <li><a style="text-align:center; height:40px;" href="<%=cp%>/deal/created.do"><i class="fa fa-plus"></i></a>
                          
                                 </li>
                                 <li><a ><i class="fa fa-male"></i> 의류/잡화 <span class="fa fa-chevron-down"></span></a>
@@ -147,16 +155,16 @@
                         <div class="menu_section">
                             <hr>
                             <ul class="nav side-menu">
-                                <li><a href="<%=cp%>/board/list.do"><i class="fa fa-bug"></i> 자유게시판</a></li>
+                                <li><a href="<%=cp%>/board/list.do"><i class="fa fa-pencil-square-o"></i> 자유게시판</a></li>
                                 
              
-                                <li><a href="<%=cp%>/dealboard/list.do"><i class="fa fa-windows"></i> 가격흥정 </a>
+                                <li><a href="<%=cp%>/dealboard/list.do"><i class="fa fa-quote-left"></i> 가격흥정 </a>
                                     <ul class="nav child_menu" style="display: none">
 
 
                                     </ul>
                                 </li>
-                                     <li><a><i class="fa fa-windows"></i> 고객센터 <span class="fa fa-chevron-down"></span></a>
+                                     <li><a><i class="fa fa-bullhorn"></i> 고객센터 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                        
                                         <li><a href="<%=cp%>/notice/list.do">공지사항</a>
@@ -168,8 +176,7 @@
 
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
-                                </li>
+                               
                             </ul>
                         </div>
 
