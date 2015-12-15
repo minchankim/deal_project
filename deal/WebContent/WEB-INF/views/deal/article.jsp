@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
 	request.setCharacterEncoding("utf-8");
    String cp = request.getContextPath();
@@ -38,7 +40,7 @@
 
     <!-- range slider -->
     <script src="<%=cp%>/res/template/js/ion_range/ion.rangeSlider.min.js"></script>
-  
+   <script src="<%=cp%>/res/template/js/chartjs/chart.min.js"></script>
  <!-- ion_range -->
 <!--    <script>
 
@@ -51,6 +53,20 @@
     	
     }
     </script> -->
+    <script>
+    function test(id){
+   
+    	 var photo = $("#"+id).html()
+  
+     p1.outerHTML='<div class="product-image" id="p1">'+photo+'</div>' 
+      
+ 
+    }
+    
+ 
+   
+
+    </script>
 
    <div class="right_col" role="main">
    
@@ -98,35 +114,35 @@
                                 <div class="x_content">
 
                                     <div class="col-md-7 col-sm-7 col-xs-12">
-                                        <div class="product-image">
+                                        <div class="product-image" id="p1">
                                             ${dealPhoto[0]}
                                         </div>
                                         <div class="product_gallery">
-                                            <a>
+                                            <a onclick="test(this.id)" id="p2">
                                                  ${dealPhoto[1]}
                                             </a>
-                                            <a>
+                                            <a onclick="test(this.id)" id="p3">
                                                ${dealPhoto[2]}
                                             </a>
-                                            <a>
+                                            <a onclick="test(this.id)" id="p4">
                                              ${dealPhoto[3]}
                                             </a>
-                                            <a>
+                                            <a onclick="test(this.id)" id="p5">
                                                 ${dealPhoto[4]}
                                             </a>
-                                            <a>
+                                            <a onclick="test(this.id)" id="p6">
                                                ${dealPhoto[5]}
                                             </a>
-                                            <a>
+                                            <a onclick="test(this.id)" id="p7">
                                                ${dealPhoto[6]}
                                             </a>
-                                            <a>
+                                            <a onclick="test(this.id)" id="p8">
                                                ${dealPhoto[7]}
                                             </a>
-                                            <a>
+                                            <a onclick="test(this.id)" id="p9">
                                                ${dealPhoto[8]}
                                             </a>
-                                            <a>
+                                            <a onclick="test(this.id)" id="p10">
                                                ${dealPhoto[9]}
                                             </a>
                                         </div>
@@ -161,7 +177,7 @@
                                             </ul>
                                         </div>
                                         <br />
-
+<!-- 
                                         <div class="">
                                             <h2>Size <small>Please select one</small></h2>
                                             <ul class="list-inline prod_size">
@@ -179,28 +195,28 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <br />
+                                        <br /> -->
 
                                         <div class="">
-                                            <div class="product_price">
+                                            <div class="product_price" style="margin-bottom:0px;">
                                                <div class="">
-  <h1>딜 성공시 구매가능 가격:   ₩${dealArticle.price}</h1>
-  40% Success  <span class="pull-right">${dealArticle.people}명중 40명 참여</span>
+  <h1 >딜 성공시 구매가능 가격:  <span style="color:red;"> ₩${dealArticle.price}</span></h1>
+   <fmt:formatNumber value="${fn:length(dealInPeople)/dealArticle.people*100}" type="number"/>% Success  <span class="pull-right">${dealArticle.people}명중 ${fn:length(dealInPeople)} 명 참여</span>
+
+
+
   <div class="progress">
   <div class="progress-bar progress-bar-striped active" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-    40%
+  aria-valuenow="${fn:length(dealInPeople)/dealArticle.people*100}" aria-valuemin="0" aria-valuemax="100" style="width:${fn:length(dealInPeople)/dealArticle.people*100}%">
+     <fmt:formatNumber value="${fn:length(dealInPeople)/dealArticle.people*100}" type="number"/>%
+   
   </div>
 </div>
 <div class="">
                                             <button type="button" class="btn btn-default btn-lg">Deal In</button>
-                                            <button type="button" class="btn btn-default btn-lg">Add to Wishlist</button>
+                                            <button type="button" class="btn btn-default btn-lg"><span class="fa fa-heart"></span></button>
                                         </div>
   <p>
-     <br>   <br>
-   <div id="like1" style="font-size: 45px;"class="glyphicon glyphicon-thumbs-up pull-left"></div> <div style="font-size: 45px;" id="like1-bs3" class="pull-left"></div>
-   <div id="dislike1" style="font-size: 45px;" class="glyphicon glyphicon-thumbs-down pull-left"></div> <div style="font-size: 45px;" id="dislike1-bs3" class="pull-left"></div> 
-  
   
      <br>   <br>
   <span class="price-tax">즉시 구매가: ₩${dealArticle.instantPrice}</span>
@@ -217,18 +233,8 @@
     <div>${dealArticle.tag1}</div>
     <div>${dealArticle.tag2}</div>
     <div>${dealPhoto[9]}</div>
- 
-   <!--  <button class="btn btn-mini" type="button">취소</button> -->
-
-</div>
-                                                
-                                                <br>
-                                            </div>
-                                        </div>
-
-                                        
-
-                                        <div class="product_social">
+    <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <div class="product_social">
                                             <ul class="list-inline">
                                                 <li><a href="#"><i class="fa fa-facebook-square"></i></a>
                                                 </li>
@@ -242,11 +248,20 @@
                                                 
                                             </ul>
                                         </div>
+   <!--  <button class="btn btn-mini" type="button">취소</button> -->
+
+</div>
+                                            </div>
+                                        </div>
+
+                                        
+
+                                     
 
                                     </div>
                                     
                                      <!--graph  -->
-		<div class="col-md-7 col-sm-7 col-xs-12 pull-left">
+		<div class="col-md-7 col-sm-12 col-xs-12" >
                             <div class="x_panel">
                                 <div class="x_title">
                                     <h2>Line graph<small>Sessions</small></h2>
@@ -267,13 +282,52 @@
                                     </ul>
                                     <div class="clearfix"></div>
                                 </div>
-                                <div class="x_content" style="display: block;">
+                                <div class="x_content"  style="  display: block;">
                                     <canvas id="canvas000" height="310" width="676" style="width: 615px; height: 307px;"></canvas>
                                 </div>
                             </div>
                         </div>
                         <!-- graph -->
                             
+                             
+                        
+                            
+                            <!--gender  -->
+                            <div class=" col-md-5 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Pie Graph</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a href="#"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+
+                                    <div id="echart_pie" style="height: 350px; cursor: default; background-color: rgba(0, 0, 0, 0);" _echarts_instance_="1450187755444">
+                                    <div style="position: relative; overflow: hidden; width: 427px; height: 350px;">
+                                    <div width="469.7000101804733" height="385.00000834465027" data-zr-dom-id="bg" style="position: absolute; left: 0px; top: 0px; width: 427px; height: 350px; -webkit-user-select: none;"></div><canvas width="469.7000101804733" height="385.00000834465027" data-zr-dom-id="1" style="position: absolute; left: 0px; top: 0px; width: 427px; height: 350px; -webkit-user-select: none;"></canvas><canvas width="469.7000101804733" height="385.00000834465027" data-zr-dom-id="2" style="position: absolute; left: 0px; top: 0px; width: 427px; height: 350px; -webkit-user-select: none;"></canvas><canvas width="469.7000101804733" height="385.00000834465027" data-zr-dom-id="3" style="position: absolute; left: 0px; top: 0px; width: 427px; height: 350px; -webkit-user-select: none;"></canvas><canvas width="469.7000101804733" height="385.00000834465027" data-zr-dom-id="4" style="position: absolute; left: 0px; top: 0px; width: 427px; height: 350px; -webkit-user-select: none;"></canvas><canvas width="469.7000101804733" height="385.00000834465027" data-zr-dom-id="6" style="position: absolute; left: 0px; top: 0px; width: 427px; height: 350px; -webkit-user-select: none;"></canvas><canvas width="469.7000101804733" height="385.00000834465027" data-zr-dom-id="8" style="position: absolute; left: 0px; top: 0px; width: 427px; height: 350px; -webkit-user-select: none;"></canvas><canvas width="469.7000101804733" height="385.00000834465027" data-zr-dom-id="_zrender_hover_" style="position: absolute; left: 0px; top: 0px; width: 427px; height: 350px; -webkit-user-select: none;"></canvas><div style="position: absolute; display: none; border: 0px solid rgb(51, 51, 51); white-space: nowrap; transition: left 0.4s, top 0.4s; border-radius: 4px; color: rgb(255, 255, 255); text-decoration: none; font-family: 微软雅黑, Arial, Verdana, sans-serif; font-size: 12px; line-height: 18px; font-style: normal; font-weight: normal; padding: 5px; left: 195px; top: 172px; background-color: rgba(0, 0, 0, 0.498039);">访问来源 <br>Search Engine : 1,548 (60.42%)</div></div></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--gender  -->
+                        
+                        
+                        
+                        
                                     
                                     <!--deal status  -->
                               <div class="x_panel" style="">
@@ -366,7 +420,8 @@
    
  
         </div>
- <script src="<%=cp%>/res/template/js/chartjs/chart.min.js"></script>
+
+
 
 <script>
 
@@ -509,6 +564,9 @@
             });
 
         });
+        
+        
+        
    </script>
     <!-- /ion_range -->
  <!-- <script>
@@ -539,3 +597,164 @@
     </script> -->
 
 
+<script>
+        var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100)
+        };
+
+
+
+
+        $(document).ready(function () {
+            new Chart(document.getElementById("canvas000").getContext("2d")).Line(lineChartData, {
+                responsive: true,
+                tooltipFillColor: "rgba(51, 51, 51, 0.55)"
+            });
+        });
+
+        var sharePiePolorDoughnutData = [
+            {
+                value: 120,
+                color: "#455C73",
+                highlight: "#34495E",
+                label: "Dark Grey"
+        },
+            {
+                value: 50,
+                color: "#9B59B6",
+                highlight: "#B370CF",
+                label: "Purple Color"
+        },
+            {
+                value: 150,
+                color: "#BDC3C7",
+                highlight: "#CFD4D8",
+                label: "Gray Color"
+        },
+            {
+                value: 180,
+                color: "#26B99A",
+                highlight: "#36CAAB",
+                label: "Green Color"
+        },
+            {
+                value: 100,
+                color: "#3498DB",
+                highlight: "#49A9EA",
+                label: "Blue Color"
+        }
+
+    ];
+
+        $(document).ready(function () {
+            window.myPie = new Chart(document.getElementById("canvas_pie").getContext("2d")).Pie(sharePiePolorDoughnutData, {
+                responsive: true,
+                tooltipFillColor: "rgba(51, 51, 51, 0.55)"
+            });
+        });
+
+    </script>
+    <script src="<%=cp%>/res/template/js/echart/echarts-all.js"></script>
+    <script src="<%=cp%>/res/template/js/echart/green.js"></script>
+    
+    <script>
+       
+
+      
+
+    
+
+
+       
+        
+        
+
+        var dataStyle = {
+            normal: {
+                label: {
+                    show: false
+                },
+                labelLine: {
+                    show: false
+                }
+            }
+        };
+        var placeHolderStyle = {
+            normal: {
+                color: 'rgba(0,0,0,0)',
+                label: {
+                    show: false
+                },
+                labelLine: {
+                    show: false
+                }
+            },
+            emphasis: {
+                color: 'rgba(0,0,0,0)'
+            }
+        };
+        
+        var myChart = echarts.init(document.getElementById('echart_pie'), theme);
+        myChart.setOption({
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                //orient: 'vertical',
+                //x: 'left',
+                x: 'center',
+                y: 'bottom',
+                data: [ '여자', '남자']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    magicType: {
+                        show: true,
+                        type: ['pie', 'funnel'],
+                        option: {
+                            funnel: {
+                                x: '25%',
+                                width: '50%',
+                                funnelAlign: 'left',
+                                max: 1548
+                            }
+                        }
+                    },
+                    restore: {
+                        show: true
+                    },
+                    saveAsImage: {
+                        show: true
+                    }
+                }
+            },
+            calculable: true,
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '48%'], //left,top
+                    data: [
+                       
+                        {
+                            value: 1500,
+                            name: '여자'
+                        },
+                        {
+                            value: 1500,
+                            name: '남자'
+                        }
+                ]
+            }
+        ]
+        });
+
+
+
+       
+    </script>
+    
+    

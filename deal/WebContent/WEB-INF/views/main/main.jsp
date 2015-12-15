@@ -10,14 +10,6 @@
 
    <link href="<%=cp%>/res/template/css/main/minchanmain.css" rel="stylesheet">
    
-<style>
-.col-xs-12,.col-sm-12,.col-md-12,.col-md-10{
-	position : relative;
-	min-height : 1px;
-	padding-right : 10px;
-	padding-left : 0px;
-}
-</style>
 <script type="text/javascript">
  
 $(document).ready(function() {
@@ -27,6 +19,31 @@ $(document).ready(function() {
         $target = $('#'+$input.attr('data-toggle'));
         $target.slideToggle();
     });
+   	    setInterval(function() {
+   	    	e1.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=e1 >'+$("#e1").html()+'</marquee>'
+    		  }, 5000); setInterval(function() {
+	    	e2.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=e2 >'+$("#e2").html()+'</marquee>'
+ 		  }, 7000); 	setInterval(function() {
+ 	   	    	e3.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=e3 >'+$("#e3").html()+'</marquee>'
+		  }, 6000); 	setInterval(function() {
+	   	    	e4.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=e4 >'+$("#e4").html()+'</marquee>'
+		  }, 6200); 	setInterval(function() {
+	   	    	e5.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=e5 >'+$("#e5").html()+'</marquee>'
+		  }, 6500); 	setInterval(function() {
+	   	    	d1.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=d1 >'+$("#d1").html()+'</marquee>'
+		  }, 7200); 	setInterval(function() {
+	   	    	d2.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=d2 >'+$("#d2").html()+'</marquee>'
+		  }, 7100); 	setInterval(function() {
+	   	    	d3.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=d3 >'+$("#d3").html()+'</marquee>'
+		  }, 6700); 	setInterval(function() {
+	   	    	d4.outerHTML='<marquee scrollamount=3 behavior=slide direction=down id=d4 >'+$("#d4").html()+'</marquee>'
+		  }, 6900); 	
+  	     
+  	 
+
+    	
+    	
+  
 }); 
 /* $.fn.ready(function (){
    $("p").fitText(2,{'minFontSize':1,'maxFontSize':50});
@@ -293,8 +310,7 @@ color:rgb(0,0,0);
 
 
 <!--대표이미지  -->
-<div class="col-xs-12 col-sm-12 col-md-10 pull-left" style="float: right;">
-<div class="col-xs-12 col-sm-12 col-md-12" style="padding-bottom:0px;padding-left:0px;padding-right:0px;">
+<div class="col-xs-12 col-sm-12 col-md-10" style="padding-bottom:0px;padding-left:0px;padding-right:0px;">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
       <!-- Wrapper for slides -->
@@ -336,22 +352,13 @@ color:rgb(0,0,0);
                 
       </div><!-- End Carousel Inner -->
 
+
     <ul class="list-group col-sm-4">
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;">뚜레쥬르 케익교환권
-      <br><span style="font-size: 13pt;">20%</span>
-      </li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;">리트머스/엠할리데이
-       <br><span style="font-size: 13pt;">80%</span>
-       </li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;">쉬즈미스 외 겨울의류
-       <br><span style="font-size: 13pt;">90%</span>
-       </li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;">금강제화 연말선물대전
-       <br><span style="font-size: 13pt;">57%</span>
-       </li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;">더베이지 아동 양말/의류
-       <br><span style="font-size: 13pt;">30%</span>
-       </li>
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>1111</h4></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>2122</h4></li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>3333</h4></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>4444</h4></li>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>55555</h4></li>
     </ul>
 
       <!-- Controls -->
@@ -365,11 +372,88 @@ color:rgb(0,0,0);
       </div>
 
     </div><!-- End Carousel -->
-    
-    <!-- 최다 클릭수 -->
-    <div class="col-xs-12 col-sm-12 col-md-12">
-<br><br>
-<div class="col-xs-12 col-sm-4 col-md-4 ">
+</div>
+
+<!--대표이미지  -->
+
+
+<div class="col-xs-6 col-sm-6 col-md-2 pull-left " >
+
+
+	<div class="row">
+		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div id="RollingTest" class="list-group">
+        <span href="#" class="list-group-item active" style="background: rgb(239, 57, 57); color: #ffffff;">
+            실시간 급상승 검색어
+            <span class="pull-right" id="slide-submenu">
+                <i class="fa fa-times"></i>
+            </span>
+        </span>
+       <a href="#" class="list-group-item">
+          <marquee behavior=slide   direction=down  scrollamount="3" id="e1">    1.김태희 <span class="fa  fa-sort-desc pull-right"></span></marquee> 
+        </a>
+     
+        
+        <a href="#" class="list-group-item">
+         <marquee behavior=slide   direction=down  scrollamount="3" id="e2">  2.비 <span class="fa fa-sort-up   pull-right" style="color:#DB0000;"></span></marquee> 
+        </a>
+        <a href="#" class="list-group-item">
+        <marquee behavior=slide   direction=down  scrollamount="3" id="e3">     3.디스패치 <span class="fa  fa-sort-desc pull-right"></span></marquee> 
+        </a>
+        <a href="#" class="list-group-item">
+       <marquee behavior=slide   direction=down  scrollamount="3" id="e4">       4.수능  </marquee> 
+        </a>
+        <a href="#" class="list-group-item">
+         <marquee behavior=slide   direction=down  scrollamount="3" id="e5">    5.2호선  <span class="fa fa-sort-up   pull-right"  style="color:#DB0000;"></span></marquee> 
+        </a>
+    </div>        
+</div>
+	</div>
+</div>
+
+
+<div class="col-xs-6 col-sm-6 col-md-2 pull-left " >
+
+
+	<div class="row">
+		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="list-group">
+        <span href="#" class="list-group-item active" style="background: rgb(239, 57, 57); color: #ffffff;">
+           딜러왕
+            <span class="pull-right" id="slide-submenu">
+                <i class="fa fa-times"></i>
+            </span>
+        </span>
+         <a href="#" class="list-group-item">
+        <marquee behavior=slide   direction=down  scrollamount="3" id="d1">      1.김민찬 <span class="badge">68%</span></marquee>
+        </a>
+        <a href="#" class="list-group-item">
+        <marquee behavior=slide   direction=down  scrollamount="3" id="d2">     2.비 <span class="badge">22%</span></marquee>
+        </a>
+        <a href="#" class="list-group-item">
+        <marquee behavior=slide   direction=down  scrollamount="3" id="d3">      3.김태희 <span class="badge">19%</span></marquee>
+         </a>
+        <a href="#" class="list-group-item">
+       <marquee behavior=slide   direction=down  scrollamount="3" id="d4">      4. 제지선 <span class="badge">13%</span></marquee>
+        </a>
+
+    </div>        
+</div>
+	</div>
+</div>
+
+
+<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
 
 
 	<div class="row">
@@ -409,7 +493,7 @@ color:rgb(0,0,0);
 	</div>
 </div>
 
-<div class="col-xs-12 col-sm-4 col-md-4">
+<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
 
 
 	<div class="row">
@@ -449,7 +533,7 @@ color:rgb(0,0,0);
 	</div>
 </div>
 
-<div class="col-xs-12 col-sm-4 col-md-4">
+<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
 
 
 	<div class="row">
@@ -488,84 +572,6 @@ color:rgb(0,0,0);
 </div>
 	</div>
 </div>
-    
-    </div><!-- 최다 클릭수 -->
-</div>
-</div>
-<!--대표이미지  -->
-
-<!-- 실시간 -->
-<div class="col-xs-12 col-sm-12 col-md-2">
-<div class="col-xs-12 col-sm-6 col-md-12 " >
-
-
-	<div class="row">
-		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
-    <div class="mini-submenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </div>
-    <div class="list-group">
-        <span href="#" class="list-group-item active" style="background: #810000; color: #ffffff;">
-            실시간 급상승 검색어
-        </span>
-        <a href="#" class="list-group-item">
-            1.김태희  <span class="fa  fa-sort-desc pull-right"></span>
-        </a>
-        <a href="#" class="list-group-item">
-          2.비 <span class="fa fa-sort-up   pull-right" style="color:#DB0000;"></span>
-        </a>
-        <a href="#" class="list-group-item">
-            3.디스패치 <span class="fa  fa-sort-desc pull-right"></span>
-        </a>
-        <a href="#" class="list-group-item">
-             4.수능  
-        </a>
-        <a href="#" class="list-group-item">
-            5.2호선  <span class="fa fa-sort-up   pull-right"  style="color:#DB0000;"></span>
-        </a>
-    </div>   
-</div>
-	</div>
-</div>
-
-
-<div class="col-xs-12 col-sm-6 col-md-12" >
-
-
-	<div class="row">
-		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
-    <div class="mini-submenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </div>
-    <div class="list-group">
-        <span href="#" class="list-group-item active"  style="background: #810000; color: #ffffff;">
-           딜러왕
-        </span>
-        <a href="#" class="list-group-item">
-            1.김민찬 <span class="badge">68%</span>
-        </a>
-        <a href="#" class="list-group-item">
-           2.비 <span class="badge">22%</span>
-        </a>
-        <a href="#" class="list-group-item">
-            3.김태희 <span class="badge">19%</span>
-         </a>
-        <a href="#" class="list-group-item">
-           4. 제지선 <span class="badge">13%</span>
-        </a>
-        <a href="#" class="list-group-item">
-          5.  김재석  <span class="badge">1%</span>
-        </a>
-    </div>        
-</div>
-	</div>
-</div>
-</div>
-
 
 
 <!--콘텐츠  -->
@@ -1053,3 +1059,4 @@ color:rgb(0,0,0);
    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   
         </div>
+     
