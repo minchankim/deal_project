@@ -16,6 +16,32 @@
 	padding: 9px 0;
 	border-top: 1px solid #E6E9ED;
 }
+.btn-success:hover, .btn-success:focus, .btn-success.focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success{
+	background: #980000;
+	color:#ffffff;
+	border-width: 1px;
+	border-color: #980000;
+	font-weight: bold;
+}
+.btn-success{
+	background: #ffffff;
+	color:#000000;
+	border-color: #C90000;
+	font-weight: bold;
+}
+.btn-primary:hover, .btn-primary:focus,.btn-primary.focus, .btn-primary:active, .btn-primary.active, .open> .dropdown-toggle.btn-primary{
+	background: #980000;
+	color:#ffffff;
+	border-width: 1px;
+	border-color: #980000;
+	font-weight: bold;
+}
+.btn-primary{
+	background: #ffffff;
+	color:#000000;
+	border-color: #C90000;
+	font-weight: bold;
+}
 
 </style>
 
