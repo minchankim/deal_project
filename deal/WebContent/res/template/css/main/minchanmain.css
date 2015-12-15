@@ -69,7 +69,10 @@
 	cursor:pointer;
 }
 #myCarousel .list-group .active {
-	background-color:rgb(26, 130, 195);	
+	background-color:rgba(51, 51, 51, 1);
+	border-width: 0px;
+	color:#ffffff;
+	font-weight: bold;
 }
 
 @media (min-width: 992px) { 

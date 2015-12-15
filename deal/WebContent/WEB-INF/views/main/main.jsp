@@ -327,13 +327,22 @@ color:rgb(0,0,0);
                 
       </div><!-- End Carousel Inner -->
 
-
     <ul class="list-group col-sm-4">
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>1111</h4></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>2122</h4></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>3333</h4></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>4444</h4></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>55555</h4></li>
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;">뚜레쥬르 케익교환권
+      <br><span style="font-size: 13pt;">20%</span>
+      </li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;">리트머스/엠할리데이
+       <br><span style="font-size: 13pt;">80%</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;">쉬즈미스 외 겨울의류
+       <br><span style="font-size: 13pt;">90%</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;">금강제화 연말선물대전
+       <br><span style="font-size: 13pt;">57%</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;">더베이지 아동 양말/의류
+       <br><span style="font-size: 13pt;">30%</span>
+       </li>
     </ul>
 
       <!-- Controls -->
@@ -363,28 +372,25 @@ color:rgb(0,0,0);
         <span class="icon-bar"></span>
     </div>
     <div class="list-group">
-        <span href="#" class="list-group-item active">
+        <span href="#" class="list-group-item active" style="background: #810000; color: #ffffff;">
             실시간 급상승 검색어
-            <span class="pull-right" id="slide-submenu">
-                <i class="fa fa-times"></i>
-            </span>
         </span>
         <a href="#" class="list-group-item">
-            <i class="fa fa-comment-o"></i> 1.김태희
+            1.김태희  <span class="fa  fa-sort-desc pull-right"></span>
         </a>
         <a href="#" class="list-group-item">
-            <i class="fa fa-search"></i> 2.비
+          2.비 <span class="fa fa-sort-up   pull-right" style="color:#DB0000;"></span>
         </a>
         <a href="#" class="list-group-item">
-            <i class="fa fa-user"></i> 3.디스패치
+            3.디스패치 <span class="fa  fa-sort-desc pull-right"></span>
         </a>
         <a href="#" class="list-group-item">
-            <i class="fa fa-folder-open-o"></i> 4.수능 <span class="badge">↑14</span>
+             4.수능  
         </a>
         <a href="#" class="list-group-item">
-            <i class="fa fa-bar-chart-o"></i> 5.2호선 <span class="badge">↑5</span>
+            5.2호선  <span class="fa fa-sort-up   pull-right"  style="color:#DB0000;"></span>
         </a>
-    </div>        
+    </div>   
 </div>
 	</div>
 </div>
@@ -401,26 +407,23 @@ color:rgb(0,0,0);
         <span class="icon-bar"></span>
     </div>
     <div class="list-group">
-        <span href="#" class="list-group-item active">
+        <span href="#" class="list-group-item active"  style="background: #810000; color: #ffffff;">
            딜러왕
-            <span class="pull-right" id="slide-submenu">
-                <i class="fa fa-times"></i>
-            </span>
         </span>
         <a href="#" class="list-group-item">
-            <i class="fa fa-comment-o"></i> 1.김민찬 68%
+            1.김민찬 <span class="badge">68%</span>
         </a>
         <a href="#" class="list-group-item">
-            <i class="fa fa-search"></i> 2.비 22%
+           2.비 <span class="badge">22%</span>
         </a>
         <a href="#" class="list-group-item">
-            <i class="fa fa-user"></i> 3.김태희 1%
+            3.김태희 <span class="badge">19%</span>
          </a>
         <a href="#" class="list-group-item">
-            <i class="fa fa-folder-open-o"></i> 김태희 1% <span class="badge">14</span>
+           4. 제지선 <span class="badge">13%</span>
         </a>
         <a href="#" class="list-group-item">
-            <i class="fa fa-bar-chart-o"></i> 김태희 1% <span class="badge">14</span>
+          5.  김재석  <span class="badge">1%</span>
         </a>
     </div>        
 </div>
