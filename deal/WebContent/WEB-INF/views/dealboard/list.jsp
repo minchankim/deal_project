@@ -6,10 +6,6 @@
    request.setCharacterEncoding("UTF-8");
 %>
 <style>
-.img-circle1{
-	border-radius:50%;
-	margin-left:40%;
-}
 .well.profile_view .bottom{
 	margin-top: 0px;
 	background: #F2F5F7;
@@ -41,6 +37,12 @@
 	color:#000000;
 	border-color: #C90000;
 	font-weight: bold;
+}
+.img-circle1{
+	width:130px;
+	height:130px;
+	border-radius:50%;
+	margin-left: 0px;
 }
 
 </style>
@@ -109,7 +111,7 @@ function readProfile(userName ,businessNum, tel, email, addr, src){
 	                           	</ul>
 	                       </div>
 	                       <div class="col-md-5 col-sm-5 col-xs-5">
-	                            <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="<%=cp%>/uploads/photo/${dto.imageFilename}" alt="" class="img-circle img-responsive" id="profileImg${dto.businessNum}"></a>
+	                            <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="<%=cp%>/uploads/photo/${dto.imageFilename}" alt="" class="img-circle1 img-responsive" id="profileImg${dto.businessNum}"></a>
 	                       </div>
                      	</div>
                         <div class="col-xs-12 bottom text-center">
@@ -185,7 +187,7 @@ function readProfile(userName ,businessNum, tel, email, addr, src){
                     </div>
                 <div class="modal-body">
                     
-                    <img src="<%=cp%>/uploads/photo/" name="aboutme" width="140" height="140" border="0" class="img-circle1" id="mprofileImg"><br><br>
+                    <center><img src="<%=cp%>/uploads/photo/" name="aboutme" width="140" height="140" border="0" class="img-circle1" id="mprofileImg"></center><br><br>
                     <h4 class="media-heading" style="text-align: center" id="myModalName"></h4>
                     <div style="text-align: center"><span>사업자 번호:</span><span class="media-heading center" style="text-align: center" id="myModalBnum"></span></div>
                     <span><strong># 태그: </strong></span>
