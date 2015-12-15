@@ -13,6 +13,11 @@ body.nav-sm .nav.side-menu li a{
 body.nav-sm ul.nav.child_menu{
 	left:125%;
 }
+.nav.side-menu> li.active > a{
+	color:#e51b13;
+	font-weight: bold;
+	border:2px solid red;
+}
 </style>
 
 
@@ -30,7 +35,7 @@ body.nav-sm ul.nav.child_menu{
                     
 
                     <!-- sidebar menu -->
-                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu" >
 
                         <div class="menu_section">
                             
