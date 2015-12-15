@@ -187,7 +187,7 @@ function readProfile(userName ,businessNum, tel, email, addr, src){
                     </div>
                 <div class="modal-body">
                     
-                    <center><img src="<%=cp%>/uploads/photo/" name="aboutme" width="140" height="140" border="0" class="img-circle1" id="mprofileImg"></center><br><br>
+                    <center><img name="aboutme" width="140" height="140" border="0" class="img-circle1" id="mprofileImg"></center><br><br>
                     <h4 class="media-heading" style="text-align: center" id="myModalName"></h4>
                     <div style="text-align: center"><span>사업자 번호:</span><span class="media-heading center" style="text-align: center" id="myModalBnum"></span></div>
                     <span><strong># 태그: </strong></span>
