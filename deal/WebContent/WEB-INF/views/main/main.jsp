@@ -285,7 +285,7 @@ color:rgb(0,0,0);
 
 
 <!--대표이미지  -->
-<div class="col-xs-12 col-sm-12 col-md-10" style="padding-bottom:120px;padding-left:0px;padding-right:0px;">
+<div class="col-xs-12 col-sm-12 col-md-10" style="padding-bottom:0px;padding-left:0px;padding-right:0px;">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
       <!-- Wrapper for slides -->
@@ -303,26 +303,26 @@ color:rgb(0,0,0);
         
         <div class="item">
           <img src="<%=cp%>/res/images/fifa2.png">
-           <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
+    <!--        <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
             <h4><a href="#">cccccccccccccccccccccccccccccccccc</a></h4>
             <p>cccccccccccccccccccccccccccccccccccccccccccccc <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
+          </div> -->
         </div><!-- End Item -->
         
         <div class="item">
           <img src="<%=cp%>/res/images/wmp2.png">
-           <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
+        <!--    <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
             <h4><a href="#">ddddddddddddddddddddddddddddddddd</a></h4>
             <p>ddddddddddddddddddddddddddddddddddddddddddddddd<a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
+          </div> -->
         </div><!-- End Item -->
 
         <div class="item">
           <img src="<%=cp%>/res/images/wmp3.png">
-           <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
+          <!--  <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
             <h4><a href="#">tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
+          </div> -->
         </div><!-- End Item -->
                 
       </div><!-- End Carousel Inner -->
@@ -384,9 +384,6 @@ color:rgb(0,0,0);
         <a href="#" class="list-group-item">
             <i class="fa fa-bar-chart-o"></i> 5.2호선 <span class="badge">↑5</span>
         </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-envelope"></i> 6.겨울
-        </a>
     </div>        
 </div>
 	</div>
@@ -425,6 +422,44 @@ color:rgb(0,0,0);
         <a href="#" class="list-group-item">
             <i class="fa fa-bar-chart-o"></i> 김태희 1% <span class="badge">14</span>
         </a>
+    </div>        
+</div>
+	</div>
+</div>
+
+
+<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
+
+
+	<div class="row">
+		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>	
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="list-group">
+        <span href="#" class="list-group-item active" style="color:black;background-color:rgba(26, 130, 195, 0);">
+           월간베스트
+            <span class="pull-right" id="slide-submenu">
+                <i class="fa fa-times"></i>
+            </span>
+        </span>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-comment-o"></i> 1.김민찬 68%
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-search"></i> 2.비 22%
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-user"></i> 3.김태희 1%
+         </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-folder-open-o"></i> 김태희 1% <span class="badge">14</span>
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-bar-chart-o"></i> 김태희 1% <span class="badge">14</span>
+        </a>
         <a href="#" class="list-group-item">
             <i class="fa fa-envelope"></i> 김태희 1%
         </a>
@@ -432,6 +467,87 @@ color:rgb(0,0,0);
 </div>
 	</div>
 </div>
+
+<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
+
+
+	<div class="row">
+		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>	
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="list-group">
+        <span href="#" class="list-group-item active" style="color:black;background-color:rgba(26, 130, 195, 0);">
+           	주간베스트
+            <span class="pull-right" id="slide-submenu">
+                <i class="fa fa-times"></i>
+            </span>
+        </span>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-comment-o"></i> 1.김민찬 68%
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-search"></i> 2.비 22%
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-user"></i> 3.김태희 1%
+         </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-folder-open-o"></i> 김태희 1% <span class="badge">14</span>
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-bar-chart-o"></i> 김태희 1% <span class="badge">14</span>
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-envelope"></i> 김태희 1%
+        </a>
+    </div>        
+</div>
+	</div>
+</div>
+
+<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
+
+
+	<div class="row">
+		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>	
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="list-group">
+        <span href="#" class="list-group-item active" style="color:black;background-color:rgba(26, 130, 195, 0);">
+           	최다클릭수
+            <span class="pull-right" id="slide-submenu">
+                <i class="fa fa-times"></i>
+            </span>
+        </span>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-comment-o"></i> 1.김민찬 68%
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-search"></i> 2.비 22%
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-user"></i> 3.김태희 1%
+         </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-folder-open-o"></i> 김태희 1% <span class="badge">14</span>
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-bar-chart-o"></i> 김태희 1% <span class="badge">14</span>
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-envelope"></i> 김태희 1%
+        </a>
+    </div>        
+</div>
+	</div>
+</div>
+
 
 <!--콘텐츠  -->
 <div class="container"  >
