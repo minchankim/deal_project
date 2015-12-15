@@ -39,7 +39,6 @@ public class LetterController {
 			job.put("isLogin", "false");
 			
 			// 로기인이 되지 않은 상태를 json으로 전송
-			
 			resp.setContentType("text/html; charset=utf-8");
 			PrintWriter out = resp.getWriter();
 			out.print(job.toString());
@@ -53,13 +52,18 @@ public class LetterController {
 			System.out.println(dto.getReceiveUserId());
 				service.insertLetter(dto);
 			state="true";
+			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
 		
+		info.setLetterNoticeCount(service.newLetterCount(info.getUserId()));
+		session.setAttribute("letterNoticeCount", info.getLetterNoticeCount());
+		
 		JSONObject job = new JSONObject();
 		job.put("isLogin", "true");
 		job.put("state", state);
+		job.put("letterNoticeCount", info.getLetterNoticeCount());
 		
 		
 		resp.setContentType("text/html; charset=utf-8");
@@ -128,4 +132,7 @@ public class LetterController {
 				PrintWriter out=resp.getWriter();
 				out.print(job.toString());
 	}
+	// 쪽지 알람!!
+	
+	
 }

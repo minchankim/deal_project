@@ -50,7 +50,15 @@ function renoteForm(id) {
 	 $('#ModalArticle').modal('hide');
 		 
 	 $('#contact').modal('show');
-	
+	// 보내는 날짜 찍기
+		var newDate = new Date();
+		var yy = newDate.getFullYear();
+		var mm = newDate.getMonth()+1;
+		var dd = newDate.getDate();
+		var toDay = yy + "-" + mm + "-" + dd;
+		
+		$("#sendDay").change();
+		$("#sendDay").text(toDay); 
 		
  }
  
@@ -88,7 +96,10 @@ function renoteForm(id) {
 						// 여기에 받는 유저아이디를 받아야한다.?
 			    		alert("메시지를 전송 했습니다.");
 						 $('#contact').modal('hide');
-
+						
+						$("#letterCount").text(""); 
+						 var lcount=data.letterNoticeCount;
+						$("#letterCount").html(lcount); 
 			    	},
 			    	error:function(e) {
 			    		alert(e.responseText);
@@ -139,13 +150,6 @@ function renoteForm(id) {
 		
 	
  }
- 
-		
-		
-		 
-		 
-		 
- 
  
  </script>
  

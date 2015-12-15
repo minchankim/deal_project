@@ -6,6 +6,7 @@ public class SessionInfo {
 	private int cash;
 	private int dealInNoticeCount,favoriteNoticeCount,uploadNoticeCount;
 	private int myDealTotal;
+	private int letterNoticeCount;
 	
 	
 
@@ -63,5 +64,13 @@ public class SessionInfo {
 
 	public void setCash(int cash) {
 		this.cash = cash;
+	}
+
+	public int getLetterNoticeCount() {
+		return letterNoticeCount;
+	}
+
+	public void setLetterNoticeCount(int letterNoticeCount) {
+		this.letterNoticeCount = letterNoticeCount;
 	}
 }

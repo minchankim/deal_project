@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project.cash.CashService;
 import com.project.deal.DealService;
+import com.project.letter.LetterService;
 
 
 
@@ -37,6 +38,9 @@ public class MemberController {
 	@Autowired
 	private DealService dservice;
 
+	@Autowired
+	private LetterService lserviere;
+	
 	
 	
 	@RequestMapping(value="/member/member", method=RequestMethod.GET)
@@ -126,7 +130,7 @@ public class MemberController {
 		info.setUserId(dto.getUserId());
 		info.setUserName(dto.getUserName());
 		info.setDealInNoticeCount(dservice.readDealJoinCount(userId));
-		
+		info.setLetterNoticeCount(lserviere.newLetterCount(userId));
 		info.setMyDealTotal(dservice.readDealJoinCount(userId));
 		
 	

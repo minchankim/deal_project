@@ -307,7 +307,7 @@ function sendLogin() {
                             <li style="padding:7px;" role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-envelope fa-5x"></i>
-                                    <span class="badge bg-green">2</span>
+                                   <span id="letterCount" class="badge bg-red pull-right">${sessionScope.Letter.letterNoticeCount}</span>
                                 </a>
                                 
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
@@ -373,7 +373,7 @@ function sendLogin() {
 							<li style="padding:7px;" role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-comments fa-5x"></i>
-                                    <span class="badge bg-green">2</span>
+                                    <span class="badge bg-green"></span>
                                 </a>
                                 
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">

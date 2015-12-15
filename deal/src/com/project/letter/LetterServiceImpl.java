@@ -20,6 +20,7 @@ public class LetterServiceImpl implements LetterService{
 
 		try {
 			result=dao.insertData("letter.insertLetter", dto);
+			dao.updateData("letter.updateAlarmCount", dto);
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -141,8 +142,13 @@ public class LetterServiceImpl implements LetterService{
 
 	@Override
 	public int newLetterCount(String userId) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result=0;
+		try {
+			result=dao.getReadData("letter.readLetterCount", userId);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return result;
 	}
 
 	@Override

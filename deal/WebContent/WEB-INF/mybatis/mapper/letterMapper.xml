@@ -101,4 +101,15 @@
         UPDATE letter SET identifyDay = now()
                  WHERE num=#{num} AND identifyDay IS NULL
     </update> 
+    
+    	<!-- 받은 쪽지 알람 -->
+	<update id="updateAlarmCount" parameterType="com.project.letter.Letter">
+	update letter JOIN member ON sendUserId=userId set notice=(notice)+1 where receiveUserId IN (#{userId})
+
+	</update> 
+	<!-- 알람 숫자 가져오기 -->
+	<select id="readLetterCount" resultType="Integer" 
+	          parameterType="String">
+		SELECT SUM(notice) FROM letter JOIN member ON sendUserId=userId WHERE receiveUserId=#{userId} and identifyDay is null
+	</select>
 </mapper>

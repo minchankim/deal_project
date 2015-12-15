@@ -11,6 +11,7 @@ public class Letter {
 	private String sendDay, identifyDay;
 	private String sendDelete, receiveDelete;
 	private int parent;
+	private int notice;
 	
 	private List<String> userIds;
 	private List<Integer> nums;
@@ -98,6 +99,12 @@ public class Letter {
 	}
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+	public int getNotice() {
+		return notice;
+	}
+	public void setNotice(int notice) {
+		this.notice = notice;
 	}
 	
 	
