@@ -10,8 +10,11 @@ body.nav-sm .nav.side-menu li a{
 	height:60px;
 	width:90px;
 }
+
 body.nav-sm ul.nav.child_menu{
 	left:125%;
+	border:2px solid red;
+	width:180px;
 }
 .nav.side-menu> li.active > a{
 	color:#e51b13;
@@ -72,12 +75,12 @@ body.nav-sm ul.nav.child_menu{
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-cutlery"></i> 식품 <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li><a href="<%=cp%>/deal/farmGrocery.do">농/수/축산 식품</a>
+                                    <ul class="nav child_menu" style="display: none; ">
+                                        <li><a href="<%=cp%>/deal/farmGrocery.do" style="width:180px;">농/수/축산 식품</a>
                                         </li>
                                         <li><a href="<%=cp%>/deal/processedGrocery.do">가공식품</a>
                                         </li>
-                                        <li><a href="<%=cp%>/deal/healthGrocery.do">건강/다이어트 식품</a>
+                                        <li><a href="<%=cp%>/deal/healthGrocery.do" style="width:180px;">건강/다이어트 식품</a>
                                         </li>
                                         <li><a href="<%=cp%>/deal/childGrocery.do">유아동식품</a>
                                         </li>
@@ -87,23 +90,23 @@ body.nav-sm ul.nav.child_menu{
                                 </li>
                                 <li><a><i class="fa fa-home"></i> 가구/생활 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="<%=cp%>/deal/cottonFurniture.do">침대/커튼/카페트</a>
+                                        <li><a href="<%=cp%>/deal/cottonFurniture.do" style="width:180px;">침대/커튼/카페트</a>
                                         </li>
-                                        <li><a href="<%=cp%>/deal/tableFurniture.do">책상/테이블/식탁</a>
+                                        <li><a href="<%=cp%>/deal/tableFurniture.do" style="width:180px;">책상/테이블/식탁</a>
                                         </li>
-                                         <li><a href="<%=cp%>/deal/interiorFurniture.do">홈/인테리어/DIY</a>
+                                         <li><a href="<%=cp%>/deal/interiorFurniture.do" style="width:180px;">홈/인테리어/DIY</a>
                                         </li>
-                                         <li><a href="<%=cp%>/deal/normalFurniture.do">생활/수납/욕실/청소</a>
+                                         <li><a href="<%=cp%>/deal/normalFurniture.do" style="width:180px;">생활/수납/욕실/청소</a>
                                         </li>
-                                         <li><a href="<%=cp%>/deal/kitchenFurniture.do">주방/수입주방</a>
+                                         <li><a href="<%=cp%>/deal/kitchenFurniture.do" style="width:180px;">주방/수입주방</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-car"></i> 레저/자동차 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="<%=cp%>/deal/sportsLeisure.do">스포츠용품</a>
+                                        <li><a href="<%=cp%>/deal/sportsLeisure.do" style="width:180px;">스포츠용품</a>
                                         </li>
-                                        <li><a href="<%=cp%>/deal/outdoorLeisure.do">등산/아웃도어</a>
+                                        <li><a href="<%=cp%>/deal/outdoorLeisure.do" style="width:180px;">등산/아웃도어</a>
                                         </li>
                                         <li><a href="<%=cp%>/deal/campingLeisure.do">캠핑/낚시</a>
                                         </li>
@@ -115,25 +118,25 @@ body.nav-sm ul.nav.child_menu{
                                 </li>
                                 <li><a><i class="fa fa-laptop"></i> 디지털/가전 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="<%=cp%>/deal/cameraDigital.do">카메라/악세사리</a>
+                                        <li><a href="<%=cp%>/deal/cameraDigital.do" style="width:180px;">카메라/악세사리</a>
                                         </li>
                                         <li><a href="<%=cp%>/deal/kitchenDigital.do">주방가전</a>
                                         </li>
                                          <li><a href="<%=cp%>/deal/lifeDigital.do">생활가전</a>
                                         </li>
-                                         <li><a href="<%=cp%>/deal/pcDigital.do">노트북/데스크탑/PC부품</a>
+                                         <li><a href="<%=cp%>/deal/pcDigital.do" style="width:180px;">노트북/데스크탑/PC부품</a>
                                         </li>
-                                         <li><a href="<%=cp%>/deal/phoneDigital.do">휴대폰/악세사리</a>
+                                         <li><a href="<%=cp%>/deal/phoneDigital.do" style="width:180px;">휴대폰/악세사리</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-book"></i> 도서/취미 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="<%=cp%>/deal/normalBook.do">도서/음반/DVD</a>
+                                        <li><a href="<%=cp%>/deal/normalBook.do" style="width:180px;">도서/음반/DVD</a>
                                         </li>
-                                        <li><a href="<%=cp%>/deal/ticketBook.do">e쿠폰/상품권/이용권</a>
+                                        <li><a href="<%=cp%>/deal/ticketBook.do" style="width:180px;">e쿠폰/상품권/이용권</a>
                                         </li>
-                                        <li><a href="<%=cp%>/deal/travelBook.do">여행/숙박/항공</a>
+                                        <li><a href="<%=cp%>/deal/travelBook.do" style="width:180px;">여행/숙박/항공</a>
                                         </li>
                                         <li><a href="<%=cp%>/deal/animalBook.do">반려동물용품</a>
                                         </li>
@@ -145,7 +148,7 @@ body.nav-sm ul.nav.child_menu{
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="tables.html">서울</a>
                                         </li>
-                                        <li><a href="tables_dynamic.html">인천/경기/강원</a>
+                                        <li><a href="tables_dynamic.html" style="width:180px;">인천/경기/강원</a>
                                         </li>
                                         <li><a href="tables_dynamic.html">대구/부산</a>
                                         </li>
@@ -158,9 +161,9 @@ body.nav-sm ul.nav.child_menu{
                             </ul>
                         </div>
                         <div class="menu_section">
-                            <hr>
+                            <hr style="margin-left: 10%;">
                             <ul class="nav side-menu">
-                                <li><a href="<%=cp%>/board/list.do"><i class="fa fa-pencil-square-o"></i> 자유게시판</a></li>
+                                
                                 
              
                                 <li><a href="<%=cp%>/dealboard/list.do"><i class="fa fa-quote-left"></i> 가격흥정 </a>
@@ -181,6 +184,7 @@ body.nav-sm ul.nav.child_menu{
 
                                     </ul>
                                 </li>
+                                <li><a href="<%=cp%>/board/list.do"><i class="fa fa-pencil-square-o"></i> 자유게시판</a></li>
                                
                             </ul>
                         </div>
