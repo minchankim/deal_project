@@ -16,94 +16,46 @@
 	padding: 9px 0;
 	border-top: 1px solid #E6E9ED;
 }
+
 </style>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-<!--
+var userName;
+var businessNum;
+var tel;
+var email;
+var addr;
 
-//-->
+function readProfile(userName ,businessNum, tel, email, addr, src){
 
-function readProfile(userId, userName ,businessNum, tel, email, addr){
-	
-	 $("#myModal2").modal('show');
-	 
-		this.userId=userId;
-	 	this.userName=userName;
-	 	this.businessNum=businessNum;
-	 	this.tel=tel;
-	 	this.email=email;
-	 	this.addr=addr;
-	 	
-	 	// 읽은 상태로 만들기 Ajax 처리
-	 	var url="<%=cp%>/dealboard/list.do";
-	 	
-		$.post(url, {userId:userId}, function(data){
-			$("#myModalName").text(userName);
-			$("#myModalName").change();
-			
-			$("#myModalBnum").text(businessNum);
-			$("#myModalBnum").change();
-			
-			$("#myModalTel").text(tel);
-			$("#myModalTel").change();
-			
-			$("#myModalEmail").text(email);
-			$("#myModalEmail").change(); 
+    this.userName=userName;
+    this.businessNum=businessNum;
+    this.tel=tel;
+    this.email=email;
+    this.addr=addr;
+    
+    $("#mprofileImg").attr("src", src);
+    
+  	$("#myModal2").modal('show');
+  	
+    $("#myModalName").text(userName);
+    
+    $("#myModalBnum").text(businessNum);
+    
+    $("#myModalTel").text(tel);
+    
+    $("#myModalEmail").text(email);
 
-			$("#myModalAddr").text(addr);
-			$("#myModalAddr").change();
-			
-		}, "json");
-		
-	 $("#myModal2").click(function(){
-			
-			$(".btn btn-success").click(function(){
-				 
-				 $('#myModal2').modal('hide');
-			 });
-		
-			});
+    $("#myModalAddr").text(addr);
+
+  
 }
 
 </script>  
 
-<!-- Modal -->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h3 class="modal-title" id="myModalLabel">More about Company</h3>
-                    </div>
-                <div class="modal-body">
-                    
-                    <img src="<%=cp%>/uploads/photo/${dto.imageFilename}"  name="aboutme" width="140" height="140" border="0" class="img-circle1"><br><br>
-                    <h4 class="media-heading" style="text-align: center;" id="myModalName">  <small>USA</small></h4>
-                    <span><strong>Tags: </strong></span>
-                        <span class="label label-warning">HTML5/CSS</span>
-                        <span class="label label-info">Adobe CS 5.5</span>
-                        <span class="label label-info">Microsoft Office</span>
-                        <span class="label label-success">Windows XP, Vista, 7</span>
-                    
-                    <hr>
-                    
-                    <p class="text-left"><strong>Bio: </strong><br>
-                        <p style="text-align: center;" id="">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
-                    <br>
-                    
-                </div>
-                <div class="modal-footer">
-                   
-                    <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Joe</button>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
 
+ 
 <div class="right_col" role="main">
    
   <div class="col-md-12 col-sm-12 col-xs-12">
@@ -131,7 +83,7 @@ function readProfile(userId, userName ,businessNum, tel, email, addr){
 	                           	</ul>
 	                       </div>
 	                       <div class="col-md-5 col-sm-5 col-xs-5">
-	                            <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="<%=cp%>/uploads/photo/${dto.imageFilename}" alt="" class="img-circle img-responsive" ></a>
+	                            <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="<%=cp%>/uploads/photo/${dto.imageFilename}" alt="" class="img-circle img-responsive" id="profileImg${dto.businessNum}"></a>
 	                       </div>
                      	</div>
                         <div class="col-xs-12 bottom text-center">
@@ -147,10 +99,10 @@ function readProfile(userId, userName ,businessNum, tel, email, addr){
                             </div>
                                                             
 	                        <div class="col-xs-12 col-sm-6 emphasis">
-	                        	<button type="button" class="btn btn-success btn-xs" onclick="noteForm('');" data-original-title> 
-	                        	<i class="fa fa-user"></i> 쪽지 보내기 </button>
-	                        	<a onclick="readProfile('${dto.userId}','${dto.userName}' ,'${dto.businessNum}', '${dto.tel}', '${dto.email}', '${dto.addr}')"><button type="button" class="btn btn-primary btn-xs" data-toggle="modal">
-	                        	<i class="fa fa-user"></i>프로필 보기</button> </a>
+	                        	<button type="button" class="btn btn-success btn-xs" data-original-title> 
+	                        	<i class="fa fa-envelope-o"></i> 쪽지 보내기 </button>
+	                        	<button type="button" class="btn btn-primary btn-xs" data-whatever="<%=cp%>/uploads/photo/${dto.imageFilename}" onclick="readProfile('${dto.userName}' ,'${dto.businessNum}', '${dto.tel}', '${dto.email}', '${dto.addr}', '<%=cp%>/uploads/photo/${dto.imageFilename}')">
+	                        	<i class="fa fa-user" ></i>프로필 보기</button> 
 	                        </div>
                      	</div>
                      	</div>
@@ -195,3 +147,47 @@ function readProfile(userId, userName ,businessNum, tel, email, addr){
 </div>
 
 
+
+<!-- Modal -->
+
+    <div class="modal fade" id="myModal2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h3 class="modal-title" id="myModalLabel">More about Company</h3>
+                    </div>
+                <div class="modal-body">
+                    
+                    <img src="<%=cp%>/uploads/photo/" name="aboutme" width="140" height="140" border="0" class="img-circle1" id="mprofileImg"><br><br>
+                    <h4 class="media-heading" style="text-align: center" id="myModalName"></h4>
+                    <div style="text-align: center"><span>사업자 번호:</span><span class="media-heading center" style="text-align: center" id="myModalBnum"></span></div>
+                    <span><strong># 태그: </strong></span>
+                        <span class="label label-warning">태그이름</span>
+                        <span class="label label-info">식품/음식</span>
+                        <span class="label label-success">딜러와 협상</span>
+                        <span class="label label-info">가격흥정</span>
+                    <hr>
+                    
+                    <p class="text-left"><strong>Tel: </strong><br>
+                        <div id="myModalTel"></div>
+                    <br>
+                    <p class="text-left"><strong>Email: </strong>
+                        <div id="myModalEmail"></div>
+                    <br>
+                    <p class="text-left"><strong>Addr: </strong>
+                        <div id="myModalAddr"></div>
+                    <br>
+                    
+                </div>
+                
+                
+                <div class="modal-footer">
+                   
+                    <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
