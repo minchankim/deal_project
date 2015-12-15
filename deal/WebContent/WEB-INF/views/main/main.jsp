@@ -10,6 +10,14 @@
 
    <link href="<%=cp%>/res/template/css/main/minchanmain.css" rel="stylesheet">
    
+<style>
+.col-xs-12,.col-sm-12,.col-md-12,.col-md-10{
+	position : relative;
+	min-height : 1px;
+	padding-right : 10px;
+	padding-left : 0px;
+}
+</style>
 <script type="text/javascript">
  
 $(document).ready(function() {
@@ -285,7 +293,8 @@ color:rgb(0,0,0);
 
 
 <!--대표이미지  -->
-<div class="col-xs-12 col-sm-12 col-md-10" style="padding-bottom:0px;padding-left:0px;padding-right:0px;">
+<div class="col-xs-12 col-sm-12 col-md-10 pull-left" style="float: right;">
+<div class="col-xs-12 col-sm-12 col-md-12" style="padding-bottom:0px;padding-left:0px;padding-right:0px;">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
       <!-- Wrapper for slides -->
@@ -356,82 +365,11 @@ color:rgb(0,0,0);
       </div>
 
     </div><!-- End Carousel -->
-</div>
-
-<!--대표이미지  -->
-
-
-<div class="col-xs-6 col-sm-6 col-md-2 pull-left " >
-
-
-	<div class="row">
-		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
-    <div class="mini-submenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </div>
-    <div class="list-group">
-        <span href="#" class="list-group-item active" style="background: #810000; color: #ffffff;">
-            실시간 급상승 검색어
-        </span>
-        <a href="#" class="list-group-item">
-            1.김태희  <span class="fa  fa-sort-desc pull-right"></span>
-        </a>
-        <a href="#" class="list-group-item">
-          2.비 <span class="fa fa-sort-up   pull-right" style="color:#DB0000;"></span>
-        </a>
-        <a href="#" class="list-group-item">
-            3.디스패치 <span class="fa  fa-sort-desc pull-right"></span>
-        </a>
-        <a href="#" class="list-group-item">
-             4.수능  
-        </a>
-        <a href="#" class="list-group-item">
-            5.2호선  <span class="fa fa-sort-up   pull-right"  style="color:#DB0000;"></span>
-        </a>
-    </div>   
-</div>
-	</div>
-</div>
-
-
-<div class="col-xs-6 col-sm-6 col-md-2 pull-left " >
-
-
-	<div class="row">
-		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
-    <div class="mini-submenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </div>
-    <div class="list-group">
-        <span href="#" class="list-group-item active"  style="background: #810000; color: #ffffff;">
-           딜러왕
-        </span>
-        <a href="#" class="list-group-item">
-            1.김민찬 <span class="badge">68%</span>
-        </a>
-        <a href="#" class="list-group-item">
-           2.비 <span class="badge">22%</span>
-        </a>
-        <a href="#" class="list-group-item">
-            3.김태희 <span class="badge">19%</span>
-         </a>
-        <a href="#" class="list-group-item">
-           4. 제지선 <span class="badge">13%</span>
-        </a>
-        <a href="#" class="list-group-item">
-          5.  김재석  <span class="badge">1%</span>
-        </a>
-    </div>        
-</div>
-	</div>
-</div>
-
-
-<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
+    
+    <!-- 최다 클릭수 -->
+    <div class="col-xs-12 col-sm-12 col-md-12">
+<br><br>
+<div class="col-xs-12 col-sm-4 col-md-4 ">
 
 
 	<div class="row">
@@ -471,7 +409,7 @@ color:rgb(0,0,0);
 	</div>
 </div>
 
-<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
+<div class="col-xs-12 col-sm-4 col-md-4">
 
 
 	<div class="row">
@@ -511,7 +449,7 @@ color:rgb(0,0,0);
 	</div>
 </div>
 
-<div class="col-xs-6 col-sm-6 col-md-4 pull-rigt ">
+<div class="col-xs-12 col-sm-4 col-md-4">
 
 
 	<div class="row">
@@ -550,6 +488,84 @@ color:rgb(0,0,0);
 </div>
 	</div>
 </div>
+    
+    </div><!-- 최다 클릭수 -->
+</div>
+</div>
+<!--대표이미지  -->
+
+<!-- 실시간 -->
+<div class="col-xs-12 col-sm-12 col-md-2">
+<div class="col-xs-12 col-sm-6 col-md-12 " >
+
+
+	<div class="row">
+		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="list-group">
+        <span href="#" class="list-group-item active" style="background: #810000; color: #ffffff;">
+            실시간 급상승 검색어
+        </span>
+        <a href="#" class="list-group-item">
+            1.김태희  <span class="fa  fa-sort-desc pull-right"></span>
+        </a>
+        <a href="#" class="list-group-item">
+          2.비 <span class="fa fa-sort-up   pull-right" style="color:#DB0000;"></span>
+        </a>
+        <a href="#" class="list-group-item">
+            3.디스패치 <span class="fa  fa-sort-desc pull-right"></span>
+        </a>
+        <a href="#" class="list-group-item">
+             4.수능  
+        </a>
+        <a href="#" class="list-group-item">
+            5.2호선  <span class="fa fa-sort-up   pull-right"  style="color:#DB0000;"></span>
+        </a>
+    </div>   
+</div>
+	</div>
+</div>
+
+
+<div class="col-xs-12 col-sm-6 col-md-12" >
+
+
+	<div class="row">
+		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+    <div class="list-group">
+        <span href="#" class="list-group-item active"  style="background: #810000; color: #ffffff;">
+           딜러왕
+        </span>
+        <a href="#" class="list-group-item">
+            1.김민찬 <span class="badge">68%</span>
+        </a>
+        <a href="#" class="list-group-item">
+           2.비 <span class="badge">22%</span>
+        </a>
+        <a href="#" class="list-group-item">
+            3.김태희 <span class="badge">19%</span>
+         </a>
+        <a href="#" class="list-group-item">
+           4. 제지선 <span class="badge">13%</span>
+        </a>
+        <a href="#" class="list-group-item">
+          5.  김재석  <span class="badge">1%</span>
+        </a>
+    </div>        
+</div>
+	</div>
+</div>
+</div>
+
 
 
 <!--콘텐츠  -->
