@@ -7,7 +7,7 @@
 	<insert id="insertLetter" parameterType="com.project.letter.Letter">
 		
 			INSERT INTO letter(content, sendUserId, receiveUserId, parent, sendDelete, receiveDelete
-                 ) VALUES ( #{content', #{sendUserId}, #{receiveUserId}, #{parent}, 'N','N')
+                 ) VALUES ( #{content}, #{sendUserId}, #{receiveUserId}, #{parent}, 'N','N')
                  
 	</insert>
 	
