@@ -39,7 +39,7 @@
                                 </li>
                                 <li><a><i class="glyphicon glyphicon-gift"></i> 딜 관리 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="<%=cp%>/admin/deal/catagory.do">카테고리 관리</a>
+                                        <li><a href="<%=cp%>/admin/deal/category.do">카테고리 관리</a>
                                         </li>
                                         <li><a href="<%=cp%>/admin/deal/notify.do">딜 신고 관리</a>
                                         </li>
