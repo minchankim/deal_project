@@ -281,19 +281,7 @@ function sendLogin() {
                                 </a>
                                 </c:if>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                    <c:if test="${sessionScope.member.userId!='admin'}">
-                                    <li><a href="<%=cp%>/member/mypage.do">정보수정</a>
-                                    </li>
-                                    </c:if>
-                                     <c:if test="${sessionScope.member.userId=='admin'}">
-                           <li><a href="<%=cp%>/admin.do">관리자</a>
-                                    </li>
-                           </c:if>
-                               
-                                    <li>
-                                        <a href="<%=cp%>/friend/list.do">
-                                            <span>팔로우</span>
-                                        </a>
+                                    <li><a href="<%=cp%>">홈</a>
                                     </li>
                                     <li>
                                         <a href="javascript:;">Help</a>
@@ -305,7 +293,7 @@ function sendLogin() {
                             </li><!-- end 내정보 -->
                              <c:if test="${sessionScope.member.userId!=null}">
 							<li style="padding-top:7px;padding-right: 5px; padding-left: 5px;">
-                                <a style="padding: 0px;margin-top:4px;" href="<%=cp%>/cash/myCash.do;"><span id="myscash">${cdto}</span></a>
+                                <a style="padding: 0px;margin-top:4px;" href="<%=cp%>">2000</a>
                                 
                              </li><!-- end 캐쉬 -->
                            </c:if>
@@ -313,7 +301,7 @@ function sendLogin() {
                             <li style="padding:7px;" role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-envelope fa-5x"></i>
-                                   <span id="letterCount" class="badge bg-red pull-right">${sessionScope.member.letterNoticeCount}</span>
+                                    <span class="badge bg-green">2</span>
                                 </a>
                                 
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
@@ -367,8 +355,8 @@ function sendLogin() {
                                     </li>
                                     <li>
                                         <div class="text-center">
-                                            <a>
-                                                <strong><a href="<%=cp%>/letter/list.do">모든 리스트보기 </a></strong>
+                                            <a href="<%=cp%>">
+                                                <strong>모든 리스트보기</strong>
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
                                         </div>
@@ -415,8 +403,8 @@ function sendLogin() {
                                     </li>
                                     <li>
                                         <div class="text-center">
-                                            <a>
-                                                <strong><a href="inbox.html">ALL</strong>
+                                            <a href="<%=cp%>">
+                                                <strong>ALL</strong>
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
                                         </div>
@@ -427,32 +415,7 @@ function sendLogin() {
                            
                             
                             
-                             <li style="padding-top: 10px;" class="">
-                                <a href="javascript:;" style="padding:0px;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-									마이딜<span id="myDealTotal" class="badge bg-red">${sessionScope.member.myDealTotal}</span>
-                                    <span class=" fa fa-angle-down"></span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                    <li><a href="<%=cp%>/myDeal/myDeal.do">
-                                    <span id="joinCount" class="badge bg-red pull-right">${sessionScope.member.dealInNoticeCount}</span>
-                                            <span>참여 딜 목록</span>
-                                    </a>
-                                    </li>
-                                    <li>
-                                        <a href="<%=cp%>/myDeal/myDeal.do">
-                                            <!-- <span class="badge bg-red pull-right">2</span> -->
-                                            <span>찜한 딜 목록</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<%=cp%>/myDeal/myDeal.do">
-                                         <!-- <span class="badge bg-red pull-right">2</span> -->
-                                            <span>올린 딜 목록</span>
-                                        </a>
-                                    </li>
-                                   
-                                </ul>
-                            </li><!-- end 마이딜 -->
+                             
 
                         </ul>
                     </nav>
@@ -461,7 +424,8 @@ function sendLogin() {
             </div>
             <!-- /top navigation -->
             
-   <!-- 알림 modal -->         
+
+   <!-- 알림 modal --> 
       <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -481,7 +445,8 @@ function sendLogin() {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                </div>
+                </div>        
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
+    

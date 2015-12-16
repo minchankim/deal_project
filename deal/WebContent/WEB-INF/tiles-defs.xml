@@ -44,5 +44,21 @@
 	  	<put-attribute name="left" value="/WEB-INF/views/layout/{1}Left.jsp" />
    	    <put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
 	</definition>
- -->
+   -->
+   <definition name=".adminMainLayout" template="/WEB-INF/views/layout/layout.jsp">
+	    <put-attribute name="title" value="think" />
+	  	<put-attribute name="sidebar" value="/WEB-INF/views/admin/layout/sidebar.jsp" />
+	  <put-attribute name="topbar" value="/WEB-INF/views/admin/layout/topbar.jsp" />	
+		<put-attribute name="body" value="/WEB-INF/views/admin/main/main.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+	</definition>
+	<definition name=".admin.*.*.*" extends=".adminMainLayout">
+		<put-attribute name="body" value="/WEB-INF/views/admin/{1}/{2}/{3}.jsp"/>
+	</definition>
+	<definition name=".admin.*.*" extends=".adminMainLayout">
+		<put-attribute name="body" value="/WEB-INF/views/admin/{1}/{2}.jsp"/>
+	</definition>
+	<definition name=".admin.*" extends=".adminMainLayout">
+    	  <put-attribute name="body" value="/WEB-INF/views/admin/deal/{1}.jsp" />
+	</definition>
 </tiles-definitions>
