@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%
    request.setCharacterEncoding("utf-8");
    String cp = request.getContextPath();
@@ -285,11 +286,59 @@ function dealjoin(Num,mode){
 		}
 	});
 }
+/* $('[id^=detail-]').hide(); */
+$(document).ready(function() {
+	/* var target_date = new Date('12, 31, 2016').getTime();
+	 
+	// variables for time units
+	var days, hours, minutes, seconds;
+	 
+	// get tag element
+	var countdown = document.getElementById('countdown');
+	 
+	// update the tag with id "countdown" every 1 second
+	setInterval(function () {
+	 
+	    // find the amount of "seconds" between now and target
+	    var current_date = new Date().getTime();
+	    var seconds_left = (target_date - current_date) / 1000;
+	 
+	    // do some time calculations
+	    days = parseInt(seconds_left / 86400);
+	    seconds_left = seconds_left % 86400;
+	     
+	    hours = parseInt(seconds_left / 3600);
+	    seconds_left = seconds_left % 3600;
+	     
+	    minutes = parseInt(seconds_left / 60);
+	    seconds = parseInt(seconds_left % 60);
+	     
+	    // format countdown string + set tag value
+	    countdown.innerHTML = 
+	      '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px;" class="days">' 
+	    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+days+'</span>' 
+	    + ' <b>Days</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="hours">' 
+	    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ hours +'</span>' 
+	    + ' <b>Hours</b></span> <span style="font-size:5p	x;color:rgba(229, 19, 19, 0.72);" class="minutes">'
+	    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px;">'
+	 	+ '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+minutes+'</span>'  
+	    + ' <b>Minutes</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="seconds">' 
+	    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ seconds +'</span>'  
+	    + ' <b>Seconds</b></span>';  
+	 
+	}, 1000); */
+	
+}); 
+
+
+ 
 </script>
 
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
 
 <style>
 .stat-item:click{
@@ -305,6 +354,72 @@ background-color:rgb(255,255,255);
 .panel-google-plus > .panel-heading > h5{
 color:rgb(0,0,0);
 }
+
+/*  countDown*/
+
+.container {
+  margin: 0px auto;
+  padding: 0px;
+}
+
+#main { 
+  background: #3B3B3B;
+ /*  height: 430px; */
+}
+
+.content {
+/*   padding: 10px 15px; */
+}
+
+.text {
+  border-bottom: 0px solid #262626;
+ /*  margin-top:10px;
+  padding-bottom: 10px; */
+  text-align: right;
+}
+
+.text h2 {
+  color: #E5E5E5;
+  /* font-size: 30px; */
+  font-style: normal;
+  font-variant: normal;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+.counter {
+  background: #2C2C2C;
+  -moz-box-shadow:    inset 0 0 5px #000000;
+  -webkit-box-shadow: inset 0 0 5px #000000;
+  box-shadow:         inset 0 0 5px #000000;
+ /*  min-height: 150px; */
+  text-align: right;
+}
+
+.counter h3 {
+  color: #E5E5E5;
+  font-size: 10px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  letter-spacing: 1px;
+ /*  padding-top:5px;
+  margin-bottom: 5px; */
+}
+
+#countdown {
+  color: #FFFFFF;
+}
+
+#countdown span {
+  color: #E5E5E5;
+
+  font-weight: 900;
+/*   margin-left: 5px;
+  margin-right: 5px; */
+ /*  text-align: center; */
+}
+
 </style>
 <div class="right_col" role="main">
 
@@ -560,6 +675,14 @@ color:rgb(0,0,0);
 </div>
 
 
+
+
+
+
+
+
+
+
 <!--콘텐츠  -->
 <div class="container"  >
     <div class="row col-md-4" >
@@ -568,7 +691,55 @@ color:rgb(0,0,0);
         <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
             <div class="[ panel panel-default ] panel-google-plus" >
                 <div class="dropdown">
-                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                    <!--CountDown  -->
+				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px;"  id="countdown${dto.num}">
+  					</div><!-- /#Countdown Div -->
+  					
+  					<script>
+  					$(document).ready(function() {
+  						 var target_date = new Date(' ${fn:substring(dto.end_date,5,7)}, ${fn:substring(dto.end_date,8,10)},  ${fn:substring(dto.end_date,0,4)}').getTime();
+  						 
+  						// variables for time units
+  						var days, hours, minutes, seconds;
+  						 
+  						// get tag element
+  						var countdown = document.getElementById('countdown'+${dto.num});
+  						 
+  						// update the tag with id "countdown" every 1 second
+  						setInterval(function () {
+  						 
+  						    // find the amount of "seconds" between now and target
+  						    var current_date = new Date().getTime();
+  						    var seconds_left = (target_date - current_date) / 1000;
+  						 
+  						    // do some time calculations
+  						    days = parseInt(seconds_left / 86400);
+  						    seconds_left = seconds_left % 86400;
+  						     
+  						    hours = parseInt(seconds_left / 3600);
+  						    seconds_left = seconds_left % 3600;
+  						     
+  						    minutes = parseInt(seconds_left / 60);
+  						    seconds = parseInt(seconds_left % 60);
+  						     
+  						    // format countdown string + set tag value
+  						    countdown.innerHTML = 
+  						      '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px; " class="days">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+days+'</span>' 
+  						    + ' <b>Days</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="hours">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ hours +'</span>' 
+  						    + ' <b>Hours</b></span> <span style="font-size:5p	x;color:rgba(229, 19, 19, 0.72);" class="minutes">'
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px;">'
+  						 	+ '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+minutes+'</span>'  
+  						    + ' <b>Minutes</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="seconds">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ seconds +'</span>'  
+  						    + ' <b>Seconds</b></span>';  
+  						 
+  						}, 1000); 
+  				
+  					});
+  					</script>
+                   <!--  <span class="dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="[ glyphicon glyphicon-chevron-down ]"></span>
                     </span>
                     <ul class="dropdown-menu" role="menu">
@@ -577,7 +748,7 @@ color:rgb(0,0,0);
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
                         <li role="presentation" class="divider"></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="panel-google-plus-tags">
                     <ul>
@@ -591,6 +762,10 @@ color:rgb(0,0,0);
                 </div>
                 <div class="panel-body">
                     <a href="<%=cp%>/deal/article.do?num=${dto.num}"><p style="font-size:20px;">${dto.subject}<!--  <a href="http://bootsnipp.com/snippets/MaWrA">http://bootsnipp.com/snippets/MaWrA</a> --></p></a>
+           
+                  
+               
+  					
                     <%--  <c:forEach var="dealdto" items="${DealInList}">
                     <c:if test="${dto.num==dealdto.dealNum}">
                     <div>11111111</div>
@@ -605,7 +780,7 @@ color:rgb(0,0,0);
                     <button type="button" class="[ btn btn-default ]">
                         <span class="[ glyphicon glyphicon-share-alt ]"></span>
                     </button> -->
-                    
+  
                     
     <div class="text-center">      
          <div class="" data-toggle="buttons">  
@@ -616,11 +791,11 @@ color:rgb(0,0,0);
                   <c:set var="badId" value="1" />
                         <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success ">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
-                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+                <i class="fa fa-check"></i> 참여
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+                <i class="fa fa-check"></i> 미참
             </label>     
                </c:if>
                     </c:forEach>  
@@ -629,11 +804,11 @@ color:rgb(0,0,0);
                     <c:if test="${badId==0}">
                                 <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
-                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+                <i class="fa fa-check"></i> 참여
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+                <i class="fa fa-check"></i> 미참
             </label>   
             </c:if>
                     
@@ -657,6 +832,8 @@ color:rgb(0,0,0);
                     </span>
                     <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
                 </div>
+                
+                
                 <div class="panel-google-plus-comment" style="padding:10px;">
                     <c:if test="${pdto.imageFilename==null}">
                    <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" /> 
@@ -724,7 +901,55 @@ color:rgb(0,0,0);
         <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
             <div class="[ panel panel-default ] panel-google-plus" >
                 <div class="dropdown">
-                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                  <!--CountDown  -->
+				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px;"  id="countdown${dto.num}">
+  					</div><!-- /#Countdown Div -->
+  					
+  					<script>
+  					$(document).ready(function() {
+  						 var target_date = new Date(' ${fn:substring(dto.end_date,5,7)}, ${fn:substring(dto.end_date,8,10)},  ${fn:substring(dto.end_date,0,4)}').getTime();
+  						 
+  						// variables for time units
+  						var days, hours, minutes, seconds;
+  						 
+  						// get tag element
+  						var countdown = document.getElementById('countdown'+${dto.num});
+  						 
+  						// update the tag with id "countdown" every 1 second
+  						setInterval(function () {
+  						 
+  						    // find the amount of "seconds" between now and target
+  						    var current_date = new Date().getTime();
+  						    var seconds_left = (target_date - current_date) / 1000;
+  						 
+  						    // do some time calculations
+  						    days = parseInt(seconds_left / 86400);
+  						    seconds_left = seconds_left % 86400;
+  						     
+  						    hours = parseInt(seconds_left / 3600);
+  						    seconds_left = seconds_left % 3600;
+  						     
+  						    minutes = parseInt(seconds_left / 60);
+  						    seconds = parseInt(seconds_left % 60);
+  						     
+  						    // format countdown string + set tag value
+  						    countdown.innerHTML = 
+  						      '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px; " class="days">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+days+'</span>' 
+  						    + ' <b>Days</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="hours">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ hours +'</span>' 
+  						    + ' <b>Hours</b></span> <span style="font-size:5p	x;color:rgba(229, 19, 19, 0.72);" class="minutes">'
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px;">'
+  						 	+ '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+minutes+'</span>'  
+  						    + ' <b>Minutes</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="seconds">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ seconds +'</span>'  
+  						    + ' <b>Seconds</b></span>';  
+  						 
+  						}, 1000); 
+  				
+  					});
+  					</script>
+                   <!--  <span class="dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="[ glyphicon glyphicon-chevron-down ]"></span>
                     </span>
                     <ul class="dropdown-menu" role="menu">
@@ -733,7 +958,7 @@ color:rgb(0,0,0);
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
                         <li role="presentation" class="divider"></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="panel-google-plus-tags">
                     <ul>
@@ -772,11 +997,11 @@ color:rgb(0,0,0);
                   <c:set var="badId" value="1" />
                         <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success ">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
-                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+                <i class="fa fa-check"></i> 참여
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+                <i class="fa fa-check"></i> 미참
             </label>     
                </c:if>
                     </c:forEach>  
@@ -785,11 +1010,11 @@ color:rgb(0,0,0);
                     <c:if test="${badId==0}">
                                 <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
-                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+                <i class="fa fa-check"></i> 참여
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+                <i class="fa fa-check"></i> 미참
             </label>   
             </c:if>
                     
@@ -883,7 +1108,55 @@ color:rgb(0,0,0);
         <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
             <div class="[ panel panel-default ] panel-google-plus" >
                 <div class="dropdown">
-                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                  <!--CountDown  -->
+				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px;"  id="countdown${dto.num}">
+  					</div><!-- /#Countdown Div -->
+  					
+  					<script>
+  					$(document).ready(function() {
+  						 var target_date = new Date(' ${fn:substring(dto.end_date,5,7)}, ${fn:substring(dto.end_date,8,10)},  ${fn:substring(dto.end_date,0,4)}').getTime();
+  						 
+  						// variables for time units
+  						var days, hours, minutes, seconds;
+  						 
+  						// get tag element
+  						var countdown = document.getElementById('countdown'+${dto.num});
+  						 
+  						// update the tag with id "countdown" every 1 second
+  						setInterval(function () {
+  						 
+  						    // find the amount of "seconds" between now and target
+  						    var current_date = new Date().getTime();
+  						    var seconds_left = (target_date - current_date) / 1000;
+  						 
+  						    // do some time calculations
+  						    days = parseInt(seconds_left / 86400);
+  						    seconds_left = seconds_left % 86400;
+  						     
+  						    hours = parseInt(seconds_left / 3600);
+  						    seconds_left = seconds_left % 3600;
+  						     
+  						    minutes = parseInt(seconds_left / 60);
+  						    seconds = parseInt(seconds_left % 60);
+  						     
+  						    // format countdown string + set tag value
+  						    countdown.innerHTML = 
+  						      '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px; " class="days">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+days+'</span>' 
+  						    + ' <b>Days</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="hours">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ hours +'</span>' 
+  						    + ' <b>Hours</b></span> <span style="font-size:5p	x;color:rgba(229, 19, 19, 0.72);" class="minutes">'
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px;">'
+  						 	+ '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+minutes+'</span>'  
+  						    + ' <b>Minutes</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="seconds">' 
+  						    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ seconds +'</span>'  
+  						    + ' <b>Seconds</b></span>';  
+  						 
+  						}, 1000); 
+  				
+  					});
+  					</script>
+                    <!-- <span class="dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="[ glyphicon glyphicon-chevron-down ]"></span>
                     </span>
                     <ul class="dropdown-menu" role="menu">
@@ -892,7 +1165,7 @@ color:rgb(0,0,0);
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
                         <li role="presentation" class="divider"></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="panel-google-plus-tags">
                     <ul>
@@ -931,11 +1204,11 @@ color:rgb(0,0,0);
                   <c:set var="badId" value="1" />
                         <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success ">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
-                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+                <i class="fa fa-check"></i> Deal에 참여
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+                <i class="fa fa-check"></i> Deal에 미참
             </label>     
                </c:if>
                     </c:forEach>  
@@ -944,11 +1217,11 @@ color:rgb(0,0,0);
                     <c:if test="${badId==0}">
                                 <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
-                <i class="fa fa-check"></i> Deal에 참여하였습니다.
+                <i class="fa fa-check"></i>참여
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> Deal에 참여하지 않았습니다.
+                <i class="fa fa-check"></i>미참
             </label>   
             </c:if>
                     
