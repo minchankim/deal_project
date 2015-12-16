@@ -6,7 +6,7 @@ public class SessionInfo {
 	private int cash;
 	private int dealInNoticeCount,favoriteNoticeCount,uploadNoticeCount;
 	private int myDealTotal;
-	private int letterNoticeCount;
+	private int letterNoticeCount; // 받은 쪽지 알람 수
 	
 	
 

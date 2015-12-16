@@ -141,7 +141,7 @@ public class LetterServiceImpl implements LetterService{
 	}
 
 	@Override
-	public int newLetterCount(String userId) {
+	public int readNewLetterCount(String userId) {
 		int result=0;
 		try {
 			result=dao.getReadData("letter.readLetterCount", userId);

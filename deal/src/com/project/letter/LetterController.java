@@ -57,7 +57,7 @@ public class LetterController {
 			System.out.println(e.toString());
 		}
 		
-		info.setLetterNoticeCount(service.newLetterCount(info.getUserId()));
+		info.setLetterNoticeCount(service.readNewLetterCount(info.getUserId()));
 		session.setAttribute("letterNoticeCount", info.getLetterNoticeCount());
 		
 		JSONObject job = new JSONObject();

@@ -28,7 +28,7 @@ public interface LetterService {
 	
 	public int deleteLetter(Map<String, Object> map);
 	
-	public int newLetterCount(String userId);
+	public int readNewLetterCount(String userId);
 
 	public List<Letter> listSend(String userId);
 	public List<Letter> listReceive(String userId);

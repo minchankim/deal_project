@@ -307,7 +307,7 @@ function sendLogin() {
                             <li style="padding:7px;" role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-envelope fa-5x"></i>
-                                   <span id="letterCount" class="badge bg-red pull-right">${sessionScope.Letter.letterNoticeCount}</span>
+                                   <span id="letterCount" class="badge bg-red pull-right">${sessionScope.member.letterNoticeCount}</span>
                                 </a>
                                 
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">

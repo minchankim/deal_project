@@ -130,7 +130,8 @@ public class MemberController {
 		info.setUserId(dto.getUserId());
 		info.setUserName(dto.getUserName());
 		info.setDealInNoticeCount(dservice.readDealJoinCount(userId));
-		info.setLetterNoticeCount(lserviere.newLetterCount(userId));
+		info.setLetterNoticeCount(lserviere.readNewLetterCount(userId));
+		System.out.println(lserviere.readNewLetterCount(userId));
 		info.setMyDealTotal(dservice.readDealJoinCount(userId));
 		
 	
