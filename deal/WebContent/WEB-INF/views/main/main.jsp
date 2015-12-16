@@ -688,7 +688,7 @@ color:rgb(0,0,0);
     <div class="row col-md-4" >
         
         <c:forEach  var="dto" items="${MainDealList1}">
-        <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
+        <div class="[ col-xs-12 col-sm-12  col-md-12 ]"  >
             <div class="[ panel panel-default ] panel-google-plus" >
                 <div class="dropdown">
                     <!--CountDown  -->
