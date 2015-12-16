@@ -7,7 +7,7 @@
 	<insert id="insertLetter" parameterType="com.project.letter.Letter">
 		
 			INSERT INTO letter(content, sendUserId, receiveUserId, parent, sendDelete, receiveDelete
-                 ) VALUES ( #{content}, #{sendUserId}, #{receiveUserId}, #{parent}, 'N','N')
+                 ) VALUES ( #{content', #{sendUserId}, #{receiveUserId}, #{parent}, 'N','N')
                  
 	</insert>
 	
@@ -104,12 +104,36 @@
     
     	<!-- 받은 쪽지 알람 -->
 	<update id="updateAlarmCount" parameterType="com.project.letter.Letter">
-	update letter JOIN member ON sendUserId=userId set notice=(notice)+1 where receiveUserId IN (#{userId})
+	update letter set notice=1 
+
+	<where>
+	receiveUserId=#{userId} 
+	</where>
 
 	</update> 
+
+<!-- 알람 지우기
+	<update id="updateAlarmCount" parameterType="com.project.letter.Letter">
+	update letter set notice=0 
+
+	<where>
+	receiveUserId=#{userId} and identifyDay is not null
+	</where>
+
+	</update>  -->
+
+	
+
+
 	<!-- 알람 숫자 가져오기 -->
-	<select id="readLetterCount" resultType="Integer" 
-	          parameterType="String">
-		SELECT SUM(notice) FROM letter JOIN member ON sendUserId=userId WHERE receiveUserId=#{userId} and identifyDay is null
+	<select id="readLetterCount" resultType="Integer"  parameterType="String">
+		SELECT SUM(notice) FROM letter  
+		
+		<where>
+		 receiveUserId=#{userId} and identifyDay is null
+		</where>
+	
+	
+	
 	</select>
 </mapper>

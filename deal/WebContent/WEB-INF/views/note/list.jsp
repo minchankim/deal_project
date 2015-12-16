@@ -99,6 +99,7 @@ function renoteForm(id) {
 						
 						$("#letterCount").text(""); 
 						 var lcount=data.letterNoticeCount;
+						 alert(lcount);
 						$("#letterCount").html(lcount); 
 			    	},
 			    	error:function(e) {
