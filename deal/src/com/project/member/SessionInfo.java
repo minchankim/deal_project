@@ -6,9 +6,19 @@ public class SessionInfo {
 	private int cash;
 	private int dealInNoticeCount,favoriteNoticeCount,uploadNoticeCount;
 	private int myDealTotal;
+	private int businessNum;
 	private int letterNoticeCount; // 받은 쪽지 알람 수
 	
 	
+	
+
+	public int getBusinessNum() {
+		return businessNum;
+	}
+
+	public void setBusinessNum(int businessNum) {
+		this.businessNum = businessNum;
+	}
 
 	public int getMyDealTotal() {
 		return myDealTotal;

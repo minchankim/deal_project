@@ -125,7 +125,7 @@ public class MemberController {
 		}
 		
 		System.out.println(cdto);
-		
+	
 		SessionInfo info = new SessionInfo();
 		info.setUserId(dto.getUserId());
 		info.setUserName(dto.getUserName());
@@ -133,6 +133,7 @@ public class MemberController {
 		info.setLetterNoticeCount(lserviere.readNewLetterCount(userId));
 		System.out.println(lserviere.readNewLetterCount(userId));
 		info.setMyDealTotal(dservice.readDealJoinCount(userId));
+		info.setBusinessNum(dto.getBusinessNum());
 		
 	
 		Photo pdto = pservice.readPhoto(dto.getUserId());

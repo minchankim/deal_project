@@ -98,6 +98,19 @@ INSERT  INTO dealjoin(dealNum, userId) VALUES (#{num},#{userId});
 	</select>
 	
 	
+	<insert id="updateDealSuccess" parameterType="com.project.deal.Deal">
+INSERT  INTO dealsuccess(dealNum, userId) VALUES (#{num},#{userId});
+	</insert>
+	<delete id = "updateDealFail" parameterType="com.project.deal.Deal">
+	DELETE FROM dealsuccess WHERE userId=#{userId} AND dealNum=#{num}
+</delete>
+
+	<select id="listDealSuccess" resultType="com.project.deal.Deal" 
+	          parameterType="String">
+		SELECT dealNum,userId FROM dealjoin WHERE userId=#{userId}
+	</select>
+	
+	
 	<!-- <update id="updateAlramCount" parameterType="com.project.deal.DealReply">
 	update dealjoin set alarmNotice= @alarmTest+1 WHERE dealNum=#{dealNum} AND userId=#{userId}
 

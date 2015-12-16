@@ -781,7 +781,7 @@ color:rgb(0,0,0);
                         <span class="[ glyphicon glyphicon-share-alt ]"></span>
                     </button> -->
   
-                    
+
     <div class="text-center">      
          <div class="" data-toggle="buttons">  
          <c:set var="badId" value="0" />
@@ -795,7 +795,7 @@ color:rgb(0,0,0);
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> 미참
+                <i class="fa fa-check"></i> 미참여
             </label>     
                </c:if>
                     </c:forEach>  
@@ -808,30 +808,60 @@ color:rgb(0,0,0);
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> 미참
+                <i class="fa fa-check"></i> 미참여
             </label>   
             </c:if>
-                    
-
-        
-        
-           
            
         </div>
-   
-    
     
     </div>
+    
+
+    <c:if test="${sessionScope.member.businessNum>0}">
+    <div class="text-center">      
+         <div class="" data-toggle="buttons">  
+         <c:set var="badId" value="0" />
+        <c:forEach var="dealdto" items="${DealInList}">
+         
+                    <c:if test="${dto.num==dealdto.dealNum}"> 
+                  <c:set var="badId" value="1" />
+                        <label onclick="<%-- dealjoin('${dto.num}',0) --%>" class="btn btn-md btn-success "  style="color:black;margin-left:75px;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> 승인완료
+            </label>
+              <label onclick="<%-- dealjoin('${dto.num}',1) --%>" class="btn btn-md btn-danger active" style="margin-left:75px;background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);" >
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> 승인대기
+            </label>     
+               </c:if>
+                    </c:forEach>  
+                
                     
+                    <c:if test="${badId==0}">
+                                <label onclick="<%-- dealjoin('${dto.num}',0) --%>" class="btn btn-md btn-success active" style="color:black;margin-left:75px;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> 승인완료
+            </label>
+              <label onclick="<%-- dealjoin('${dto.num}',1) --%>" class="btn btn-md btn-danger  " style="margin-left:75px;background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> 승인대기
+            </label>   
+            </c:if>
+           
+        </div>
+    
+    </div>
+    </c:if>
+             
                     
                      <span class="pull-right">
-                      <a class="btn btn-default stat-item " style="font-size:25px; padding-bottom: 5px;padding-right:5px; ">
+                      <a class="btn btn-default stat-item  btn-xs" style="font-size:25px; padding-bottom: 0px;padding-right:5px; ">
                         <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;padding-left: 5px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i></a> 
                        <%--  <i id="dislike${dto.num}"  style="font-size: 30px;" onclick="disLike(${dto.num});" class="glyphicon glyphicon-thumbs-down"><div style="font-size: 25px;" id="dislike${dto.num}-bs3">4</div></i> --%> 
            
                     </span>
                     <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
-                </div>
+</div>
                 
                 
                 <div class="panel-google-plus-comment" style="padding:10px;">
@@ -1001,7 +1031,7 @@ color:rgb(0,0,0);
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> 미참
+                <i class="fa fa-check"></i> 미참여
             </label>     
                </c:if>
                     </c:forEach>  
@@ -1014,7 +1044,7 @@ color:rgb(0,0,0);
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> 미참
+                <i class="fa fa-check"></i> 미참여
             </label>   
             </c:if>
                     
@@ -1208,7 +1238,7 @@ color:rgb(0,0,0);
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> Deal에 미참
+                <i class="fa fa-check"></i> Deal에 미참여
             </label>     
                </c:if>
                     </c:forEach>  
@@ -1221,7 +1251,7 @@ color:rgb(0,0,0);
             </label>
               <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i>미참
+                <i class="fa fa-check"></i>미참여
             </label>   
             </c:if>
                     
