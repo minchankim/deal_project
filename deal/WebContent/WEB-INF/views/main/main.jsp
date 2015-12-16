@@ -353,12 +353,22 @@ color:rgb(0,0,0);
       </div><!-- End Carousel Inner -->
 
 
-    <ul class="list-group col-sm-4">
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>1111</h4></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>2122</h4></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>3333</h4></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>4444</h4></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>55555</h4></li>
+      <ul class="list-group col-sm-4"> <!-- 이거 슬라이드 내용 바뀐거고  -->
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;">뚜레쥬르 케익교환권
+      <br><span style="font-size: 13pt;">20%</span>
+      </li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;">리트머스/엠할리데이
+       <br><span style="font-size: 13pt;">80%</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;">쉬즈미스 외 겨울의류
+       <br><span style="font-size: 13pt;">90%</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;">금강제화 연말선물대전
+       <br><span style="font-size: 13pt;">57%</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;">더베이지 아동 양말/의류
+       <br><span style="font-size: 13pt;">30%</span>
+       </li>
     </ul>
 
       <!-- Controls -->
@@ -464,7 +474,7 @@ color:rgb(0,0,0);
         <span class="icon-bar"></span>
     </div>
     <div class="list-group">
-        <span href="#" class="list-group-item active" style="color:black;background-color:rgba(26, 130, 195, 0);">
+        <span  href="#" class="list-group-item active" style="color:white;background-color:rgb(239, 107, 57);">
            월간베스트
             <span class="pull-right" id="slide-submenu">
                 <i class="fa fa-times"></i>
@@ -479,15 +489,7 @@ color:rgb(0,0,0);
         <a href="#" class="list-group-item">
             <i class="fa fa-user"></i> 3.김태희 1%
          </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-folder-open-o"></i> 김태희 1% <span class="badge">14</span>
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-bar-chart-o"></i> 김태희 1% <span class="badge">14</span>
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-envelope"></i> 김태희 1%
-        </a>
+      
     </div>        
 </div>
 	</div>
@@ -504,7 +506,7 @@ color:rgb(0,0,0);
         <span class="icon-bar"></span>
     </div>
     <div class="list-group">
-        <span href="#" class="list-group-item active" style="color:black;background-color:rgba(26, 130, 195, 0);">
+        <span href="#" class="list-group-item active" style="color:white;background-color:rgb(239, 107, 57);">
            	주간베스트
             <span class="pull-right" id="slide-submenu">
                 <i class="fa fa-times"></i>
@@ -519,15 +521,7 @@ color:rgb(0,0,0);
         <a href="#" class="list-group-item">
             <i class="fa fa-user"></i> 3.김태희 1%
          </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-folder-open-o"></i> 김태희 1% <span class="badge">14</span>
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-bar-chart-o"></i> 김태희 1% <span class="badge">14</span>
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-envelope"></i> 김태희 1%
-        </a>
+     
     </div>        
 </div>
 	</div>
@@ -544,7 +538,7 @@ color:rgb(0,0,0);
         <span class="icon-bar"></span>
     </div>
     <div class="list-group">
-        <span href="#" class="list-group-item active" style="color:black;background-color:rgba(26, 130, 195, 0);">
+        <span href="#" class="list-group-item active" style="color:white;background-color:rgb(239, 107, 57);">
            	최다클릭수
             <span class="pull-right" id="slide-submenu">
                 <i class="fa fa-times"></i>
@@ -559,15 +553,7 @@ color:rgb(0,0,0);
         <a href="#" class="list-group-item">
             <i class="fa fa-user"></i> 3.김태희 1%
          </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-folder-open-o"></i> 김태희 1% <span class="badge">14</span>
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-bar-chart-o"></i> 김태희 1% <span class="badge">14</span>
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-envelope"></i> 김태희 1%
-        </a>
+     
     </div>        
 </div>
 	</div>
