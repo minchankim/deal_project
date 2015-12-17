@@ -241,7 +241,7 @@ public class DealController {
 		stringContent[i]=String.valueOf(charContent[i]);
 		}
 		
-		System.out.println();
+	
 		for(int i= 0;i<dto.getContent().length();i++){
 		
 		if(stringContent[i].equals("<")&&stringContent[i+1].equals("i")&&stringContent[i+2].equals("m")&&stringContent[i+3].equals("g")){
@@ -274,7 +274,7 @@ public class DealController {
 		dto.setUserId(info.getUserId());
 		dto.setUserName(info.getUserName());
 	
-	
+	System.out.println(dto.getApproveCheck());
 		service.insertDeal(dto, path);
 		
 		return new ModelAndView("redirect:/main.do");

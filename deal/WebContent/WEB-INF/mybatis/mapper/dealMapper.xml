@@ -9,7 +9,7 @@
 					people,approveCheck,start_date,end_date,content,saveFilename,originalFilename
 					,region1,region2,tag1,tag2,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10,smillarNum)
  VALUES (#{userId},#{userName},#{subject},#{price},#{instantPrice},#{discountRate},#{category1}
- 	,#{category2},#{people},1,#{start_date},
+ 	,#{category2},#{people},#{approveCheck},#{start_date},
 	#{end_date},#{content},#{saveFilename},#{originalFilename},#{region1},#{region2},#{tag1},#{tag2},#{image1},#{image2},#{image3},#{image4},#{image5},#{image6}
 	,#{image7},#{image8},#{image9},#{image10},#{smillarNum});
 
@@ -19,7 +19,7 @@
 					people,approveCheck,start_date,end_date,content,saveFilename,originalFilename
 					,region1,region2,tag1,tag2,image1,image2,image3,image4,image5,image6,image7,image8,image9,image10,smillarNum)
  VALUES (#{userId},#{userName},#{subject},#{price},#{instantPrice},#{discountRate},#{category1}
- 	,#{category2},#{people},1,#{start_date},
+ 	,#{category2},#{people},#{approveCheck},#{start_date},
 	#{end_date},#{content},#{saveFilename},#{originalFilename},#{region1},#{region2},#{tag1},#{tag2},#{image1},#{image2},#{image3},#{image4},#{image5},#{image6}
 	,#{image7},#{image8},#{image9},#{image10},LAST_INSERT_ID());
 
