@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="adminMain">
+<select id="memberTCount" resultType="Integer" parameterType="map">
+SELECT ifnull(COUNT(*),0) FROM member
+</select>
+
+<select id="busiTCount" resultType="Integer" parameterType="map">
+SELECT IFNULL(COUNT(*),0) FROM (
+	SELECT userId,userName,tel,email,addr,businessNum FROM member 
+	WHERE businessNum NOT IN('0')
+)tb
+</select>
+
+<select id="dealTCount" resultType="Integer" parameterType="map">
+SELECT IFNULL(COUNT(*),0) FROM deal
+</select>
+
+<select id="dealjoinCount" resultType="Integer" parameterType="map">
+select max(cnt) as count from(
+SELECT ifnull(count(dealNum),0) cnt FROM  dealjoin group by dealNum)tb
+</select>
+
+<select id="maleCount" resultType="Integer" parameterType="map">
+SELECT ifnull(count(gender),0) cnt FROM  member where gender='0' group by gender 
+</select>
+
+<select id="femaleCount" resultType="Integer" parameterType="map">
+SELECT ifnull(count(gender),0) cnt FROM  member where gender='1' group by gender 
+</select>
+</mapper>
