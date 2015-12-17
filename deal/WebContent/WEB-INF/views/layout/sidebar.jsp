@@ -17,10 +17,11 @@ body.nav-sm ul.nav.child_menu{
 	width:180px;
 }
 .nav.side-menu> li.active > a{
-	color:#e51b13;
+	color:black;
 	font-weight: bold;
 	border:2px solid red;
 }
+
 </style>
 
 
@@ -28,7 +29,7 @@ body.nav-sm ul.nav.child_menu{
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="<%=cp%>/main.do" class="site_title" style="background: #ffffff"><img src="<%=cp %>/res/images/logosample.jpg" style="width:230px; height:55px; pull-left"></a>
+                        <a href="<%=cp%>/main.do" class="site_title" style="padding:0px;background: rgba(4, 63, 84, 0)"><img src="<%=cp %>/res/images/logo.png" style="width:230px; height:55px; pull-left"></a>
                     </div>
                     <div class="clearfix"></div>
 

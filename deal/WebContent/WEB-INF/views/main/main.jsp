@@ -432,7 +432,7 @@ color:rgb(0,0,0);
 
 
 </style>
-<div class="right_col" role="main" style="padding-left:0px;">
+<div class="right_col" role="main" style="padding-left:7px;">
 
 
 <!--대표이미지  -->
@@ -443,12 +443,12 @@ color:rgb(0,0,0);
       <div class="carousel-inner">
       
         <div class="item active">
-          <img src="<%=cp%>/res/images/sample.png">
+          <img src="<%=cp%>/res/images/s1.png">
 
         </div><!-- End Item -->
  
          <div class="item">
-          <img src="<%=cp%>/res/images/sample.png">
+          <img src="<%=cp%>/res/images/s2.png">
           
         </div><!-- End Item -->
         
@@ -563,7 +563,7 @@ color:rgb(0,0,0);
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </div>
-    <div class="list-group">
+    <div class="list-group" style="margin-bottom:0px;">
         <span href="#" class="list-group-item active" style="background: rgb(239, 57, 57); color: #ffffff;">
            딜러왕
             <span class="pull-right" id="slide-submenu">
@@ -590,7 +590,7 @@ color:rgb(0,0,0);
 
 
 
-<section class="section-white col-md-10 col-xs-12" style="padding-left:0px; paddign-right:5px;">
+<section class="section-white col-md-10 col-xs-12" style="padding-left:0px; padding-bottom:20px; paddign-right:5px;">
   <div class="container">
 
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -647,7 +647,7 @@ color:rgb(0,0,0);
 
 <!--콘텐츠  -->
 <div class="container"  >
-    <div class=" col-md-4 pull-left"  style="padding-left:1px;padding-right:2px;">
+    <div class=" col-md-4 pull-left"  style="padding-left:1px;padding-right:3px;">
         
         <c:forEach  var="dto" items="${MainDealList1}">
 
@@ -914,15 +914,17 @@ color:rgb(0,0,0);
         
     </div><!-- row -->
     
-     <div class="col-md-4" style="padding-left:1px;padding-right:2px;">
+     <div class=" col-md-4 pull-left"  style="padding-left:1px;padding-right:3px;">
         
         <c:forEach  var="dto" items="${MainDealList2}">
-        <div class=" col-xs-12 col-sm-12  col-md-12 " style="padding-left:0px;padding-right:0px;">
+
+        <div class="col-xs-12 col-sm-12  col-md-12"  style="padding-left:0px;padding-right:0px;">
             <div class="[ panel panel-default ] panel-google-plus" >
-                <div class="dropdown">
                   <!--CountDown  -->
-				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px;"  id="countdown${dto.num}">
+				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px; margin-bottom:2px;"  id="countdown${dto.num}">
   					</div><!-- /#Countdown Div -->
+                <div class="dropdown">
+              
   					
   					<script>
   					$(document).ready(function() {
@@ -984,13 +986,34 @@ color:rgb(0,0,0);
                         <li>#${dto.tag1}</li>
                     </ul>
                 </div>
-                <div class="panel-heading" style=" padding-bottom: 15px;" >
-                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}"  style="width:60px;height:70px;" />
+                <c:set var="success" value="0" />
+                      <c:forEach var="successdto" items="${DealSuccessList}">
+         		<c:if test="${dto.num==successdto.dealNum}"> 
+         			<c:set var="success" value="1" />
+                    </c:if>
+                    </c:forEach>
+                    
+                    
+                    <c:choose>
+    <c:when test="${success==1}">
+      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgb(239, 107, 57);">
+    </c:when>    
+    <c:otherwise>
+        <div class="panel-heading" style="padding-bottom: 15px;">
+    </c:otherwise>
+</c:choose>
+                    
+               
+                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" />
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
                 </div>
                 <div class="panel-body">
                     <a href="<%=cp%>/deal/article.do?num=${dto.num}"><p style="font-size:20px;">${dto.subject}<!--  <a href="http://bootsnipp.com/snippets/MaWrA">http://bootsnipp.com/snippets/MaWrA</a> --></p></a>
+           
+                  
+               
+  					
                     <%--  <c:forEach var="dealdto" items="${DealInList}">
                     <c:if test="${dto.num==dealdto.dealNum}">
                     <div>11111111</div>
@@ -1005,20 +1028,21 @@ color:rgb(0,0,0);
                     <button type="button" class="[ btn btn-default ]">
                         <span class="[ glyphicon glyphicon-share-alt ]"></span>
                     </button> -->
-                    
-                    
+  
+
     <div class="text-center">      
          <div class="" data-toggle="buttons">  
          <c:set var="badId" value="0" />
         <c:forEach var="dealdto" items="${DealInList}">
          
                     <c:if test="${dto.num==dealdto.dealNum}"> 
+                    
                   <c:set var="badId" value="1" />
-                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success ">
+                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>     
@@ -1027,34 +1051,73 @@ color:rgb(0,0,0);
                 
                     
                     <c:if test="${badId==0}">
-                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active">
+                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>   
             </c:if>
-                    
-
-        
-        
-           
            
         </div>
-   
-    
     
     </div>
-                    
-                    
-                     <span class="pull-right">
-                        <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i> 
+    
+    
+    
+    
+      <span class="pull-right">
+                      <a class="btn btn-default stat-item  btn-xs pull-right" style="font-size:25px; padding-bottom: 0px;padding-right:5px; ">
+                        <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;padding-left: 5px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i></a> 
                        <%--  <i id="dislike${dto.num}"  style="font-size: 30px;" onclick="disLike(${dto.num});" class="glyphicon glyphicon-thumbs-down"><div style="font-size: 25px;" id="dislike${dto.num}-bs3">4</div></i> --%> 
+           
                     </span>
+    
+
+    <c:if test="${sessionScope.member.businessNum>0}">
+    <div class="text-center">      
+         <div class="" data-toggle="buttons">  
+         <c:set var="badId" value="0" />
+        <c:forEach var="successdto" items="${DealSuccessList}">
+         
+                    <c:if test="${dto.num==successdto.dealNum}"> 
+                  <c:set var="badId" value="1" />
+                        <label id="success${dto.num}" onclick=" dealapprove('${dto.num}',0)" class="btn btn-md btn-success pull-right"  style="color:black;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> 승인완료
+            </label>
+              <label id="success${dto.num}" onclick="dealapprove('${dto.num}',1)" class="btn btn-md btn-danger active pull-right" style="background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);" >
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> 승인대기
+            </label>     
+               </c:if>
+                    </c:forEach>  
+                
+                    
+                    <c:if test="${badId==0}">
+                                <label onclick="dealapprove('${dto.num}',0)" class="btn btn-md btn-success active pull-right" style="color:black;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> 승인완료
+            </label>
+              <label onclick="dealapprove('${dto.num}',1)" class="btn btn-md btn-danger  pull-right" style="background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> 승인대기
+            </label>   
+            </c:if>
+           
+        </div>
+    
+    </div>
+    </c:if>
+
+                    
+                   
                     <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
-                </div>
+</div>
+                
+                
                 <div class="panel-google-plus-comment" style="padding:10px;">
                     <c:if test="${pdto.imageFilename==null}">
                    <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" /> 
@@ -1113,7 +1176,9 @@ color:rgb(0,0,0);
                 
             </div>
         </div>
-        </c:forEach>
+        </c:forEach>   
+        
+        
     </div><!-- row -->
     
     
@@ -1121,15 +1186,17 @@ color:rgb(0,0,0);
     
     
     
-       <div class="col-md-4" style="padding-left:1px;padding-right:2px;">
+       <div class=" col-md-4 pull-left"  style="padding-left:1px;padding-right:3px;">
         
         <c:forEach  var="dto" items="${MainDealList3}">
-        <div class=" col-xs-12 col-sm-12  col-md-12 " style="padding-left:0px;padding-right:0px;">
+
+        <div class="col-xs-12 col-sm-12  col-md-12"  style="padding-left:0px;padding-right:0px;">
             <div class="[ panel panel-default ] panel-google-plus" >
-                <div class="dropdown">
                   <!--CountDown  -->
-				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px;"  id="countdown${dto.num}">
+				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px; margin-bottom:2px;"  id="countdown${dto.num}">
   					</div><!-- /#Countdown Div -->
+                <div class="dropdown">
+              
   					
   					<script>
   					$(document).ready(function() {
@@ -1175,7 +1242,7 @@ color:rgb(0,0,0);
   				
   					});
   					</script>
-                    <!-- <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                   <!--  <span class="dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="[ glyphicon glyphicon-chevron-down ]"></span>
                     </span>
                     <ul class="dropdown-menu" role="menu">
@@ -1191,13 +1258,34 @@ color:rgb(0,0,0);
                         <li>#${dto.tag1}</li>
                     </ul>
                 </div>
-                <div class="panel-heading" style=" padding-bottom: 15px;" >
-                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" alt="Mouse0270"  style="width:60px;height:70px;" />
+                <c:set var="success" value="0" />
+                      <c:forEach var="successdto" items="${DealSuccessList}">
+         		<c:if test="${dto.num==successdto.dealNum}"> 
+         			<c:set var="success" value="1" />
+                    </c:if>
+                    </c:forEach>
+                    
+                    
+                    <c:choose>
+    <c:when test="${success==1}">
+      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgb(239, 107, 57);">
+    </c:when>    
+    <c:otherwise>
+        <div class="panel-heading" style="padding-bottom: 15px;">
+    </c:otherwise>
+</c:choose>
+                    
+               
+                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" />
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
                 </div>
                 <div class="panel-body">
                     <a href="<%=cp%>/deal/article.do?num=${dto.num}"><p style="font-size:20px;">${dto.subject}<!--  <a href="http://bootsnipp.com/snippets/MaWrA">http://bootsnipp.com/snippets/MaWrA</a> --></p></a>
+           
+                  
+               
+  					
                     <%--  <c:forEach var="dealdto" items="${DealInList}">
                     <c:if test="${dto.num==dealdto.dealNum}">
                     <div>11111111</div>
@@ -1212,58 +1300,96 @@ color:rgb(0,0,0);
                     <button type="button" class="[ btn btn-default ]">
                         <span class="[ glyphicon glyphicon-share-alt ]"></span>
                     </button> -->
-                    
-                    
+  
+
     <div class="text-center">      
          <div class="" data-toggle="buttons">  
          <c:set var="badId" value="0" />
         <c:forEach var="dealdto" items="${DealInList}">
          
                     <c:if test="${dto.num==dealdto.dealNum}"> 
+                    
                   <c:set var="badId" value="1" />
-                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success ">
+                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
-                <i class="fa fa-check"></i> Deal에 참여
+                <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i> Deal에 미참여
+                <i class="fa fa-check"></i> 미참여
             </label>     
                </c:if>
                     </c:forEach>  
                 
                     
                     <c:if test="${badId==0}">
-                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active">
+                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
-                <i class="fa fa-check"></i>참여
+                <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
-                <i class="fa fa-check"></i>미참여
+                <i class="fa fa-check"></i> 미참여
             </label>   
             </c:if>
-                    
-
-        
-        
-           
            
         </div>
-   
-    
     
     </div>
-                    
-                    
-                     <span class="pull-right">
-                        <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i> 
+    
+    
+    
+    
+      <span class="pull-right">
+                      <a class="btn btn-default stat-item  btn-xs pull-right" style="font-size:25px; padding-bottom: 0px;padding-right:5px; ">
+                        <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;padding-left: 5px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i></a> 
                        <%--  <i id="dislike${dto.num}"  style="font-size: 30px;" onclick="disLike(${dto.num});" class="glyphicon glyphicon-thumbs-down"><div style="font-size: 25px;" id="dislike${dto.num}-bs3">4</div></i> --%> 
-                       
+           
                     </span>
+    
+
+    <c:if test="${sessionScope.member.businessNum>0}">
+    <div class="text-center">      
+         <div class="" data-toggle="buttons">  
+         <c:set var="badId" value="0" />
+        <c:forEach var="successdto" items="${DealSuccessList}">
+         
+                    <c:if test="${dto.num==successdto.dealNum}"> 
+                  <c:set var="badId" value="1" />
+                        <label id="success${dto.num}" onclick=" dealapprove('${dto.num}',0)" class="btn btn-md btn-success pull-right"  style="color:black;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> 승인완료
+            </label>
+              <label id="success${dto.num}" onclick="dealapprove('${dto.num}',1)" class="btn btn-md btn-danger active pull-right" style="background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);" >
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> 승인대기
+            </label>     
+               </c:if>
+                    </c:forEach>  
+                
                     
+                    <c:if test="${badId==0}">
+                                <label onclick="dealapprove('${dto.num}',0)" class="btn btn-md btn-success active pull-right" style="color:black;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
+                <i class="fa fa-check"></i> 승인완료
+            </label>
+              <label onclick="dealapprove('${dto.num}',1)" class="btn btn-md btn-danger  pull-right" style="background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);">
+                <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
+                <i class="fa fa-check"></i> 승인대기
+            </label>   
+            </c:if>
+           
+        </div>
+    
+    </div>
+    </c:if>
+
+                    
+                   
                     <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
-                </div>
+</div>
+                
+                
                 <div class="panel-google-plus-comment" style="padding:10px;">
                     <c:if test="${pdto.imageFilename==null}">
                    <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" /> 
@@ -1322,7 +1448,9 @@ color:rgb(0,0,0);
                 
             </div>
         </div>
-        </c:forEach>
+        </c:forEach>   
+        
+        
     </div><!-- row -->
     
     

@@ -199,9 +199,9 @@ function sendLogin() {
 <!-- top navigation -->
             <div class="top_nav">
 
-                <div class="nav_menu">
+                <div class="nav_menu" style="height:55px;">
                     <nav class="" role="navigation">
-                        <div class="nav toggle" style="margin-bottom: 0px;">
+                        <div class="nav toggle" style="margin-bottom: 2px;">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
 

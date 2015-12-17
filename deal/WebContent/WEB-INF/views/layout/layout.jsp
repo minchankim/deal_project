@@ -19,7 +19,7 @@
    <script src="<%=cp%>/res/template/js/jquery.min.js"></script>
 
 <link href="<%=cp%>/res/template/css/bootstrap.min.css" rel="stylesheet">
-<link href="<%=cp%>/res/template/css/custom.css" rel="stylesheet">
+<link href="<%=cp%>/res/defaultTemplate/css/custom.css" rel="stylesheet">
 <link href="<%=cp%>/res/template/css/animate.min.css" rel="stylesheet">
 <link href="<%=cp%>/res/template/css/icheck/flat/green.css" rel="stylesheet">
 <link href="<%=cp%>/res/template/css/select/select2.min.css" rel="stylesheet">

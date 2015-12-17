@@ -87,7 +87,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 body {
-    background-color: rgb(255, 255, 255);
+  /*   background-color: rgb(255, 255, 255); */
     padding-top: 60px;
     padding-bottom: 30px;
 }
