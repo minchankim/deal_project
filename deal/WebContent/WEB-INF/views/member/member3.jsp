@@ -446,6 +446,30 @@ $('.btn-success>input').click(function() {/*gender  */
                             </div>
                           </div>
 
+						 <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">사업자번호</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                  <input name="businessNum" autocomplete="on" type="text" placeholder="BusinessNum" class="form-control" required>
+                                  <span class="input-group-addon label-danger"><i class="fa fa-user fa-lg text-white"></i></span>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="industry">직종</label>
+                            <div class="col-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon label-danger"><i class="fa fa-briefcase fa-lg text-white" required></i></span>
+                                <select id="industry" class="form-control">
+                                  <option value="" selected disabled>Choose One:</option>
+                                  <option value="Accountancy">Accountancy</option>
+                                  <option value="Agricultural">Agricultural</option>
+                                  <option value="Automotive">Automotive</option>
+                                </select>
+                              </div>
+                              </div>
+                            </div>
                         
                             
                             <p style="display:inline;" class="small col-xs-9 col-sm-offset-2 col-sm-7 text-SI-grey">this is a block of copy for you to write some blurb.</p>

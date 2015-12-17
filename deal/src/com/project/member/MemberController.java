@@ -41,12 +41,25 @@ public class MemberController {
 	@Autowired
 	private LetterService lserviere;
 	
+	@RequestMapping(value="/member/memberSel")
+	public ModelAndView memberSel() throws Exception{
+		ModelAndView mav = new ModelAndView(".member.memberSel");
+		return mav;
+	}
 	
+
 	
 	@RequestMapping(value="/member/member", method=RequestMethod.GET)
 	public ModelAndView memberForm() throws	Exception{
 		
 		ModelAndView mav = new ModelAndView(".member.member");
+
+		return mav;
+	}
+	@RequestMapping(value="/member/member3", method=RequestMethod.GET)
+	public ModelAndView memberForm3() throws	Exception{
+		
+		ModelAndView mav = new ModelAndView(".member.member3");
 
 		return mav;
 	}
