@@ -74,6 +74,18 @@ $(document).ready(function(){
 		clickEvent = false;
 	});
 })
+$(document).click(function(){
+	 var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+	    var itemlength = $('#myCarousel .item').length;
+	    var triggerheight = Math.round(boxheight/itemlength+1);
+		$('#myCarousel .list-group-item').outerHeight(triggerheight);
+});
+$(window).on('resize', function(){
+	 var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+	    var itemlength = $('#myCarousel .item').length;
+	    var triggerheight = Math.round(boxheight/itemlength+1);
+		$('#myCarousel .list-group-item').outerHeight(triggerheight);
+});
 $(window).load(function() {
     var boxheight = $('#myCarousel .carousel-inner').innerHeight();
     var itemlength = $('#myCarousel .item').length;
@@ -421,11 +433,11 @@ color:rgb(0,0,0);
 }
 
 </style>
-<div class="right_col" role="main">
+<div class="right_col" role="main" style="padding-left:0px;">
 
 
 <!--대표이미지  -->
-<div class="col-xs-12 col-sm-12 col-md-10" style="padding-bottom:0px;padding-left:0px;padding-right:0px;">
+<div class="col-xs-12 col-sm-12 col-md-10" style="padding-bottom:0px;padding-left:0px;padding-right:0px; margin-bottom:5px;">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
       <!-- Wrapper for slides -->
@@ -468,20 +480,20 @@ color:rgb(0,0,0);
       </div><!-- End Carousel Inner -->
 
 
-      <ul class="list-group col-sm-4"> <!-- 이거 슬라이드 내용 바뀐거고  -->
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;">뚜레쥬르 케익교환권
+      <ul class="list-group col-md-4 col-sm-4 col-xs-1" style="margin-bottom:0px;"> <!-- 이거 슬라이드 내용 바뀐거고  -->
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">뚜레쥬르 케익교환권
       <br><span style="font-size: 13pt;">20%</span>
       </li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;">리트머스/엠할리데이
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">리트머스/엠할리데이
        <br><span style="font-size: 13pt;">80%</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;">쉬즈미스 외 겨울의류
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">쉬즈미스 외 겨울의류
        <br><span style="font-size: 13pt;">90%</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;">금강제화 연말선물대전
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">금강제화 연말선물대전
        <br><span style="font-size: 13pt;">57%</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;">더베이지 아동 양말/의류
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">더베이지 아동 양말/의류
        <br><span style="font-size: 13pt;">30%</span>
        </li>
     </ul>
@@ -501,8 +513,8 @@ color:rgb(0,0,0);
 
 <!--대표이미지  -->
 
-
-<div class="col-xs-6 col-sm-6 col-md-2 pull-left " >
+<div class="container">
+<div class="col-xs-6 col-sm-6 col-md-2 pull-left">
 
 
 	<div class="row">
@@ -576,7 +588,6 @@ color:rgb(0,0,0);
 </div>
 	</div>
 </div>
-
 
 
 
@@ -675,6 +686,12 @@ color:rgb(0,0,0);
 </div>
 	</div>
 </div>
+
+
+</div>
+
+
+
 
 
 
