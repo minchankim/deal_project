@@ -201,7 +201,7 @@
      <br>   <br>
   <span class="price-tax">즉시 구매가: ₩${dealArticle.instantPrice}</span>
     <button class="btn btn-primary" type="button">바로구매하기</button>
-    <div>${dealArticle.category1}</div>
+    <%-- <div>${dealArticle.category1}</div>
     <div>${dealArticle.category2}</div>
     <div>${dealArticle.approveCheck}</div>
     <div>${dealArticle.start_date}</div>
@@ -212,7 +212,7 @@
     <div>${dealArticle.region2}</div>
     <div>${dealArticle.tag1}</div>
     <div>${dealArticle.tag2}</div>
-    <div>${dealPhoto[9]}</div>
+    <div>${dealPhoto[9]}</div> --%>
     <br> <br> <br> <br> <br> <br> <br> <br> <br>
     <div class="product_social">
                                             <ul class="list-inline">
@@ -273,7 +273,7 @@
                         
                             
                             <!--gender  -->
-                            <div class=" col-md-5 col-sm-12 col-xs-12">
+                            <div class=" col-md-7 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
                                     <h2>Pie Graph</h2>
@@ -310,7 +310,7 @@
                         
                                     
                                     <!--deal status  -->
-                              <div class="x_panel" style="">
+                            <!--   <div class="x_panel" style="">
                                 <div class="x_title">
                                     <h2>Grid Slider</h2>
                                     <ul class="nav navbar-right panel_toolbox">
@@ -359,7 +359,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                             -->
                             
                            
                                     <!--deal status  -->
