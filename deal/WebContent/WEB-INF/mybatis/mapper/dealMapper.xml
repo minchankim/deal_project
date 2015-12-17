@@ -131,6 +131,30 @@ INSERT  INTO dealsuccess(dealNum, userId,businessNum) VALUES (#{num},#{userId},#
 	          parameterType="String">
 		SELECT SUM(alarmNotice) FROM dealjoin WHERE userId=#{userId}
 	</select>
+	
+	
+		<update id="updateApprove" parameterType="com.project.deal.Deal">
+	update deal set approveCheck=1 where num =#{num}
+
+	</update> 
+	
+	<update id="updateApproveAlarm" parameterType="com.project.deal.Deal">
+	update dealjoin set successNotice=1 where dealNum =#{num}
+	</update> 
+	
+	
+		<update id="updateApproveFail" parameterType="com.project.deal.Deal">
+	update deal set approveCheck=0 where num =#{num}
+	</update> 
+	
+	<update id="updateApproveFailAlarm" parameterType="com.project.deal.Deal">
+	update dealjoin set successNotice=0 where dealNum =#{num}
+	</update> 
+	
+	<select id="listDealSuccessAlarm" resultType="com.project.deal.Deal" 
+	          parameterType="String">
+		SELECT * FROM deal WHERE num IN(select dealNum from dealjoin WHERE successNotice=1 AND userId=#{userId})
+	</select>
 
 
 </mapper>

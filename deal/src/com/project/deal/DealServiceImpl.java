@@ -208,7 +208,10 @@ public class DealServiceImpl implements DealService{
 			
 	
 				result=dao.insertData("deal.updateDealSuccess", dto);
-	
+				dao.insertData("deal.updateApprove", dto);
+				
+				dao.insertData("deal.updateApproveAlarm", dto);
+			
 		} catch(Exception e) {
 			System.out.println(e.toString());
 		}
@@ -221,11 +224,26 @@ public class DealServiceImpl implements DealService{
 		try{
 	
 				result=dao.deleteData("deal.updateDealFail", dto);
+				dao.insertData("deal.updateApproveFail", dto);
+				dao.insertData("deal.updateApproveFailAlarm", dto);
 	
 		} catch(Exception e) {
 			System.out.println(e.toString());
 		}
 		return result;
+	}
+
+	@Override
+	public List<Deal> listDealSuccessAlarm(String userId) {
+List<Deal> list=null;
+		
+		try {
+			
+			list=dao.getListData("deal.listDealSuccessAlarm", userId);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return list;
 	}
 
 

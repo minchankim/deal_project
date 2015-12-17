@@ -385,20 +385,25 @@ function sendLogin() {
                                 </a>
                                 
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
+                                   
+                              
+                                       <c:forEach  var="dto" items="${DealSuccessListAlarm}">
                                    <li data-toggle="modal">
                                         <a href="#success" data-toggle="modal">
                                             <span class="image">
                                        <img class="media-object img-circle" src="<%=cp%>/res/images/mac1.jpg">
                                     		</span>
-                                            <span>
-                                        <span>딜에 성공하셨습니다!</span>
-                                            <span class="time">3 mins ago</span>
-                                            </span>
+                                          
+                                        <span style="word-break:break-all;width:200;text-overflow:ellipsis; overflow:hidden;">${dto.subject}</span> 
+                                            <span class="time" >3 min</span>
+                                         
                                             <span class="message">
                                        			확인하기
                                     </span>
                                         </a>
                                     </li>
+                                    </c:forEach>
+                                    
                                     <li data-toggle="modal" >
                                         <a href="#success" data-toggle="modal">
                                             <span class="image">

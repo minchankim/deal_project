@@ -58,12 +58,12 @@
    
     	 var photo = $("#"+id).html()
   
-     p1.outerHTML='<div class="product-image" id="p1">'+photo+'</div>' 
-      
- 
+     p1.outerHTML='<div class="product-image col-md-7 col-sm-2 col-xs-2" id="p1">'+photo+'</div>' 
+     e.preventDefault();
+     return false;
     }
     
- 
+  
    
 
     </script>
@@ -71,80 +71,60 @@
    <div class="right_col" role="main">
    
    <div class="">
-                    <div class="page-title">
-                        <div class="title_left">
-                            <h3>DEAL 상세 :: DEAL Information Page</h3>
-                        </div>
-
-                        <div class="title_right">
-                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="clearfix"></div>
 
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>page design</h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a href="#"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Settings 1</a>
-                                                </li>
-                                                <li><a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
+                                 
+                      
+					<h2>	${dealArticle.subject}</h2>
+                		
+             
+                           
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
 
                                     <div class="container">
+                                    <div>
                                         <div class="product-image col-md-7" id="p1">
                                             ${dealPhoto[0]}
                                         </div>
+                                        </div>
                                         <div class="product_gallery">
-                                            <a onclick="test(this.id)" id="p2">
+                                         <a href="JavaScript:void()"  class="closeLink" onclick="test(this.id)" id="p2">
+                                                 ${dealPhoto[0]}
+                                            </a>
+                                            <a href="JavaScript:void()" class="closeLink" onclick="test(this.id)" id="p3">
                                                  ${dealPhoto[1]}
                                             </a>
-                                            <a onclick="test(this.id)" id="p3">
+                                            <a  href="JavaScript:void()"  class="closeLink" onclick="test(this.id)" id="p4">
                                                ${dealPhoto[2]}
                                             </a>
-                                            <a onclick="test(this.id)" id="p4">
+                                            <a href="JavaScript:void()"  class="closeLink" onclick="test(this.id)" id="p5">
                                              ${dealPhoto[3]}
                                             </a>
-                                            <a onclick="test(this.id)" id="p5">
+                                            <a href="JavaScript:void()" class="closeLink"  onclick="test(this.id)" id="p6">
                                                 ${dealPhoto[4]}
                                             </a>
-                                            <a onclick="test(this.id)" id="p6">
-                                               ${dealPhoto[5]}
+                                            <a href="JavaScript:void()" class="closeLink"  onclick="test(this.id)" id="p7">
+                                               ${dealPhoto[5]} 
                                             </a>
-                                            <a onclick="test(this.id)" id="p7">
+                                            <a href="JavaScript:void()"  class="closeLink" onclick="test(this.id)" id="p8">
                                                ${dealPhoto[6]}
                                             </a>
-                                            <a onclick="test(this.id)" id="p8">
+                                            <a href="JavaScript:void()" class="closeLink"  onclick="test(this.id)" id="p9">
                                                ${dealPhoto[7]}
                                             </a>
-                                            <a onclick="test(this.id)" id="p9">
+                                            <a href="JavaScript:void()" class="closeLink"  onclick="test(this.id)" id="p10">
                                                ${dealPhoto[8]}
                                             </a>
-                                            <a onclick="test(this.id)" id="p10">
+                                           <%--  <a href="#"  onclick="test(this.id)" id="p10">
                                                ${dealPhoto[9]}
-                                            </a>
+                                            </a> --%>
                                         </div>
                                     </div>	
 

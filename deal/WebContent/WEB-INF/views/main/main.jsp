@@ -707,11 +707,11 @@ color:rgb(0,0,0);
 
 <!--콘텐츠  -->
 <div class="container"  >
-    <div class="row col-md-4" >
+    <div class=" col-md-4 pull-left"  style="padding-left:1px;padding-right:2px;">
         
         <c:forEach  var="dto" items="${MainDealList1}">
 
-        <div class="[ col-xs-12 col-sm-12  col-md-12 ]"  >
+        <div class="col-xs-12 col-sm-12  col-md-12"  style="padding-left:0px;padding-right:0px;">
             <div class="[ panel panel-default ] panel-google-plus" >
                   <!--CountDown  -->
 				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px; margin-bottom:2px;"  id="countdown${dto.num}">
@@ -904,7 +904,7 @@ color:rgb(0,0,0);
     
     </div>
     </c:if>
-             
+
                     
                    
                     <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
@@ -974,10 +974,10 @@ color:rgb(0,0,0);
         
     </div><!-- row -->
     
-     <div class="row col-md-4" >
+     <div class="col-md-4" style="padding-left:1px;padding-right:2px;">
         
         <c:forEach  var="dto" items="${MainDealList2}">
-        <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
+        <div class=" col-xs-12 col-sm-12  col-md-12 " style="padding-left:0px;padding-right:0px;">
             <div class="[ panel panel-default ] panel-google-plus" >
                 <div class="dropdown">
                   <!--CountDown  -->
@@ -1181,10 +1181,10 @@ color:rgb(0,0,0);
     
     
     
-       <div class="row col-md-4" >
+       <div class="col-md-4" style="padding-left:1px;padding-right:2px;">
         
         <c:forEach  var="dto" items="${MainDealList3}">
-        <div class="[ col-xs-12 col-sm-12 <!-- col-md-12 -->]" >
+        <div class=" col-xs-12 col-sm-12  col-md-12 " style="padding-left:0px;padding-right:0px;">
             <div class="[ panel panel-default ] panel-google-plus" >
                 <div class="dropdown">
                   <!--CountDown  -->

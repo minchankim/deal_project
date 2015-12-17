@@ -49,6 +49,8 @@ public class MainController {
 			List<Deal> DealInList = dservice.listDealIn(info.getUserId());
 			mav.addObject("DealInList", DealInList);
 			
+			List<Deal> DealSuccessListAlarm = dservice.listDealSuccessAlarm(info.getUserId());
+			mav.addObject("DealSuccessListAlarm", DealSuccessListAlarm);
 		
 		} catch (Exception e) {
 			System.out.println(e.toString()+"로그인 안하면 생기는 NULL이니 상관 ㄴㄴMAINCONTROLLER임");
@@ -68,7 +70,8 @@ public class MainController {
 			List<Deal> DealSuccessList = dservice.listDealSuccess();
 			mav.addObject("DealSuccessList", DealSuccessList);
 		 
-		
+			
+			
 	
 		mav.addObject("MainDealList", mainList);
 		

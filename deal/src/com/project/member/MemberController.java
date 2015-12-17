@@ -135,6 +135,8 @@ public class MemberController {
 		info.setMyDealTotal(dservice.readDealJoinCount(userId));
 		info.setBusinessNum(dto.getBusinessNum());
 		
+		
+		
 	
 		Photo pdto = pservice.readPhoto(dto.getUserId());
 
