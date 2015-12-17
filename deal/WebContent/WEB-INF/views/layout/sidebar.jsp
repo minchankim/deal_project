@@ -60,7 +60,7 @@ body.nav-sm ul.nav.child_menu{
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-github-alt"></i> 뷰티 <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-heart"></i> 뷰티 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="<%=cp%>/deal/skinBeauty.do">스킨케어</a>
                                         </li>
