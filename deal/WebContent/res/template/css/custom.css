@@ -769,8 +769,9 @@ li.current-page a {
     overflow: hidden;
     font-weight: 400;
     font-size: 22px;
+    font-weight:bold;
+    text-align:center;
     width: 100%;
-    color: #ECF0F1 !important;
     margin-left: 0 !important;
     line-height: 59px;
     display: block;
