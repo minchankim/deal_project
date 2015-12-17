@@ -506,6 +506,42 @@ public class DealController {
 			PrintWriter out=resp.getWriter();
 			out.print(job.toString());
 		}
+		
+		
+
+		@RequestMapping(value="/deal/successListAlarm")
+		public ModelAndView successListAlarm(
+				@RequestParam(value="userId") String userId
+				) throws Exception {
+			
+
+			
+			Map<String, Object> map=new HashMap<String, Object>();
+			map.put("userId", userId);
+			
+
+			List<Deal> sucdealList=service.listDealSuccessAlarm(userId);
+			
+			// 엔터를 <br>
+			Iterator<Deal> it=sucdealList.iterator();
+			int listNum, n=0;
+			while(it.hasNext()) {
+				Deal dto=it.next();
+				/*dto.setContent(dto.getContent().replaceAll("\n", "<br>"));*/
+				n++;
+			}
+			
+			// 페이징처리(인수2개 짜리 js로 처리)
+	
+			ModelAndView mav=new ModelAndView("layout/SuccessDealList");
+
+			// jsp로 넘길 데이터
+			mav.addObject("sucdealList", sucdealList);
+
+			
+			return mav;
+		}
+	
 	
 	
 }

@@ -428,6 +428,9 @@ color:rgb(0,0,0);
  /*  text-align: center; */
 }
 
+
+
+
 </style>
 <div class="right_col" role="main" style="padding-left:0px;">
 
@@ -587,104 +590,41 @@ color:rgb(0,0,0);
 
 
 
-<div class="col-xs-6 col-sm-6 col-md-3 pull-rigt " margin-right:5px;">
+<section class="section-white col-md-10 col-xs-12" style="padding-left:0px; paddign-right:5px;">
+  <div class="container">
 
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
 
-	<div class="row">
-		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
-    <div class="mini-submenu">
-        <span class="icon-bar"></span>	
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="<%=cp%>/res/images/ttt.png">
+        </div>
+        <div class="item">
+            <img src="<%=cp%>/res/images/ttt2.png">
+        </div>
+        <div class="item">
+             <img src="<%=cp%>/res/images/ttt3.png">
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
     </div>
-    <div class="list-group">
-        <span  href="#" class="list-group-item active" style="color:white;background-color:rgb(239, 107, 57);">
-           월간TOP3
-            <span class="pull-right" id="slide-submenu">
-                <i class="fa fa-times"></i>
-            </span>
-        </span>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-comment-o"></i> 1.김민찬 68%
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-search"></i> 2.비 22%
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-user"></i> 3.김태희 1%
-         </a>
-      
-    </div>        
-</div>
-	</div>
-</div>
 
-<div class="col-xs-6 col-sm-6 col-md-3 pull-rigt "  style="margin-left:5px; margin-right:5px;">
-
-
-	<div class="row">
-		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
-    <div class="mini-submenu">
-        <span class="icon-bar"></span>	
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </div>
-    <div class="list-group">
-        <span href="#" class="list-group-item active" style="color:white;background-color:rgb(239, 107, 57);">
-           	주간TOP3
-            <span class="pull-right" id="slide-submenu">
-                <i class="fa fa-times"></i>
-            </span>
-        </span>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-comment-o"></i> 1.김민찬 68%
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-search"></i> 2.비 22%
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-user"></i> 3.김태희 1%
-         </a>
-     
-    </div>        
-</div>
-	</div>
-</div>
-
-<div class="col-xs-6 col-sm-6 col-md-3 pull-rigt " style=" margin-right:5px;">
-
-
-	<div class="row">
-		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
-    <div class="mini-submenu">
-        <span class="icon-bar"></span>	
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </div>
-    <div class="list-group">
-        <span href="#" class="list-group-item active" style="color:white;background-color:rgb(239, 107, 57);">
-           	최다클릭TOP3
-            <span class="pull-right" id="slide-submenu">
-                <i class="fa fa-times"></i>
-            </span>
-        </span>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-comment-o"></i> 1.김민찬 68%
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-search"></i> 2.비 22%
-        </a>
-        <a href="#" class="list-group-item">
-            <i class="fa fa-user"></i> 3.김태희 1%
-         </a>
-     
-    </div>        
-</div>
-	</div>
-</div>
-
-
-</div>
+  </div>
+</section>
 
 
 

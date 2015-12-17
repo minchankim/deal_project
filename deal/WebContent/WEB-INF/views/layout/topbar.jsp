@@ -177,9 +177,20 @@ function sendLogin() {
     f.action = "<%=cp%>/member/login.do";
     f.submit();
 }
-    
+    function ttt(){
+    	
+		var userid='${sessionScope.member.userId}';
+    	
+  
+    	
+    	 var url="<%=cp%>/deal/successListAlarm.do";
+    	$.post(url, {userId:userid}, function(data){
+    	  $("#sucDealList").html(data);  
+    	}); 
+    }
 
     
+
 
 </script>
 
@@ -240,7 +251,7 @@ function sendLogin() {
 						</label>
 					</div> <!-- /.checkbox -->
 					<label style="padding-top:5px;" class="pull-right">
-							 <a  href="<%=cp%>/member/memberSel.do">회원가입</a>
+							 <a  href="<%=cp%>/member/member.do">회원가입</a>
 						</label>
 				</form>
 				
@@ -378,54 +389,17 @@ function sendLogin() {
 							
 							
 							<!-- 알림 -->
-                            <li style="padding:7px;"role="presentation" class="dropdown">
+                            <li style="padding:7px;"role="presentation" class="dropdown" onclick="ttt()">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-paper-plane fa-5x"></i>
                                     <span class="badge bg-green">2</span>
                                 </a>
                                 
-                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
+                                <ul id="sucDealList" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
                                    
                               
-                                       <c:forEach  var="dto" items="${DealSuccessListAlarm}">
-                                   <li data-toggle="modal">
-                                        <a href="#success" data-toggle="modal">
-                                            <span class="image">
-                                       <img class="media-object img-circle" src="<%=cp%>/res/images/mac1.jpg">
-                                    		</span>
-                                          
-                                        <span style="word-break:break-all;width:200;text-overflow:ellipsis; overflow:hidden;">${dto.subject}</span> 
-                                            <span class="time" >3 min</span>
-                                         
-                                            <span class="message">
-                                       			확인하기
-                                    </span>
-                                        </a>
-                                    </li>
-                                    </c:forEach>
+                                      
                                     
-                                    <li data-toggle="modal" >
-                                        <a href="#success" data-toggle="modal">
-                                            <span class="image">
-                                       <img class="media-object img-circle" src="<%=cp%>/res/images/prod1.jpg">
-                                    		</span>
-                                            <span>
-                                        <span>딜에 성공하셨습니다.</span>
-                                            <span class="time">3 mins ago</span>
-                                            </span>
-                                            <span class="message">
-                                       			확인하기
-                                    </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="text-center">
-                                            <a>
-                                                <strong><a href="inbox.html">ALL</strong>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    </li>
                                 </ul>
                             </li><!-- end 알림 -->
                       
