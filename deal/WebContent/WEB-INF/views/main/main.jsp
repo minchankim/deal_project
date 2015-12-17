@@ -298,49 +298,45 @@ function dealjoin(Num,mode){
 		}
 	});
 }
-/* $('[id^=detail-]').hide(); */
-$(document).ready(function() {
-	/* var target_date = new Date('12, 31, 2016').getTime();
-	 
-	// variables for time units
-	var days, hours, minutes, seconds;
-	 
-	// get tag element
-	var countdown = document.getElementById('countdown');
-	 
-	// update the tag with id "countdown" every 1 second
-	setInterval(function () {
-	 
-	    // find the amount of "seconds" between now and target
-	    var current_date = new Date().getTime();
-	    var seconds_left = (target_date - current_date) / 1000;
-	 
-	    // do some time calculations
-	    days = parseInt(seconds_left / 86400);
-	    seconds_left = seconds_left % 86400;
-	     
-	    hours = parseInt(seconds_left / 3600);
-	    seconds_left = seconds_left % 3600;
-	     
-	    minutes = parseInt(seconds_left / 60);
-	    seconds = parseInt(seconds_left % 60);
-	     
-	    // format countdown string + set tag value
-	    countdown.innerHTML = 
-	      '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px;" class="days">' 
-	    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+days+'</span>' 
-	    + ' <b>Days</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="hours">' 
-	    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ hours +'</span>' 
-	    + ' <b>Hours</b></span> <span style="font-size:5p	x;color:rgba(229, 19, 19, 0.72);" class="minutes">'
-	    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:5px;">'
-	 	+ '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+minutes+'</span>'  
-	    + ' <b>Minutes</b></span> <span style="font-size:5px;color:rgba(229, 19, 19, 0.72);" class="seconds">' 
-	    + '<span style="color:rgba(229, 19, 19, 0.72);font-size:20px;">'+ seconds +'</span>'  
-	    + ' <b>Seconds</b></span>';  
-	 
-	}, 1000); */
+
+
+function dealapprove(Num,mode){
+	 var params="dealNum="+Num;
+	 	params+="&mode="+mode;
+
+	 	$.ajax({
+			type:"POST"
+			,url:"<%=cp%>/deal/dealSuccess.do"
+			,data:params
+			,dataType:"json"
+			,success:function(data) {
+				
+				var state=data.state;
+				if(state=="true") {
+					 if (!count) count = 0;
+					 count++;
+					countLike(id,count); 
+				   
+				} else if(state=="false") {
+					alert("딜 취소에대한 권한이 없습니다 !!!");
+				
+					 $('#success'+Num).addClass("active"); 
+				
+					return false;
+				} else if(state=="loginFail") {
+					alert("로그인하세여");
+					return false;
+				}else{
+					alert("로그인해");
+				}
+			}
+			,error:function(e) {
+				alert(e.responseText);
+			}
+		});
 	
-}); 
+	
+}
 
 
  
@@ -714,12 +710,14 @@ color:rgb(0,0,0);
     <div class="row col-md-4" >
         
         <c:forEach  var="dto" items="${MainDealList1}">
+
         <div class="[ col-xs-12 col-sm-12  col-md-12 ]"  >
             <div class="[ panel panel-default ] panel-google-plus" >
-                <div class="dropdown">
-                    <!--CountDown  -->
-				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px;"  id="countdown${dto.num}">
+                  <!--CountDown  -->
+				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px; margin-bottom:2px;"  id="countdown${dto.num}">
   					</div><!-- /#Countdown Div -->
+                <div class="dropdown">
+              
   					
   					<script>
   					$(document).ready(function() {
@@ -781,7 +779,24 @@ color:rgb(0,0,0);
                         <li>#${dto.tag1}</li>
                     </ul>
                 </div>
-                <div class="panel-heading" style=" padding-bottom: 15px;" >
+                <c:set var="success" value="0" />
+                      <c:forEach var="successdto" items="${DealSuccessList}">
+         		<c:if test="${dto.num==successdto.dealNum}"> 
+         			<c:set var="success" value="1" />
+                    </c:if>
+                    </c:forEach>
+                    
+                    
+                    <c:choose>
+    <c:when test="${success==1}">
+      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgb(239, 107, 57);">
+    </c:when>    
+    <c:otherwise>
+        <div class="panel-heading" style="padding-bottom: 15px;">
+    </c:otherwise>
+</c:choose>
+                    
+               
                     <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" />
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
@@ -814,12 +829,13 @@ color:rgb(0,0,0);
         <c:forEach var="dealdto" items="${DealInList}">
          
                     <c:if test="${dto.num==dealdto.dealNum}"> 
+                    
                   <c:set var="badId" value="1" />
-                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success ">
+                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active">
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>     
@@ -828,11 +844,11 @@ color:rgb(0,0,0);
                 
                     
                     <c:if test="${badId==0}">
-                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active">
+                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger ">
+              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>   
@@ -846,7 +862,7 @@ color:rgb(0,0,0);
     
     
       <span class="pull-right">
-                      <a class="btn btn-default stat-item  btn-xs" style="font-size:25px; padding-bottom: 0px;padding-right:5px; ">
+                      <a class="btn btn-default stat-item  btn-xs pull-right" style="font-size:25px; padding-bottom: 0px;padding-right:5px; ">
                         <i id="like${dto.num}" style="font-size: 30px; backgoround-color:red;" onclick="Like(${dto.num},1);" class="glyphicon glyphicon-thumbs-up"><div style="font-size: 25px;padding-left: 5px;" id="like${dto.num}-bs3" >${dto.countLike}</div></i></a> 
                        <%--  <i id="dislike${dto.num}"  style="font-size: 30px;" onclick="disLike(${dto.num});" class="glyphicon glyphicon-thumbs-down"><div style="font-size: 25px;" id="dislike${dto.num}-bs3">4</div></i> --%> 
            
@@ -857,15 +873,15 @@ color:rgb(0,0,0);
     <div class="text-center">      
          <div class="" data-toggle="buttons">  
          <c:set var="badId" value="0" />
-        <c:forEach var="dealdto" items="${DealInList}">
+        <c:forEach var="successdto" items="${DealSuccessList}">
          
-                    <c:if test="${dto.num==dealdto.dealNum}"> 
+                    <c:if test="${dto.num==successdto.dealNum}"> 
                   <c:set var="badId" value="1" />
-                        <label onclick="<%-- dealjoin('${dto.num}',0) --%>" class="btn btn-md btn-success pull-right"  style="color:black;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
+                        <label id="success${dto.num}" onclick=" dealapprove('${dto.num}',0)" class="btn btn-md btn-success pull-right"  style="color:black;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 승인완료
             </label>
-              <label onclick="<%-- dealjoin('${dto.num}',1) --%>" class="btn btn-md btn-danger active pull-right" style="background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);" >
+              <label id="success${dto.num}" onclick="dealapprove('${dto.num}',1)" class="btn btn-md btn-danger active pull-right" style="background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);" >
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 승인대기
             </label>     
@@ -874,11 +890,11 @@ color:rgb(0,0,0);
                 
                     
                     <c:if test="${badId==0}">
-                                <label onclick="<%-- dealjoin('${dto.num}',0) --%>" class="btn btn-md btn-success active pull-right" style="color:black;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
+                                <label onclick="dealapprove('${dto.num}',0)" class="btn btn-md btn-success active pull-right" style="color:black;background-color:rgba(255, 220, 104, 0.84);border-color:rgba(255, 255, 255, 0);">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 승인완료
             </label>
-              <label onclick="<%-- dealjoin('${dto.num}',1) --%>" class="btn btn-md btn-danger  pull-right" style="background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);">
+              <label onclick="dealapprove('${dto.num}',1)" class="btn btn-md btn-danger  pull-right" style="background-color:rgba(85, 85, 85, 0.84);border-color:rgba(255, 255, 255, 0);">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 승인대기
             </label>   
@@ -954,6 +970,8 @@ color:rgb(0,0,0);
             </div>
         </div>
         </c:forEach>   
+        
+        
     </div><!-- row -->
     
      <div class="row col-md-4" >

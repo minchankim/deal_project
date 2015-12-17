@@ -99,15 +99,16 @@ INSERT  INTO dealjoin(dealNum, userId) VALUES (#{num},#{userId});
 	
 	
 	<insert id="updateDealSuccess" parameterType="com.project.deal.Deal">
-INSERT  INTO dealsuccess(dealNum, userId) VALUES (#{num},#{userId});
+INSERT  INTO dealsuccess(dealNum, userId,businessNum) VALUES (#{num},#{userId},#{businessNum});
 	</insert>
+	
 	<delete id = "updateDealFail" parameterType="com.project.deal.Deal">
-	DELETE FROM dealsuccess WHERE userId=#{userId} AND dealNum=#{num}
+	DELETE FROM dealsuccess WHERE userId=#{userId} AND dealNum=#{num} AND businessNum=#{businessNum}
 </delete>
 
 	<select id="listDealSuccess" resultType="com.project.deal.Deal" 
 	          parameterType="String">
-		SELECT dealNum,userId FROM dealjoin WHERE userId=#{userId}
+		SELECT dealNum,userId,created,businessNum FROM dealsuccess
 	</select>
 	
 	

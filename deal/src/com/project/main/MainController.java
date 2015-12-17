@@ -43,13 +43,19 @@ public class MainController {
 		 Map<String, Object> map = new HashMap<String, Object>();
 		 List<Deal> mainList = service.listDeal(map);
 		 ModelAndView mav = new ModelAndView(".mainLayout");
+		 
 		try {
 			
-			 List<Deal> DealInList = dservice.listDealIn(info.getUserId());
-				mav.addObject("DealInList", DealInList);
+			List<Deal> DealInList = dservice.listDealIn(info.getUserId());
+			mav.addObject("DealInList", DealInList);
+			
+		
 		} catch (Exception e) {
 			System.out.println(e.toString()+"로그인 안하면 생기는 NULL이니 상관 ㄴㄴMAINCONTROLLER임");
 		}
+		
+		List<Deal> DealApproveList = dservice.listDealSuccess();
+		mav.addObject("DealApproveList", DealApproveList);
 		
 			map.put("start", 0);
 		 List<Deal> mainList1 = service.listDeal2(map);
@@ -59,7 +65,8 @@ public class MainController {
 		 List<Deal> mainList3 = service.listDeal2(map);
 		 
 		
-		 
+			List<Deal> DealSuccessList = dservice.listDealSuccess();
+			mav.addObject("DealSuccessList", DealSuccessList);
 		 
 		
 	

@@ -16,9 +16,20 @@ public class Deal {
 		private int countLike,smillarNum;
 		private int dealmonth,avgprice;
 		private int alarmNotice;
+		private int businessNum;
+		
+		
+		
+		
 		
 		
 	
+		public int getBusinessNum() {
+			return businessNum;
+		}
+		public void setBusinessNum(int businessNum) {
+			this.businessNum = businessNum;
+		}
 		public int getAlarmNotice() {
 			return alarmNotice;
 		}

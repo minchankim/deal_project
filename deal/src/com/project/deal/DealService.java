@@ -22,6 +22,11 @@ public interface DealService {
 	public int updateDealOut(Deal dto);
 	public List<Deal> listDealIn(String userId);
 	
+	public List<Deal> listDealSuccess();
+	public int updateDealSuccess(Deal dto);
+	public int updateDealFail(Deal dto);
+	
+	
 	public int readDealJoinCount(String userId);
 	
 }
