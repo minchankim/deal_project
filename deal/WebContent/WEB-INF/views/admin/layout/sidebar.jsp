@@ -6,13 +6,11 @@
    String cp = request.getContextPath();
 %>
 
-
-
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="<%=cp%>/admin/main.do" class="site_title" style="background: #ffffff; color:#000000;">관리자</a>
+                        <a href="<%=cp%>/admin.do" class="site_title" style="background: #ffffff; ">관리자</a>
                     </div>
                     <div class="clearfix"></div>
 
@@ -47,7 +45,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a><i class="glyphicon glyphicon-usd"></i> 포인트 관리 <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="glyphicon glyphicon-usd"></i> 포인트&캐시 관리 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="<%=cp%>/admin/point/number.do">계좌 관리</a>
                                         </li>
