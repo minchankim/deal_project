@@ -113,8 +113,8 @@
                                 </div>
                                 <div class="x_content">
 
-                                    <div class="col-md-7 col-sm-7 col-xs-12">
-                                        <div class="product-image" id="p1">
+                                    <div class="container">
+                                        <div class="product-image col-md-7" id="p1">
                                             ${dealPhoto[0]}
                                         </div>
                                         <div class="product_gallery">
