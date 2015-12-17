@@ -32,9 +32,9 @@ function searchList() {
                          
                          <form name="searchForm" action="" method="post">  
                             	     <select name="searchKey" class="selectField pull-left" style="height:32px; border-radius:20px;">
-                            	     <option value="num">회원번호</option>
 					                  <option value="userName">회사명</option>
 					                  <option value="userId">ID</option>
+					                  <option value="email">이메일</option>
 					                  <option value="busiNum">사업자번호</option>
 					                  <option value="created">가입일</option>
 			           				</select>
@@ -61,25 +61,27 @@ function searchList() {
                                             <tr class="headings">
                                                 <th class="sorting_disabled">
                                                 </th>
-                                               
-                                                <th class="column-title">회원번호 </th>
                                                 <th class="column-title">회사명</th>
                                                 <th class="column-title">아이디 </th>
+                                                <th class="column-title">이메일 </th>
                                                 <th class="column-title">사업자번호 </th>
                                                 <th class="column-title">가입일 </th>
+                                                <th class="column-title">탈퇴 </th>
+                                                
                                 </tr>
                             </thead>
 
                             <tbody>                            
-                            <c:forEach var="dto" items="${list}">
+                            <c:forEach var="dto" items="${busiList}">
                             
                                 <tr class="even pointer">
                                     <td class="a-center ">
-                                    <td class=" ">${dto.num}</td>
                                     <td class=" ">${dto.userName}</td>
                                     <td class=" ">${dto.userId}</td>
-                                    <td class=" ">${dto.busiNum}</td>
-                                    <td class=" ">${dto.created}</td>
+                                    <td class=" ">${dto.email}</td>
+                                    <td class=" ">${dto.businessNum}</td>
+                                    <td class=" ">${dto.created_date}</td>
+                                    <td class=" "><a href="<%=cp%>"><button type="button" class="btn btn-dark"  style="pull-right; font-size: 8pt; height:18px; width: 50px; margin-bottom: 0px; margin-right: 0px; padding:0px;">탈퇴</button></a></td>
                                  </tr>
                             </c:forEach>
                                       </tbody>
