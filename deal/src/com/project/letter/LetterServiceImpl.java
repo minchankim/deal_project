@@ -54,6 +54,18 @@ public class LetterServiceImpl implements LetterService{
 	}
 
 	@Override
+	public List<Letter> listTopReceive(String userId) {
+		List<Letter> list = null;
+		try {
+				list = dao.getListData("letter.listTopReceive", userId);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return list;
+		
+	}
+	
+	@Override
 	public int dataCountSend(Map<String, Object> map) {
 			int result=0;
 			try {

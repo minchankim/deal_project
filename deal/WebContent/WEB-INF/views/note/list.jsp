@@ -98,9 +98,9 @@ function renoteForm(id) {
 						 $('#contact').modal('hide');
 						
 						$("#letterCount").text(""); 
-						 var lcount=data.letterNoticeCount;
-						 alert(lcount);
-						$("#letterCount").html(lcount); 
+						 var noticeletter=data.noticeletter;
+					
+						$("#letterCount").html(noticeletter); 
 			    	},
 			    	error:function(e) {
 			    		alert(e.responseText);

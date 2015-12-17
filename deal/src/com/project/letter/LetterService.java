@@ -32,4 +32,6 @@ public interface LetterService {
 
 	public List<Letter> listSend(String userId);
 	public List<Letter> listReceive(String userId);
+	public List<Letter> listTopReceive(String userId);
+
 }

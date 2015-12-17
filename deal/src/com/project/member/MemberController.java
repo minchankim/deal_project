@@ -129,7 +129,7 @@ public class MemberController {
 		Member dto = service.readMember(userId);
 		
 		int cdto = cservice.readCash(userId);
-		
+		int ldto = lserviere.readNewLetterCount(userId);
 		if(dto == null){
 			String msg = "아이디 또는 패스워드가 일치하지 않습니다.";
 			ModelAndView mav = new ModelAndView(".member.member");
@@ -138,12 +138,12 @@ public class MemberController {
 		}
 		
 		System.out.println(cdto);
-	
+		System.out.println("쪽지알림"+ldto);
 		SessionInfo info = new SessionInfo();
 		info.setUserId(dto.getUserId());
 		info.setUserName(dto.getUserName());
 		info.setDealInNoticeCount(dservice.readDealJoinCount(userId));
-		info.setLetterNoticeCount(lserviere.readNewLetterCount(userId));
+		//info.setLetterNoticeCount(lserviere.readNewLetterCount(userId));
 		System.out.println(lserviere.readNewLetterCount(userId));
 		info.setMyDealTotal(dservice.readDealJoinCount(userId));
 		info.setBusinessNum(dto.getBusinessNum());
@@ -157,6 +157,7 @@ public class MemberController {
 		session.setAttribute("member", info);
 		session.setAttribute("pdto", pdto);
 		session.setAttribute("cdto", cdto);
+		session.setAttribute("ldto", ldto);
 		return new ModelAndView("redirect:/");
 	}
 	

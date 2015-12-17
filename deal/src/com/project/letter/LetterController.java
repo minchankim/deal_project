@@ -46,24 +46,27 @@ public class LetterController {
 	}
 
 		String state = "false";
+		int noticeletter=0; // 받은 쪽지 알람수
 		try {
 				
 				dto.setSendUserId(info.getUserId());
-			System.out.println(dto.getReceiveUserId());
+				System.out.println(dto.getReceiveUserId());
 				service.insertLetter(dto);
-			state="true";
+				noticeletter = service.readNewLetterCount(info.getUserId());
+				session.setAttribute("ldto", noticeletter);
+				state="true";
 			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
 		
-		info.setLetterNoticeCount(service.readNewLetterCount(info.getUserId()));
-		session.setAttribute("letterNoticeCount", info.getLetterNoticeCount());
+		/*info.setLetterNoticeCount(service.readNewLetterCount(info.getUserId()));
+		session.setAttribute("letterNoticeCount", info.getLetterNoticeCount());*/
 		
 		JSONObject job = new JSONObject();
 		job.put("isLogin", "true");
 		job.put("state", state);
-		job.put("letterNoticeCount", info.getLetterNoticeCount());
+		job.put("noticeletter", noticeletter);
 		
 		
 		resp.setContentType("text/html; charset=utf-8");
@@ -102,6 +105,24 @@ public class LetterController {
 	
 	}
 	
+	
+	// top 리스트에 출력하기
+	@RequestMapping(value="/letter/listTopReceive")
+	public ModelAndView listTopReceive(HttpServletResponse resp, HttpSession session, Letter dto)
+			throws Exception{
+			
+		SessionInfo info = (SessionInfo)session.getAttribute("member");
+	
+		List<Letter> list  = null;
+		list = service.listTopReceive(info.getUserId());
+		ModelAndView mav = new ModelAndView("note/listTopReceive"); // ajax 처리하기위해서
+		
+		mav.addObject("list", list);
+	
+		return mav;
+		
+	}
+	
 	//읽은 상태로 변환 하기
 	@RequestMapping(value="/letter/updateIdentify", method=RequestMethod.POST)
 	public void updateIdentify(
@@ -122,17 +143,30 @@ public class LetterController {
 					
 					return;
 				}
-				service.updateIdentifyDay(num);
+				String state = "false";
+				int noticeletter2 =0;
+				
+				try {
+					service.updateIdentifyDay(num);
+					noticeletter2 = service.readNewLetterCount(info.getUserId());
+					session.setAttribute("ldto", noticeletter2);
+					state="true";
+					
+				} catch (Exception e) {
+					System.out.println(e.toString());
+				}
 				
 				JSONObject job=new JSONObject();
 				job.put("isLogin", "true");
-				job.put("state", "true");
+				job.put("state", state);
+				job.put("noticeletter2", noticeletter2);
 				
 				resp.setContentType("text/html; charset=utf-8");
 				PrintWriter out=resp.getWriter();
 				out.print(job.toString());
 	}
-	// 쪽지 알람!!
+	
+	
 	
 	
 }
