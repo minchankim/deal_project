@@ -526,9 +526,6 @@ color:rgb(0,0,0);
     <div id="RollingTest" class="list-group">
         <span href="#" class="list-group-item active" style="background: #810000; color: #ffffff;">
             실시간 급상승 검색어
-            <span class="pull-right" id="slide-submenu">
-                <i class="fa fa-times"></i>
-            </span>
         </span>
        <a href="#" class="list-group-item">
           <marquee behavior=slide   direction=down  scrollamount="3" id="e1">    1.김태희 <span class="fa  fa-sort-desc pull-right"></span></marquee> 
@@ -566,9 +563,7 @@ color:rgb(0,0,0);
     <div class="list-group" style="margin-bottom:0px;">
         <span href="#" class="list-group-item active" style="background: #810000; color: #ffffff;">
            딜러왕
-            <span class="pull-right" id="slide-submenu">
-                <i class="fa fa-times"></i>
-            </span>
+           
         </span>
          <a href="#" class="list-group-item">
         <marquee behavior=slide   direction=down  scrollamount="3" id="d1">      1.김민찬 <span class="badge pull-right">68%</span></marquee>
