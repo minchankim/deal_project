@@ -528,21 +528,15 @@ color:rgb(0,0,0);
             실시간 급상승 검색어
         </span>
        <a href="#" class="list-group-item">
-          <marquee behavior=slide   direction=down  scrollamount="3" id="e1">    1.김태희 <span class="fa  fa-sort-desc pull-right"></span></marquee> 
+          <marquee behavior=slide   direction=down  scrollamount="3" id="e1">    1.커텐 <span class="fa  fa-sort-desc pull-right"></span></marquee> 
         </a>
      
         
         <a href="#" class="list-group-item">
-         <marquee behavior=slide   direction=down  scrollamount="3" id="e2">  2.비 <span class="fa fa-sort-up   pull-right" style="color:#DB0000;"></span></marquee> 
+         <marquee behavior=slide   direction=down  scrollamount="3" id="e2">  2.의자 <span class="fa fa-sort-up   pull-right" style="color:#DB0000;"></span></marquee> 
         </a>
         <a href="#" class="list-group-item">
-        <marquee behavior=slide   direction=down  scrollamount="3" id="e3">     3.디스패치 <span class="fa  fa-sort-desc pull-right"></span></marquee> 
-        </a>
-        <a href="#" class="list-group-item">
-       <marquee behavior=slide   direction=down  scrollamount="3" id="e4">       4.수능  </marquee> 
-        </a>
-        <a href="#" class="list-group-item">
-         <marquee behavior=slide   direction=down  scrollamount="3" id="e5">    5.2호선  <span class="fa fa-sort-up   pull-right"  style="color:#DB0000;"></span></marquee> 
+        <marquee behavior=slide   direction=down  scrollamount="3" id="e3">     3.크리스마스 <span class="fa  fa-sort-desc pull-right"></span></marquee> 
         </a>
     </div>        
 </div>
@@ -550,9 +544,9 @@ color:rgb(0,0,0);
 </div>
 
 
+
 <div class="col-xs-6 col-sm-6 col-md-2 pull-right " >
-
-
+<br>
 	<div class="row">
 		<div style="padding:0px;" class=" col-xs-12 col-sm-12 col-md-12 sidebar">
     <div class="mini-submenu">
@@ -574,10 +568,6 @@ color:rgb(0,0,0);
         <a href="#" class="list-group-item">
         <marquee behavior=slide   direction=down  scrollamount="3" id="d3">      3.김태희 <span class="badge pull-right">19%</span></marquee>
          </a>
-        <a href="#" class="list-group-item">
-       <marquee behavior=slide   direction=down  scrollamount="3" id="d4">      4. 제지선 <span class="badge pull-right">13%</span></marquee>
-        </a>
-
     </div>        
 </div>
 	</div>
