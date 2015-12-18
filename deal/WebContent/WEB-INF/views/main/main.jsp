@@ -443,17 +443,17 @@ color:rgb(0,0,0);
       <div class="carousel-inner">
       
         <div class="item active">
-          <img src="<%=cp%>/res/images/s1.png">
+          <img src="<%=cp%>/res/images/m1.jpg">
 
         </div><!-- End Item -->
  
          <div class="item">
-          <img src="<%=cp%>/res/images/s2.png">
+          <img src="<%=cp%>/res/images/m2.jpg">
           
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="<%=cp%>/res/images/sample.png">
+          <img src="<%=cp%>/res/images/m3.jpg">
     <!--        <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
             <h4><a href="#">cccccccccccccccccccccccccccccccccc</a></h4>
             <p>cccccccccccccccccccccccccccccccccccccccccccccc <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
@@ -461,7 +461,7 @@ color:rgb(0,0,0);
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="<%=cp%>/res/images/sample.png">
+          <img src="<%=cp%>/res/images/m4.jpg">
         <!--    <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
             <h4><a href="#">ddddddddddddddddddddddddddddddddd</a></h4>
             <p>ddddddddddddddddddddddddddddddddddddddddddddddd<a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
@@ -469,7 +469,7 @@ color:rgb(0,0,0);
         </div><!-- End Item -->
 
         <div class="item">
-          <img src="<%=cp%>/res/images/sample.png">
+          <img src="<%=cp%>/res/images/m5.jpg">
           <!--  <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
             <h4><a href="#">tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
