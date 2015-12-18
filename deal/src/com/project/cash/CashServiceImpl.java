@@ -1,5 +1,6 @@
 package com.project.cash;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +64,7 @@ public class CashServiceImpl implements CashService{
 		return result;
 }
 
-/*	@Override
+	@Override
 	public List<Cash> listinsertCash(String userId) {
 		List<Cash> list = null;
 		
@@ -73,26 +74,10 @@ public class CashServiceImpl implements CashService{
 			System.out.println(e.toString());
 		}
 		return list;
-	}*/
+	}
 	
-/*
-	@Override
-	public List<Cash> listBuy(String userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public List<Cash> listReturn(String userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-
-	/*@Override
-	public List<Cash> listBuy(String userId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public List<Cash> listReturn(String userId) {
@@ -105,7 +90,7 @@ public class CashServiceImpl implements CashService{
 		}
 		
 		return list;
-	}*/
+	}
 
 
 }

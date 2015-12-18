@@ -316,7 +316,7 @@ function sendLogin() {
                             </li><!-- end 내정보 -->
                              <c:if test="${sessionScope.member.userId!=null}">
 							<li style="padding-top:7px;padding-right: 5px; padding-left: 5px;">
-                                <a style="padding: 0px;margin-top:4px;" href="<%=cp%>/cash/myCash.do;"><span id="myscash">${cdto}</span></a>
+                                <a style="padding: 0px;margin-top:4px;" href="<%=cp%>/cash/list.do;"><span id="myscash">${cdto}</span></a>
                                 
                              </li><!-- end 캐쉬 -->
                            </c:if>

@@ -1,6 +1,7 @@
 package com.project.cash;
 
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,12 +21,6 @@ public class MyCashController {
 	 
 	@Autowired
 	private CashService service;
-	
-	@RequestMapping(value="/cash/myCash",method=RequestMethod.GET)
-	public ModelAndView method() {
-		 ModelAndView mav = new ModelAndView(".cash.myCash");
-		return mav;
-	}
 	
 
 	@RequestMapping(value="/cash/insertCash", method=RequestMethod.POST)
@@ -115,7 +110,7 @@ System.out.println("환전금액"+scash2);
 }
 	
 	
-	/*@RequestMapping(value="/cash/list")
+	@RequestMapping(value="/cash/list")
 	public ModelAndView list(HttpServletResponse resp, HttpSession session,
 			Cash dto
 		
@@ -132,21 +127,22 @@ System.out.println("환전금액"+scash2);
 		
 		List<Cash> list1 = null;
 		List<Cash> list2 = null;
-		List<Cash> list3 = null;
+		//List<Cash> list3 = null;
 		
 		list1=service.listinsertCash(info.getUserId());
-		list2=service.listBuy(info.getUserId());
-		list3=service.listReturn(info.getUserId());
+		list2=service.listReturn(info.getUserId());
+
+		//list3=service.listReturn(info.getUserId());
 		
 		ModelAndView mav=new  ModelAndView(".cash.myCash");
 
 			mav.addObject("list1", list1);
 			mav.addObject("list2", list2);
-			mav.addObject("list3", list3);
+			//mav.addObject("list3", list3);
 		
 			return  mav;
 	
 	}
-	*/
+	
 	
 }

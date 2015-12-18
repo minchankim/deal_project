@@ -15,12 +15,40 @@
 				VALUES (#{userId} , #{returnCash}, now(), null)
 	</insert> 
 	
+	
+	
+	<!--  충전 리스트 -->
+		<select id="listInsertCash" parameterType="String" resultType="com.project.cash.Cash">
+		    SELECT  cash, DATE_FORMAT(created, '%Y-%m-%d') AS created
+             		
+                   FROM cash 
+           
+	     	      <where>
+	     	      
+	     	     userId = #{userId} and created is not null
+	     	      </where>
+	     	  </select>
+	     	  
+	     <select id="listReturn" parameterType="String" resultType="com.project.cash.Cash">
+		    SELECT  returnCash, DATE_FORMAT(returnDate, '%Y-%m-%d') AS returnDate
+             		
+                   FROM cash 
+           
+	     	      <where>
+	     	      
+	     	     userId = #{userId} and returnDate is not null
+	     	      </where>
+	     
+	     </select>
+	
 	<!-- 잔액 캐쉬만 아이디 받기 조회하기 -->
 	<select id="myCash" parameterType="String" resultType="Integer">
 	
 	select (sum(cash)-sum(returnCash)) cash from cash where userId=#{userId};
 	
 	</select>
+	
+	
 	
 		<!--  <select id="listInsertCash" parameterType="String" resultType="com.project.cash.Cash">
 		    SELECT  userId

@@ -1,5 +1,6 @@
 package com.project.cash;
 
+import java.util.List;
 import java.util.Map;
 
 public interface CashService {
@@ -9,7 +10,7 @@ public interface CashService {
 	public int readCash(String userId);
 	public int returnCash(Cash dto);
 	
-/*	public List<Cash> listinsertCash(String userId);
-	public List<Cash> listBuy(String userId);
-	public List<Cash> listReturn(String userId);*/
+	public List<Cash> listinsertCash(String userId);
+	//public List<Cash> listBuy(String userId);
+	public List<Cash> listReturn(String userId);
 }

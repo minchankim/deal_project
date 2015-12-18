@@ -314,48 +314,25 @@
                                         <thead>
                                             <tr class="headings">
                                                
-                                                <th class="column-title">번호 </th>
+                                              
                                                 <th class="column-title">충전날짜 </th>
                                                 <th class="column-title">충전캐시 </th>
                                                 <th class="column-title">충전수단 </th>
                                                 <th class="column-title">상태 </th>
-                                                <th class="column-title">잔여캐시 </th>
+                                                
                                	 			 </tr>
                             </thead>
 
                             <tbody>
+                        <c:forEach var="dto" items="${list1}">
                              <tr>
-                                    <td class=" ">1</td>
-                                    <td class=" ">2015.12.12 </td>
-                                    <td class=" ">3000 <i class="success fa fa-long-arrow-up"></i></td>
+                                
+                                    <td class=" ">${dto.created}</td>
+                                    <td class=" ">${dto.cash}<i class="success fa fa-long-arrow-up"></i></td>
                                     <td class=" ">신용카드</td>
                                     <td class=" ">정상충전</td>
-                                    <td class="a-right a-right ">10000</td>
                             </tr>
-                            <tr>
-                                    <td class=" ">2</td>
-                                    <td class=" ">2015.12.12 </td>
-                                    <td class=" ">3500 <i class="success fa fa-long-arrow-up"></i></td>
-                                    <td class=" ">신용카드</td>
-                                    <td class=" ">정상충전</td>
-                                    <td class="a-right a-right ">18000</td>
-                            </tr>
-                             <tr>
-                                    <td class=" ">3</td>
-                                    <td class=" ">2015.12.13 </td>
-                                    <td class=" ">3000 <i class="success fa fa-long-arrow-up"></i></td>
-                                    <td class=" ">신용카드</td>
-                                    <td class=" ">정상충전</td>
-                                    <td class="a-right a-right ">21000</td>
-                            </tr>
-                             <tr>
-                                    <td class=" ">4</td>
-                                    <td class=" ">2015.12.13 </td>
-                                    <td class=" ">1500 <i class="success fa fa-long-arrow-up"></i></td>
-                                    <td class=" ">신용카드</td>
-                                    <td class=" ">정상충전</td>
-                                    <td class="a-right a-right ">22000</td>
-                            </tr>
+                         </c:forEach>
                                    
                              </tbody>
 
@@ -420,49 +397,23 @@
                                         <thead>
                                             <tr class="headings">
                                             
-                                                <th class="column-title">번호 </th>
-                                                <th class="column-title">날짜 </th>
+                                                <th class="column-title">환전날짜 </th>
                                                 <th class="column-title">환급캐시 </th>
                                                 <th class="column-title">환급수단 </th>
                                                 <th class="column-title">환급상태 </th>
-                                                <th class="column-title">Amount </th>
+                                             
                                				 </tr>
                             </thead>
 
                            					 <tbody>
-                               
-                                            <tr>
-                                    <td class=" ">1</td>
-                                    <td class=" ">2015.12.11 </td>
-                                    <td class=" ">3000 <i class="success fa fa-long-arrow-down"></i></td>
+                        		<c:forEach var="dto" items="${list2}">
+                                     <tr>
+                                    <td class=" ">${dto.returnDate}</td>
+                                    <td class=" ">${dto.returnCash}<i class="success fa fa-long-arrow-down"></i></td>
                                     <td class=" ">계좌입금</td>
                                     <td class=" ">정상환전</td>
-                                    <td class="a-right a-right ">12000</td>
-                            </tr>
-                            <tr>
-                                    <td class=" ">2</td>
-                                    <td class=" ">2015.12.12 </td>
-                                    <td class=" ">10000 <i class="success fa fa-long-arrow-down"></i></td>
-                                    <td class=" ">계좌입금</td>
-                             		<td class=" ">정상환전</td>
-                                    <td class="a-right a-right ">16000</td>
-                            </tr>
-                             <tr>
-                                    <td class=" ">3</td>
-                                    <td class=" ">2015.12.14 </td>
-                                    <td class=" ">12000 <i class="success fa fa-long-arrow-down"></i></td>
-                                    <td class=" ">계좌입금</td>
-                                    <td class=" ">정상환전</td>
-                                    <td class="a-right a-right ">17000</td>
-                            </tr>
-                             <tr>
-                                    <td class=" ">4</td>
-                                    <td class=" ">2015.12.15 </td>
-                                    <td class=" ">3500 <i class="success fa fa-long-arrow-down"></i></td>
-                                  	<td class=" ">계좌입금</td>
-                                    <td class=" ">정상환전</td>
-                                    <td class="a-right a-right ">12000</td>
-                            </tr>
+                           			 </tr>
+                   				</c:forEach>
                                             </tbody>
 
                                     </table>
