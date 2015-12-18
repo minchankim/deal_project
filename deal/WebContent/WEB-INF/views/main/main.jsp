@@ -480,20 +480,20 @@ color:rgb(0,0,0);
 
 
       <ul class="list-group col-md-4 col-sm-4 col-xs-1" style="margin-bottom:0px;"> <!-- 이거 슬라이드 내용 바뀐거고  -->
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">뚜레쥬르 케익교환권
-      <br><span style="font-size: 13pt;">20%</span>
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">뮤지컬 위대한 캣츠비
+      <br><span style="font-size: 13pt;">55%</span>
       </li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">리트머스/엠할리데이
-       <br><span style="font-size: 13pt;">80%</span>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">뚜레쥬르 케익교환권
+       <br><span style="font-size: 13pt;">20%</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">쉬즈미스 외 겨울의류
-       <br><span style="font-size: 13pt;">90%</span>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">마크막스 연말코디
+       <br><span style="font-size: 13pt;">9,900원</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">금강제화 연말선물대전
-       <br><span style="font-size: 13pt;">57%</span>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">맥심 커피믹스 320T 무배 특가
+       <br><span style="font-size: 13pt;">30,900원</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">더베이지 아동 양말/의류
-       <br><span style="font-size: 13pt;">30%</span>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">산들로 알루미늄 면 난방텐트
+       <br><span style="font-size: 13pt;">20%</span>
        </li>
     </ul>
 
@@ -524,7 +524,7 @@ color:rgb(0,0,0);
         <span class="icon-bar"></span>
     </div>
     <div id="RollingTest" class="list-group">
-        <span href="#" class="list-group-item active" style="background: rgb(239, 57, 57); color: #ffffff;">
+        <span href="#" class="list-group-item active" style="background: #810000; color: #ffffff;">
             실시간 급상승 검색어
             <span class="pull-right" id="slide-submenu">
                 <i class="fa fa-times"></i>
@@ -564,23 +564,23 @@ color:rgb(0,0,0);
         <span class="icon-bar"></span>
     </div>
     <div class="list-group" style="margin-bottom:0px;">
-        <span href="#" class="list-group-item active" style="background: rgb(239, 57, 57); color: #ffffff;">
+        <span href="#" class="list-group-item active" style="background: #810000; color: #ffffff;">
            딜러왕
             <span class="pull-right" id="slide-submenu">
                 <i class="fa fa-times"></i>
             </span>
         </span>
          <a href="#" class="list-group-item">
-        <marquee behavior=slide   direction=down  scrollamount="3" id="d1">      1.김민찬 <span class="badge">68%</span></marquee>
+        <marquee behavior=slide   direction=down  scrollamount="3" id="d1">      1.김민찬 <span class="badge pull-right">68%</span></marquee>
         </a>
         <a href="#" class="list-group-item">
-        <marquee behavior=slide   direction=down  scrollamount="3" id="d2">     2.비 <span class="badge">22%</span></marquee>
+        <marquee behavior=slide   direction=down  scrollamount="3" id="d2">     2.비 <span class="badge pull-right">22%</span></marquee>
         </a>
         <a href="#" class="list-group-item">
-        <marquee behavior=slide   direction=down  scrollamount="3" id="d3">      3.김태희 <span class="badge">19%</span></marquee>
+        <marquee behavior=slide   direction=down  scrollamount="3" id="d3">      3.김태희 <span class="badge pull-right">19%</span></marquee>
          </a>
         <a href="#" class="list-group-item">
-       <marquee behavior=slide   direction=down  scrollamount="3" id="d4">      4. 제지선 <span class="badge">13%</span></marquee>
+       <marquee behavior=slide   direction=down  scrollamount="3" id="d4">      4. 제지선 <span class="badge pull-right">13%</span></marquee>
         </a>
 
     </div>        
@@ -1176,7 +1176,7 @@ color:rgb(0,0,0);
                 
             </div>
         </div>
-        </c:forEach>   
+        </c:forEach>
         
         
     </div><!-- row -->
