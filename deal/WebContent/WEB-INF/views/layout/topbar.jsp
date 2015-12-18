@@ -320,6 +320,8 @@ function sendLogin() {
                                 
                              </li><!-- end 캐쉬 -->
                            </c:if>
+                           
+                               <c:if test="${sessionScope.member.userId!=null}">
                           <!-- 쪽지 -->
                          <li style="padding:7px;" role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false" onclick="newLetter();">
@@ -345,11 +347,12 @@ function sendLogin() {
                                     </span>
                                         </a>
                                     </li> --%>
+                                     
                            <li id=listTopReceive>
                            </li>
                             
                             
-                                
+                           
                                     <li>
                                         <div class="text-center">
                                             <a>
@@ -360,9 +363,9 @@ function sendLogin() {
                                     </li>
                                 </ul>
                             </li><!-- end 알림 -->
+                      </c:if>
                       
-                      
-                      
+                      <c:if test="${sessionScope.member.userId!=null}">
                       <!-- 재석아 지우지마!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
                            	<!-- 알림 -->
                             <li style="padding:7px;"role="presentation" class="dropdown" onclick="ttt()">
@@ -404,7 +407,7 @@ function sendLogin() {
                                    
                                 </ul>
                             </li><!-- end 마이딜 -->
-                            
+                            </c:if>
                             
                             
                             
