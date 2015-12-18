@@ -251,7 +251,7 @@ function sendLogin() {
 						</label>
 					</div> <!-- /.checkbox -->
 					<label style="padding-top:5px;" class="pull-right">
-							 <a  href="<%=cp%>/member/member.do">회원가입</a>
+							 <a  href="<%=cp%>/member/memberSel.do">회원가입</a>
 						</label>
 				</form>
 				
