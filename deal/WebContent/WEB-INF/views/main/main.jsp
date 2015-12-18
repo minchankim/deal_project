@@ -454,45 +454,33 @@ color:rgb(0,0,0);
         
         <div class="item">
           <img src="<%=cp%>/res/images/m3.jpg">
-    <!--        <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
-            <h4><a href="#">cccccccccccccccccccccccccccccccccc</a></h4>
-            <p>cccccccccccccccccccccccccccccccccccccccccccccc <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div> -->
         </div><!-- End Item -->
         
         <div class="item">
           <img src="<%=cp%>/res/images/m4.jpg">
-        <!--    <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
-            <h4><a href="#">ddddddddddddddddddddddddddddddddd</a></h4>
-            <p>ddddddddddddddddddddddddddddddddddddddddddddddd<a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div> -->
         </div><!-- End Item -->
 
         <div class="item">
           <img src="<%=cp%>/res/images/m5.jpg">
-          <!--  <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
-            <h4><a href="#">tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div> -->
         </div><!-- End Item -->
                 
       </div><!-- End Carousel Inner -->
 
 
       <ul class="list-group col-md-4 col-sm-4 col-xs-1" style="margin-bottom:0px;"> <!-- 이거 슬라이드 내용 바뀐거고  -->
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">뮤지컬 위대한 캣츠비
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;border-color:#454545;">뮤지컬 위대한 캣츠비
       <br><span style="font-size: 13pt;">55%</span>
       </li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">뚜레쥬르 케익교환권
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;border-color:#454545;">뚜레쥬르 케익교환권
        <br><span style="font-size: 13pt;">20%</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">마크막스 연말코디
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;border-color:#454545;">마크막스 연말코디
        <br><span style="font-size: 13pt;">9,900원</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">맥심 커피믹스 320T 무배 특가
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;border-color:#454545;">맥심 커피믹스 320T 무배 특가
        <br><span style="font-size: 13pt;">30,900원</span>
        </li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">산들로 알루미늄 면 난방텐트
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;border-color:#454545;">산들로 알루미늄 면 난방텐트
        <br><span style="font-size: 13pt;">20%</span>
        </li>
     </ul>

@@ -19,9 +19,11 @@ body.nav-sm ul.nav.child_menu{
 .nav.side-menu> li.active > a{
 	color:black;
 	font-weight: bold;
-	border:2px solid red;
+	<!--border:2px solid red;-->
 }
-
+.nav.side-menu> li.current-page, .nav.side-menu> li.active{
+	border-right:5px solid #B70000;
+}
 </style>
 
 

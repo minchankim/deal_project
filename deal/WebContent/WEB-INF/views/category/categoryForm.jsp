@@ -250,50 +250,47 @@ function countLike(id,count){
       <div class="carousel-inner">
       
         <div class="item active">
-          <img src="<%=cp%>/res/images/main1.jpg">
+          <img src="<%=cp%>/res/images/b1.jpg">
 
         </div><!-- End Item -->
  
          <div class="item">
-          <img src="<%=cp%>/res/images/main2.jpg">
+          <img src="<%=cp%>/res/images/b2.jpg">
           
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="<%=cp%>/res/images/fifa2.png">
-           <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
-            <h4><a href="#">cccccccccccccccccccccccccccccccccc</a></h4>
-            <p>cccccccccccccccccccccccccccccccccccccccccccccc <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
+          <img src="<%=cp%>/res/images/b3.jpg">
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="<%=cp%>/res/images/wmp2.png">
-           <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
-            <h4><a href="#">ddddddddddddddddddddddddddddddddd</a></h4>
-            <p>ddddddddddddddddddddddddddddddddddddddddddddddd<a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
+          <img src="<%=cp%>/res/images/b4.jpg">
         </div><!-- End Item -->
 
         <div class="item">
-          <img src="<%=cp%>/res/images/wmp3.png">
-           <div class="carousel-caption col-xs-12 col-sm-12 col-md-12">
-            <h4><a href="#">tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
-          </div>
+          <img src="<%=cp%>/res/images/b5.jpg">
         </div><!-- End Item -->
                 
       </div><!-- End Carousel Inner -->
 
 
-    <ul class="list-group col-sm-4">
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>1</h4></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>2</h4></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>3</h4></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>4</h4></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>5</h4></li>
+    <ul class="list-group col-md-4 col-sm-4 col-xs-1" style="margin-bottom:0px;"> <!-- 이거 슬라이드 내용 바뀐거고  -->
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active" style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">신도림 쉐라톤 피스트뷔페 연말 특가
+      <br><span style="font-size: 13pt;">15%</span>
+      </li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">더센터오브 필라테스 운동시작 [전국]
+       <br><span style="font-size: 13pt;">20%</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">커피베이 아메리카노 [전국]
+       <br><span style="font-size: 13pt;">40%</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">그랜드호텔 그리츠 뷔페 [여의도]
+       <br><span style="font-size: 13pt;">38,330원</span>
+       </li>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"  style="font-size: 11pt;border-color:rgba(169, 66, 155, 0.35);">전국 오빠닭 BEST 메뉴
+       <br><span style="font-size: 13pt;">33%</span>
+       </li>
     </ul>
-
       <!-- Controls -->
       <div class="carousel-controls">
           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
