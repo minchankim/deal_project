@@ -361,7 +361,21 @@ function sendLogin() {
                                 </ul>
                             </li><!-- end 알림 -->
                       
-                           
+                      
+                      
+                      <!-- 재석아 지우지마!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                           	<!-- 알림 -->
+                            <li style="padding:7px;"role="presentation" class="dropdown" onclick="ttt()">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-paper-plane fa-5x"></i>
+                                    <span class="badge bg-green">2</span>
+                                </a>
+                                
+                                <ul id="sucDealList" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
+                             
+                                </ul>
+                            </li><!-- end 알림 -->
+                      <!--또 지우면 주겨버릴꺼얏ㅅㅅㅅㅅㅅㅅ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
                             
                             
                              <li style="padding-top: 10px;" class="">
@@ -390,6 +404,11 @@ function sendLogin() {
                                    
                                 </ul>
                             </li><!-- end 마이딜 -->
+                            
+                            
+                            
+                            
+                            
 
                         </ul>
                     </nav>
