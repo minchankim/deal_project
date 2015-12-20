@@ -188,6 +188,18 @@ function sendLogin() {
     	  $("#sucDealList").html(data);  
     	}); 
     }
+    
+    
+    function newLetter(){
+    	var userid='${sessionScope.member.userId}';
+    	
+    	  
+    	
+   	 var url="<%=cp%>/letter/listTopReceive.do";
+   	$.post(url, {userId:userid}, function(data){
+   	  $("#listTopReceive").html(data);  
+   	}); 
+    }
 
     
 

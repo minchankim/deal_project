@@ -10,14 +10,14 @@
   									<li>
                                         <a>
                                             <span class="image">
-                                       <img class="media-object img-circle" src="<%=cp %>/res/images/park.jpg" alt="profile">
+                                       <img class="media-object img-circle" src="<%=cp %>/res/images/park.jpg" >
                                     		</span>
                                             <span>
-                                        <span>${dto.userId}</span>
+                                        <span>${dto.sendUserId}</span>
                                             <span class="time">${dto.sendDay}</span>
                                             </span>
                                             <span class="message">
-                                       			${dto.content}
+                                       			
                                     </span>
                                         </a>
                                     </li>

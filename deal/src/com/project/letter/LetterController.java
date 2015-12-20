@@ -53,15 +53,14 @@ public class LetterController {
 				System.out.println(dto.getReceiveUserId());
 				service.insertLetter(dto);
 				noticeletter = service.readNewLetterCount(info.getUserId());
+				System.out.println("받은쪽지 알람 수"+noticeletter);
 				session.setAttribute("ldto", noticeletter);
 				state="true";
 			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		
-		/*info.setLetterNoticeCount(service.readNewLetterCount(info.getUserId()));
-		session.setAttribute("letterNoticeCount", info.getLetterNoticeCount());*/
+	
 		
 		JSONObject job = new JSONObject();
 		job.put("isLogin", "true");
@@ -73,6 +72,54 @@ public class LetterController {
 		PrintWriter out = resp.getWriter();
 		out.print(job.toString());
 	}
+	
+	//읽은 상태로 변환 하기
+		@RequestMapping(value="/letter/updateIdentify", method=RequestMethod.POST)
+		public void updateIdentify(
+				HttpServletResponse resp, 
+				HttpSession session,
+				int num
+				) throws Exception{
+			// 쪽지 보기에서 답변을 확인 한 경우 읽은 상태로 만들기
+					SessionInfo info=(SessionInfo)session.getAttribute("member");
+					if(info==null) {
+						JSONObject job=new JSONObject();
+						job.put("isLogin", "false");
+
+						// 로그인이 되지 않은 상태를 JSON으로 전송
+						resp.setContentType("text/html; charset=utf-8");
+						PrintWriter out=resp.getWriter();
+						out.print(job.toString());
+						
+						return;
+					}
+					String state = "false";
+					int noticeletter2 =0;
+					
+					try {
+						service.updateIdentifyDay(num);
+						noticeletter2 = service.readNewLetterCount(info.getUserId());
+						session.setAttribute("ldto", noticeletter2);
+						state="true";
+						
+					} catch (Exception e) {
+						System.out.println(e.toString());
+					}
+					
+					JSONObject job=new JSONObject();
+					job.put("isLogin", "true");
+					job.put("state", state);
+					job.put("noticeletter2", noticeletter2);
+					
+					resp.setContentType("text/html; charset=utf-8");
+					PrintWriter out=resp.getWriter();
+					out.print(job.toString());
+		}
+		
+	
+	
+	
+	
 	
 	// 받은 쪽지 리스트/ 보낸쪽지 리스트 -- 동시에 
 	@RequestMapping(value="/letter/list")
@@ -123,48 +170,6 @@ public class LetterController {
 		
 	}
 	
-	//읽은 상태로 변환 하기
-	@RequestMapping(value="/letter/updateIdentify", method=RequestMethod.POST)
-	public void updateIdentify(
-			HttpServletResponse resp, 
-			HttpSession session,
-			int num
-			) throws Exception{
-		// 쪽지 보기에서 답변을 확인 한 경우 읽은 상태로 만들기
-				SessionInfo info=(SessionInfo)session.getAttribute("member");
-				if(info==null) {
-					JSONObject job=new JSONObject();
-					job.put("isLogin", "false");
-
-					// 로그인이 되지 않은 상태를 JSON으로 전송
-					resp.setContentType("text/html; charset=utf-8");
-					PrintWriter out=resp.getWriter();
-					out.print(job.toString());
-					
-					return;
-				}
-				String state = "false";
-				int noticeletter2 =0;
-				
-				try {
-					service.updateIdentifyDay(num);
-					noticeletter2 = service.readNewLetterCount(info.getUserId());
-					session.setAttribute("ldto", noticeletter2);
-					state="true";
-					
-				} catch (Exception e) {
-					System.out.println(e.toString());
-				}
-				
-				JSONObject job=new JSONObject();
-				job.put("isLogin", "true");
-				job.put("state", state);
-				job.put("noticeletter2", noticeletter2);
-				
-				resp.setContentType("text/html; charset=utf-8");
-				PrintWriter out=resp.getWriter();
-				out.print(job.toString());
-	}
 	
 	
 	
