@@ -46,3 +46,10 @@
                         </ul> -->
                     </li>
                     </c:forEach>
+                    
+                      <c:if test="${dataCount==0}">
+					   		등록된 게시물이 없습니다.
+					   </c:if>
+					   <c:if test="${dataCount!=0}">
+					   		${pageIndexList}
+					   </c:if>

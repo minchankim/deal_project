@@ -2,11 +2,14 @@ package com.project.deal;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.project.common.MyUtil;
 import com.project.member.Photo;
 import com.project.member.PhotoService;
 import com.project.member.SessionInfo;
@@ -32,6 +36,9 @@ public class DealController {
 	
 	@Autowired
 	private PhotoService pservice;
+	
+	@Autowired
+	private MyUtil myUtil;
 	 
 	@RequestMapping(value="/deal/article",method=RequestMethod.GET)
 	public ModelAndView articleInform(
@@ -318,34 +325,57 @@ public class DealController {
 	
 		
 		@RequestMapping(value="/deal/mainDealreplyList")
-		public ModelAndView replyList(
-				@RequestParam(value="dealNum") int dealNum
+		public ModelAndView replyList(HttpServletRequest req,
+				@RequestParam(value="dealNum") int dealNum ,
+				@RequestParam(value = "pageNum", defaultValue = "1") int current_page
+				
 				) throws Exception {
 			
+	
+			int numPerPage =3;
+			int total_page=0;
+			int dataCount=0;
 		
+		System.out.println(current_page+"ddfddf");
+		System.out.println(dealNum+"ddfddf");
 			
 			Map<String, Object> map=new HashMap<String, Object>();
 			map.put("dealNum", dealNum);
+	
 			
-
+			dataCount = service.dataCount(map);
+			total_page = myUtil.getPageCount(numPerPage, dataCount);
+			if(current_page>total_page)
+				current_page=total_page;
+			
+			// 리스트에 출력할 데이터
+			int start = (current_page - 1) * numPerPage;
+			map.put("start", start);
+			map.put("numPerPage", numPerPage);
 			List<DealReply> replyList=service.dealReplyList(map);
 			
 			// 엔터를 <br>
+			int listNum, n = 0;
 			Iterator<DealReply> it=replyList.iterator();
-			int listNum, n=0;
 			while(it.hasNext()) {
 				DealReply dto=it.next();
+				listNum = dataCount - (start + n - 1);
+				dto.setListNum(listNum);
 				dto.setContent(dto.getContent().replaceAll("\n", "<br>"));
 				n++;
 			}
 			
-			// 페이징처리(인수2개 짜리 js로 처리)
+			String pageIndexList=myUtil.pageIndexList2(current_page, total_page);
 
 			
 			ModelAndView mav=new ModelAndView("main/mainReply");
 
 			// jsp로 넘길 데이터
 			mav.addObject("replyList", replyList);
+			mav.addObject("dataCount", dataCount);
+			mav.addObject("pageNum", current_page);
+
+			mav.addObject("pageIndexList",pageIndexList);
 
 			
 			return mav;

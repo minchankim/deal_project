@@ -30,4 +30,6 @@ public interface DealService {
 	public int readDealJoinCount(String userId);
 	public List<Deal> listDealSuccessAlarm(String userId);
 	
+	public int dataCount(Map<String, Object>map);
+	
 }

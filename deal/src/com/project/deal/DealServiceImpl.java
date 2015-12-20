@@ -246,5 +246,16 @@ List<Deal> list=null;
 		return list;
 	}
 
+	@Override
+	public int dataCount(Map<String, Object> map) {
+		int result = 0;
+		try {
+			result = dao.getIntValue("deal.dataCount", map);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		return result;
+	}
+
 
 }

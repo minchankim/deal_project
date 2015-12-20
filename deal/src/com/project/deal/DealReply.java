@@ -1,6 +1,7 @@
 package com.project.deal;
 
 public class DealReply {
+	private int listNum;
 	private int dealNum,num;
 	private String userId,userName,created,content,imageFilename;
 	private int alarmCount;
@@ -8,6 +9,14 @@ public class DealReply {
 	
 	
 	
+	public int getListNum() {
+		return listNum;
+	}
+
+	public void setListNum(int listNum) {
+		this.listNum = listNum;
+	}
+
 	public int getAlarmCount() {
 		return alarmCount;
 	}

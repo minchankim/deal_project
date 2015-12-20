@@ -12,6 +12,25 @@
    <link href="<%=cp%>/res/template/css/main/minchanmain.css" rel="stylesheet">
    
 <script type="text/javascript">
+var pageN=1;
+var dNum;
+
+
+
+function pNum(pageNumber){
+
+
+	pageN=pageNumber; 
+
+	listPage(dNum); 
+}
+
+function pageSet(dNum){
+	this.dNum=dNum;
+	
+
+	
+}
  
 $(document).ready(function() {
     $('[id^=detail-]').hide();
@@ -129,9 +148,7 @@ function sendReply(dealNum) {
 	
  	var content=$.trim($("#replyContent-"+dealNum).val());
 	var src=$("#imageFilename-"+dealNum).attr('src');
-	 
-	
-	
+
 	
 	
 	
@@ -170,8 +187,9 @@ function sendReply(dealNum) {
 	});  
 }
 function listPage(dealNum) {
+
 	var url="<%=cp%>/deal/mainDealreplyList.do";
-	$.post(url, {dealNum:dealNum}, function(data){
+	$.post(url, {dealNum:dealNum,pageNum:pageN}, function(data){
 	 $("#listReply-"+dealNum).html(data); 
 	});
 }
@@ -337,6 +355,9 @@ function dealapprove(Num,mode){
 	
 	
 }
+
+
+
 
 
  
@@ -619,12 +640,12 @@ color:rgb(0,0,0);
 
 
 <!--콘텐츠  -->
-<div class="container"  >
+<div class="container" >
     <div class=" col-md-4 pull-left"  style="padding-left:1px;padding-right:3px;">
         
         <c:forEach  var="dto" items="${MainDealList1}">
 
-        <div class="col-xs-12 col-sm-12  col-md-12"  style="padding-left:0px;padding-right:0px;">
+        <div class="col-xs-12 col-sm-12  col-md-12"   onmouseenter="pageSet('${dto.num}');"  style="padding-left:0px;padding-right:0px;">
             <div class="[ panel panel-default ] panel-google-plus" >
                   <!--CountDown  -->
 				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px; margin-bottom:2px;"  id="countdown${dto.num}">
