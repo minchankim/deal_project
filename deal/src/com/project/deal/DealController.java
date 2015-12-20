@@ -336,8 +336,7 @@ public class DealController {
 			int total_page=0;
 			int dataCount=0;
 		
-		System.out.println(current_page+"ddfddf");
-		System.out.println(dealNum+"ddfddf");
+
 			
 			Map<String, Object> map=new HashMap<String, Object>();
 			map.put("dealNum", dealNum);
@@ -352,26 +351,37 @@ public class DealController {
 			int start = (current_page - 1) * numPerPage;
 			map.put("start", start);
 			map.put("numPerPage", numPerPage);
-			List<DealReply> replyList=service.dealReplyList(map);
 			
-			// 엔터를 <br>
-			int listNum, n = 0;
-			Iterator<DealReply> it=replyList.iterator();
-			while(it.hasNext()) {
-				DealReply dto=it.next();
-				listNum = dataCount - (start + n - 1);
-				dto.setListNum(listNum);
-				dto.setContent(dto.getContent().replaceAll("\n", "<br>"));
-				n++;
+			
+			ModelAndView mav=new ModelAndView("main/mainReply");
+			try {
+				List<DealReply> replyList=service.dealReplyList(map);
+				int listNum, n = 0;
+				Iterator<DealReply> it=replyList.iterator();
+				while(it.hasNext()) {
+					DealReply dto=it.next();
+					listNum = dataCount - (start + n - 1);
+					dto.setListNum(listNum);
+					dto.setContent(dto.getContent().replaceAll("\n", "<br>"));
+					n++;
+				}
+				
+				mav.addObject("replyList", replyList);
+			} catch (Exception e) {
+				System.out.println(e.toString()+"Null이네용 Null이라서 뜨는 에러에용 신경 ㄴㄴ");
 			}
 			
+			
+			// 엔터를 <br>
+		
+		
 			String pageIndexList=myUtil.pageIndexList2(current_page, total_page);
 
 			
-			ModelAndView mav=new ModelAndView("main/mainReply");
+			
 
 			// jsp로 넘길 데이터
-			mav.addObject("replyList", replyList);
+		
 			mav.addObject("dataCount", dataCount);
 			mav.addObject("pageNum", current_page);
 

@@ -27,6 +27,7 @@ function pNum(pageNumber){
 
 function pageSet(dNum){
 	this.dNum=dNum;
+	this.pageN=1;
 	
 
 	
@@ -841,7 +842,7 @@ color:rgb(0,0,0);
 
                     
                    
-                    <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
+                    <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...(${dto.replyCount})</div>
 </div>
                 
                 
@@ -912,7 +913,7 @@ color:rgb(0,0,0);
         
         <c:forEach  var="dto" items="${MainDealList2}">
 
-        <div class="col-xs-12 col-sm-12  col-md-12"  style="padding-left:0px;padding-right:0px;">
+        <div class="col-xs-12 col-sm-12  col-md-12"  onmouseenter="pageSet('${dto.num}');"  style="padding-left:0px;padding-right:0px;">
             <div class="[ panel panel-default ] panel-google-plus" >
                   <!--CountDown  -->
 				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px; margin-bottom:2px;"  id="countdown${dto.num}">
@@ -1108,7 +1109,7 @@ color:rgb(0,0,0);
 
                     
                    
-                    <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
+                    <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...(${dto.replyCount})</div>
 </div>
                 
                 
@@ -1184,7 +1185,7 @@ color:rgb(0,0,0);
         
         <c:forEach  var="dto" items="${MainDealList3}">
 
-        <div class="col-xs-12 col-sm-12  col-md-12"  style="padding-left:0px;padding-right:0px;">
+        <div class="col-xs-12 col-sm-12  col-md-12"  onmouseenter="pageSet('${dto.num}');"  style="padding-left:0px;padding-right:0px;">
             <div class="[ panel panel-default ] panel-google-plus" >
                   <!--CountDown  -->
 				<div class="col-md-12 col-sm-12 " style="text-align:right; padding:0px; margin:0px; margin-bottom:2px;"  id="countdown${dto.num}">
@@ -1380,7 +1381,7 @@ color:rgb(0,0,0);
 
                     
                    
-                    <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...</div>
+                    <div class="input-placeholder col-md-12 col-sm-12 col-xs-12" style="font-size:15px;margin:0px;" onclick="listPage('${dto.num}')">Add a comment...(${dto.replyCount})</div>
 </div>
                 
                 

@@ -17,6 +17,9 @@ public class Deal {
 		private int dealmonth,avgprice;
 		private int alarmNotice;
 		private int businessNum;
+		private int replyCount;
+		
+		
 		
 		
 		
@@ -24,6 +27,12 @@ public class Deal {
 		
 		
 	
+		public int getReplyCount() {
+			return replyCount;
+		}
+		public void setReplyCount(int replyCount) {
+			this.replyCount = replyCount;
+		}
 		public int getBusinessNum() {
 			return businessNum;
 		}
