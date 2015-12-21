@@ -62,20 +62,92 @@ function searchList() {
                                                
                                                 <th class="column-title">회원번호 </th>
                                                 <th class="column-title">아이디 </th>
+                                                <th class="column-title">거래은행 </th>
+                                                <th class="column-title">예금주 </th>
                                                 <th class="column-title">계좌번호 </th>
                                 </tr>
                             </thead>
 
                             <tbody>                            
-                            <c:forEach var="dto" items="${list}">
+                         
                             
                                 <tr class="even pointer">
                                     <td class="a-center ">
-                                    <td class=" ">${dto.num}</td>
-                                    <td class=" ">${dto.userId}</td>
-                                    <td class=" ">${dto.cardNum}</td>
+                                    <td class=" ">1</td>
+                                    <td class=" ">iamaad</td>
+                                    <td class=" ">신한</td>
+                                    <td class=" ">김재석</td>
+                                    <td class=" ">113-11-13131</td>
                                  </tr>
-                            </c:forEach>
+                         
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">2</td>
+                                    <td class=" ">bb1234</td>
+                                    <td class=" ">신한</td>
+                                    <td class=" ">김민찬</td>
+                                    <td class=" ">113-11-13131</td>
+                                 </tr>
+                      
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">3</td>
+                                    <td class=" ">koko</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">박창영</td>
+                                    <td class=" ">323-11-13111</td>
+                                 </tr>
+                      
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">4</td>
+                                    <td class=" ">abc123</td>
+                                    <td class=" ">농협</td>
+                                    <td class=" ">김재석</td>
+                                    <td class=" ">1333-11-13131</td>
+                                 </tr>
+                      
+                             <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">5</td>
+                                    <td class=" ">korea</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">이기쁨</td>
+                                    <td class=" ">2333-110-13131</td>
+                                 </tr>
+                             <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">6</td>
+                                    <td class=" ">kiki</td>
+                                    <td class=" ">신한</td>
+                                    <td class=" ">조은윤</td>
+                                    <td class=" ">333-010-81484</td>
+                                 </tr>
+                            <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">7</td>
+                                    <td class=" ">koko</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">박창영</td>
+                                    <td class=" ">323-11-13111</td>
+                                 </tr>
+                                     <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">8</td>
+                                    <td class=" ">korea</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">이기쁨</td>
+                                    <td class=" ">2333-110-13131</td>
+                                 </tr>
+                                 
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">9</td>
+                                    <td class=" ">iamaad</td>
+                                    <td class=" ">신한</td>
+                                    <td class=" ">김재석</td>
+                                    <td class=" ">113-11-13131</td>
+                                 </tr>
                                       </tbody>
                                             
 

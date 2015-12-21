@@ -63,27 +63,116 @@ function searchList() {
                                                 <th class="sorting_disabled">
                                                 </th>
                                                
-                                                <th class="column-title">회원번호 </th>
+                                                <th class="column-title">번호 </th>
                                                 <th class="column-title">아이디 </th>
                                                 <th class="column-title">계좌번호 </th>
+                                                 <th class="column-title">거래은행 </th>
                                                 <th class="column-title">환불일 </th>
                                                 <th class="column-title">환불여부</th>
                                 </tr>
                             </thead>
 
                             <tbody>                            
-                            <c:forEach var="dto" items="${list}">
+                     
                             
                                 <tr class="even pointer">
                                     <td class="a-center ">
-                                    <td class=" ">${dto.num}</td>
-                                    <td class=" ">${dto.userId}</td>
-                                    <td class=" ">${dto.cardNum}</td>
-                                    <td class=" ">${dto.refundDate}</td>
-                                    <td class=" ">${dto.refundOkNo}</td>
+                                    <td class=" ">1</td>
+                                    <td class=" ">bb1234</td>
+                                    <td class=" ">131-311-1110</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">2015.12.18</td>
+                                    <td class=" ">정상환전</td>
                                     
                                  </tr>
-                            </c:forEach>
+                                      <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">2</td>
+                                    <td class=" ">iamaad</td>
+                                    <td class=" ">331-311-1110</td>
+                                    <td class=" ">농협</td>
+                                    <td class=" ">2015.12.18</td>
+                                    <td class=" ">정상환전</td>
+                                    
+                                 </tr>
+                                 
+                                       
+                                      <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">3</td>
+                                    <td class=" ">gogodeal</td>
+                                    <td class=" ">731-311-1110</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">2015.12.19</td>
+                                    <td class=" ">정상환전</td>
+                                    
+                                 </tr>
+                                      
+                                      <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">4</td>
+                                    <td class=" ">korea</td>
+                                    <td class=" ">231-311-1110</td>
+                                    <td class=" ">신한</td>
+                                    <td class=" ">2015.12.19</td>
+                                    <td class=" ">정상환전</td>
+                                    
+                                 </tr>
+                                   
+                                      <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">5</td>
+                                    <td class=" ">koko</td>
+                                    <td class=" ">110-321-1110</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">2015.12.19</td>
+                                    <td class=" ">정상환전</td>
+                                    
+                                 </tr>
+                                 
+                                 <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">6</td>
+                                    <td class=" ">kiki</td>
+                                    <td class=" ">252-321-1110</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">2015.12.19</td>
+                                    <td class=" ">정상환전</td>
+                                    
+                                 </tr>
+                                 <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">7</td>
+                                    <td class=" ">niceman</td>
+                                    <td class=" ">2520-3321-5510</td>
+                                    <td class=" ">신한</td>
+                                    <td class=" ">2015.12.20</td>
+                                    <td class=" ">정상환전</td>
+                                    
+                                 </tr>
+                                  <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">8</td>
+                                    <td class=" ">gogodeal</td>
+                                    <td class=" ">731-311-1110</td>
+                                    <td class=" ">국민</td>
+                                    <td class=" ">2015.12.19</td>
+                                    <td class=" ">정상환전</td>
+                                    
+                                 </tr>
+                                  <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">9</td>
+                                    <td class=" ">iamaad</td>
+                                    <td class=" ">331-311-1110</td>
+                                    <td class=" ">농협</td>
+                                    <td class=" ">2015.12.18</td>
+                                    <td class=" ">정상환전</td>
+                                    
+                                 </tr>
+                                 
+                                 
+                     
                                       </tbody>
                                             
 
