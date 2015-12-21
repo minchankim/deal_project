@@ -34,7 +34,7 @@
                     <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
                         <div class="left"></div>
                         <div class="right">
-                            <span class="count_top" style="font-size: 10pt"><i class="fa fa-clock-o"></i> 총 남자 회원 수 </span>
+                            <span class="count_top" style="font-size: 10pt"><i class="fa fa-clock-o"></i> 총 사업자 수 </span>
                             <div class="count">${count2}</div>
                         </div>
                     </div>
@@ -48,21 +48,21 @@
                     <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
                         <div class="left"></div>
                         <div class="right">
-                            <span class="count_top" style="font-size: 10pt"><i class="fa fa-user"></i> 총 여자 회원 수</span>
+                            <span class="count_top" style="font-size: 10pt"><i class="fa fa-user"></i>최고 딜 참여수 </span>
                             <div class="count">${count4}</div>
                         </div>
                     </div>
                     <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
                         <div class="left"></div>
                         <div class="right">
-                            <span class="count_top" style="font-size: 10pt"><i class="fa fa-user"></i> 총 사업자 수 </span>
+                            <span class="count_top" style="font-size: 10pt"><i class="fa fa-user"></i> 총 남자 회원 수</span>
                             <div class="count">${count5}</div>
                         </div>
                     </div>
                     <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
                         <div class="left"></div>
                         <div class="right">
-                            <span class="count_top" style="font-size: 10pt"><i class="fa fa-user"></i>최고 딜 참여수 </span>
+                            <span class="count_top" style="font-size: 10pt"><i class="fa fa-user"></i> 총 여자 회원 수 </span>
                             <div class="count"> ${count6}</div>
                         </div>
                     </div>
