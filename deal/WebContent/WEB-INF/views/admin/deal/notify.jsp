@@ -72,19 +72,34 @@ function searchList() {
                                 </tr>
                             </thead>
 
-                            <tbody>                            
-                            <c:forEach var="dto" items="${list}">
-                            
-                                <tr class="even pointer">
+                            <tbody>         
+                            <tr class="even pointer">
                                     <td class="a-center ">
-                                    <td class=" ">${dto.num}</td>
-                                    <td class=" ">${dto.subject}</td>
-                                    <td class=" ">${dto.userId}</td>
-                                    <td class=" ">${dto.created}</td>
-                                     <td class=" ">${dto.notifyCreated}</td>
-                                     <td class=" ">${dto.notifyWhy}</td>
+                                    <td class=" ">23</td>
+                                    <td class=" ">[전국]크리스피크림도넛지금사용가능 50%할인 </td>
+                                    <td class=" ">ysh3254</td>
+                                    <td class=" ">2015-12-16</td>
+                                     <td class=" ">2015-12-18</td>
+                                     <td class=" ">사기죄</td>
                                  </tr>
-                            </c:forEach>
+                                    <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">16</td>
+                                    <td class=" ">로픈 바오밥 大특가바디상품 증정 이벤트!  </td>
+                                    <td class=" ">kjseng032</td>
+                                    <td class=" ">2015-12-01</td>
+                                     <td class=" ">2015-12-09</td>
+                                     <td class=" ">딜러태도불량</td>
+                                 </tr>
+                                    <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">41</td>
+                                    <td class=" ">플레시크, 지금 특가중!고객만족 사은이벤트! </td>
+                                    <td class=" ">kmcchan21</td>
+                                    <td class=" ">2015-11-19</td>
+                                     <td class=" ">2015-12-15</td>
+                                     <td class=" ">사기죄</td>
+                                 </tr>
                                       </tbody>
                                             
 

@@ -10,7 +10,7 @@
 <script type="text/javascript">
 function searchList() {
 	var f=document.searchForm;
-	f.action="<%=cp%>/admin/member/memberList.do";
+	f.action="<%=cp%>/admin/member/blackList.do";
 	f.submit();
 }
 </script>
@@ -32,9 +32,8 @@ function searchList() {
                          
                          <form name="searchForm" action="" method="post">  
                             	     <select name="searchKey" class="selectField pull-left" style="height:32px; border-radius:20px;">
-                            	     <option value="num">회원번호</option>
-					                  <option value="userName">이름</option>
 					                  <option value="userId">ID</option>
+					                  <option value="userName">이름</option>
 					                  <option value="woMan">성별</option>
 					                  <option value="created">가입일</option>
 					                   <option value="blackCreated">차단일</option>
@@ -62,10 +61,8 @@ function searchList() {
                                             <tr class="headings">
                                                 <th class="sorting_disabled">
                                                 </th>
-                                               
-                                                <th class="column-title">회원번호 </th>
-                                                <th class="column-title">이름</th>
                                                 <th class="column-title">아이디 </th>
+                                                <th class="column-title">이름</th>
                                                 <th class="column-title">성별 </th>
                                                 <th class="column-title">가입일 </th>
                                                 <th class="column-title">차단일 </th>
@@ -73,19 +70,39 @@ function searchList() {
                                 </tr>
                             </thead>
 
-                            <tbody>                            
-                            <c:forEach var="dto" items="${list}">
-                            
+                            <tbody>                                                       
                                 <tr class="even pointer">
                                     <td class="a-center ">
-                                    <td class=" ">${dto.num}</td>
-                                    <td class=" ">${dto.userName}</td>
-                                    <td class=" ">${dto.userId}</td>
-                                    <td class=" ">${dto.woMan}</td>
-                                    <td class=" ">${dto.created}</td>
-                                     <td class=" ">${dto.blackCreated}</td>
+                                    <td class=" ">win0513</td>
+                                    <td class=" ">이승기</td>
+                                    <td class=" ">남</td>
+                                    <td class=" ">2015-11-03</td>
+                                     <td class=" ">2015-12-20</td>
                                  </tr>
-                            </c:forEach>
+                                 <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">kkug0513</td>
+                                    <td class=" ">김종국</td>
+                                    <td class=" ">남</td>
+                                    <td class=" ">2015-10-16</td>
+                                     <td class=" ">2015-12-18</td>
+                                 </tr>
+                                 <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">hh0215</td>
+                                    <td class=" ">설현</td>
+                                    <td class=" ">여</td>
+                                    <td class=" ">2015-11-19</td>
+                                     <td class=" ">2015-12-12</td>
+                                 </tr>
+                                 <tr class="even pointer">
+                                    <td class="a-center ">
+                                    <td class=" ">jimin0627</td>
+                                    <td class=" ">김지민</td>
+                                    <td class=" ">여</td>
+                                    <td class=" ">2015-11-10</td>
+                                     <td class=" ">2015-12-22</td>
+                                 </tr>
                                       </tbody>
                                             
 

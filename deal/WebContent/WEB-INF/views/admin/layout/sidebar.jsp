@@ -5,12 +5,16 @@
 	request.setCharacterEncoding("utf-8");
    String cp = request.getContextPath();
 %>
-
+<style>
+.site_title{
+	color:#000000;
+}
+</style>
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="<%=cp%>/admin.do" class="site_title" style="background: #ffffff; ">관리자</a>
+                        <a href="<%=cp%>/admin.do" class="site_title" style="text-align: center;">관리자</a>
                     </div>
                     <div class="clearfix"></div>
 
@@ -37,7 +41,6 @@
                                 </li>
                                 <li><a><i class="glyphicon glyphicon-gift"></i> 딜 관리 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="<%=cp%>/admin/deal/category.do">카테고리 관리</a>
                                         </li>
                                         <li><a href="<%=cp%>/admin/deal/notify.do">딜 신고 관리</a>
                                         </li>

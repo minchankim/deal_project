@@ -327,26 +327,26 @@ margin-top:20px;
                 <div class="row hidden-xs" id="slider-thumbs">
                         <!-- Bottom switcher of slider -->
                         <ul class="hide-bullets">
-                            <li class="col-sm-4">
-				                                <a class="thumbnail" id="carousel-selector-0"><img src="<%=cp%>/res/images/b1.jpg"></a>
-				                            </li>
-				
-				                            <li class="col-sm-4">
-				                                <a class="thumbnail" id="carousel-selector-1"><img src="<%=cp%>/res/images/b2.jpg"></a>
-				                            </li>
-				
-				                            <li class="col-sm-4">
-				                                <a class="thumbnail" id="carousel-selector-2"><img src="<%=cp%>/res/images/b3.jpg"></a>
-				                            </li>
-				
-				                            <li class="col-sm-6">
-				                                <a class="thumbnail" id="carousel-selector-3"><img src="<%=cp%>/res/images/b4.jpg"></a>
-				                            </li>
-				
-				                            <li class="col-sm-6">
-				                                <a class="thumbnail" id="carousel-selector-4"><img src="<%=cp%>/res/images/b5.jpg"></a>
-				                            </li>
-				
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-0"><img src="<%=cp%>/res/images/b5.jpg"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-1"><img src="<%=cp%>/res/images/b5.jpg"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-2"><img src="<%=cp%>/res/images/b5.jpg"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-3"><img src="<%=cp%>/res/images/b5.jpg"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-4"><img src="<%=cp%>/res/images/b5.jpg"></a>
+                            </li>
+
                         </ul>                 
                 </div>
         </div>
