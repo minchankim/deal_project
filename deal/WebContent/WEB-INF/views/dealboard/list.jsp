@@ -48,6 +48,7 @@
 </style>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="<%=cp%>/res/template/js/message.js"></script>   
 <script type="text/javascript">
 var userName;
 var businessNum;
@@ -127,8 +128,8 @@ function readProfile(userName ,businessNum, tel, email, addr, src){
                             </div>
                                                             
 	                        <div class="col-xs-12 col-sm-6 emphasis">
-	                        	<button type="button" class="btn btn-success btn-xs" data-original-title> 
-	                        	<i class="fa fa-envelope-o"></i> 쪽지 보내기 </button>
+	                        	<button type="button" class="btn btn-success btn-xs" data-original-title onclick="noteForm('${dto.userId}');"> 
+	                        	<i class="fa fa-envelope-o" ></i> 쪽지 보내기 </button>
 	                        	<button type="button" class="btn btn-primary btn-xs" data-whatever="<%=cp%>/uploads/photo/${dto.imageFilename}" onclick="readProfile('${dto.userName}' ,'${dto.businessNum}', '${dto.tel}', '${dto.email}', '${dto.addr}', '<%=cp%>/uploads/photo/${dto.imageFilename}')">
 	                        	<i class="fa fa-user" ></i>프로필 보기</button> 
 	                        </div>

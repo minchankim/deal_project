@@ -69,4 +69,11 @@
 	     	     userId = #{userId}
 	     	      </where>
 	     </select>  -->
+	     
+	     <!-- 환전하기 -->
+
+	<update id="dealInCash" parameterType="com.project.deal.DealReply">
+	update cash set cash=cash-#{price} where userId=#{userId}
+	</update> 
+	
 </mapper>

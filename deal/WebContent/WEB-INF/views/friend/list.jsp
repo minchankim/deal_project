@@ -93,7 +93,7 @@ A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themefores
 Licensed under MIT
 -->
 
- <div class="right_col" role="main">
+ <div class="right_col" role="main" style="background:#2A3F54;">
                    <div class="x_title">
                                     <h2><a class="follow" href="<%=cp %>/friend/list.do"><i class="fa fa-child fa-2x"></i>팔로우</a></h2>
                                     <c:if test="${mode=='allList'}">
@@ -135,11 +135,11 @@ Licensed under MIT
 						                                       <li class="dropdown" >
 						                                      	 <a class="dropdown-toggle f-namefont " data-toggle="dropdown">${dto.userId}</a>  
 						                               			   <ul class="dropdown-menu" style="margin-left: 5%;" >
-								                                    <li><a data-toggle="modal" data-target="#ModalCreated"><span class="glyphicon glyphicon-envelope"></span> 쪽지보내기</a></li>
+								                                    <li><a data-toggle="modal" data-target="#ModalCreated"  onclick="noteForm('${dto.userId}');"><span class="glyphicon glyphicon-envelope"></span> 쪽지보내기</a></li>
 								                                    <li class="divider"></li>
 								                                    <li><a href="#"><span class="glyphicon glyphicon-minus-sign"></span> 차단하기</a></li>
-								                                     <li class="divider"></li>
-								                                     <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> 신고하기</a></li>
+								                                     <li class="divider"></li><!-- 
+								                                            <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> 신고하기</a></li> -->
 								                                    </ul>
 						                            	      </li></ul>
 						                                	<span>팔로우 ${dto.cnt }명</span>

@@ -5,6 +5,16 @@ public class Cash {
 	   private String userId;
 	   private int cash , returnCash;
 	   private String created, returnDate;
+	   private int price;
+	   
+	   
+	   
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
 	public int getNum() {
 		return num;
 	}

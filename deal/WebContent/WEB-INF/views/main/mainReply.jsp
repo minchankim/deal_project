@@ -13,7 +13,7 @@
                         </a>
                         <div class="comment-body">
                             <div class="comment-heading">
-                               <h5 class="time pull-right">${dto.created}</h5><h4 class="user">${dto.userId}</h4>
+                               <h5 class="time pull-right"><span data-livestamp="${dto.created}"></span></h5><h4 class="user">${dto.userId}</h4>
                                
                             </div>
                             <p style="word-break:break-all;margin-left:40px;">${dto.content}</p>

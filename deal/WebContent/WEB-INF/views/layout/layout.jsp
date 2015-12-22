@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href=" http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" type="text/css"/>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-         
+  <script src="<%=cp%>/res/template/js/message.js"></script>       
 
 <script type="text/javascript">
 
@@ -92,22 +92,36 @@
             <div class="layoutSide">
             <tiles:insertAttribute name="sidebar"/>
          </div>
-   
+
    <div class="layoutTop">
       <tiles:insertAttribute name="topbar"/>
+   
    </div>
    
    <div class="layoutBody">
+    
+         
+   
       <tiles:insertAttribute name="body"/>
+   
    </div>
    
    
-   <div class="layoutFooter">
+
+   
+
+                               
+                               
+                               
+                               
+                             </div>
+     
+</div>
+                           <div class="layoutFooter">
       <tiles:insertAttribute name="footer"/>
    </div>
-
-<!--  쪽지 보내기 -->
-<!-- <div class="modal fade" id="contact" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+    <!-- 쪽지 보내기창 -->
+<div class="modal fade" id="contact" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="panel panel-primary">
                      <div class="panel-heading">
@@ -120,7 +134,7 @@
                             	 <div> 받는사람 </div> 
                                 </div> 
                             
-                                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px;">
+                                <div class="col-lg-5 col-md-5 col-sm-5" style="padding-bottom: 10px;">
                             	 <div style="margin-right: 20px;" class="form-control" id="idWrite">  </div> 
                                 </div>
                                 	</div>
@@ -141,43 +155,10 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <!--  임시 쪽지 종료 -->
-<!--  쪽지 보내기 제이쿼리 모달창 종료 -->
-
-<!-- 쪽지 내용 모달창 -->
-<!-- <div class="modal fade">
-   <div id="ModalArticle" >
-                             
-                                 <div>
-                                    
-                                     <span class="pull-right note_fontsize" >2015-11-18[16:59]</span>보낸시간 뜨는거야
-                                       
-                                       <p class="quote-text">
-                                     			쪽지내용
-                                       </p>
-                                    <hr>
-                                       <div class="blog-post-actions">
-                   
-                                       <a class="blog-post-bottom pull-left" data-toggle="modal" data-target="#ModalCreated">
-                                          	(보낸사람)-바로답장
-                                        </a>
-                                         
-                                       </div>
-                                 </div>
-                               </div>
-                               </div> -->
-                              <!-- 쪽지 내용 확인창 --> 
-                               
-         
-                               
-                               
-                               
-                               
-                             </div>
-</div>
- 
-
+            </div>
+<!-- 쪽지보내기창 -->
+	                                  
+	                                  
          <script src="<%=cp%>/res/template/js/custom.js"></script>  
 
 </body>

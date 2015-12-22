@@ -31,6 +31,7 @@ public class LetterController {
 	//쪽지 보내기폼은 모달창으로 인식함--바로 post로 보냄????--질문-- 받는아이디
 	@RequestMapping(value="/letter/send", method=RequestMethod.POST)
 	public void sendSubmit(HttpServletResponse resp, HttpSession session, Letter dto) throws Exception{
+	 System.out.println("!!!!!!!!!!!!!!!!!!");
 	
 		// 쪽지 보내기
 		SessionInfo info=(SessionInfo)session.getAttribute("member");

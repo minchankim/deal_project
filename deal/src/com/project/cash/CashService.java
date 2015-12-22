@@ -13,4 +13,6 @@ public interface CashService {
 	public List<Cash> listinsertCash(String userId);
 	//public List<Cash> listBuy(String userId);
 	public List<Cash> listReturn(String userId);
+	
+	public int dealInCash(Cash dto);
 }

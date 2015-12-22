@@ -92,6 +92,20 @@ public class CashServiceImpl implements CashService{
 		return list;
 	}
 
+	@Override
+	public int dealInCash(Cash dto) {
+		int result=0;
+		
+		try{
+			
+			
+			dao.updateData("cash.dealInCash", dto);
+		} catch(Exception e) {
+			System.out.println(e.toString());
+		}
+		return result;
+	}
+
 
 }
 

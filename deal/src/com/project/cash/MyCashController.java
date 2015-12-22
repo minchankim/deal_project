@@ -103,7 +103,7 @@ public void returnCash(HttpServletResponse resp, HttpSession session, Cash dto) 
 		job.put("jsLogin", "true");
 		job.put("state", state);
 		job.put("scash2", scash2);
-System.out.println("환전금액"+scash2);
+
 		resp.setContentType("text/html; charset=utf-8");
 		PrintWriter out = resp.getWriter();
 		out.print(job.toString());

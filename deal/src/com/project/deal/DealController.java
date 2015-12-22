@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.project.cash.Cash;
+import com.project.cash.CashService;
 import com.project.common.MyUtil;
 import com.project.member.Photo;
 import com.project.member.PhotoService;
@@ -36,6 +38,10 @@ public class DealController {
 	
 	@Autowired
 	private PhotoService pservice;
+	
+	@Autowired
+	private CashService cservice;
+	
 	
 	@Autowired
 	private MyUtil myUtil;
@@ -450,8 +456,11 @@ public class DealController {
 				HttpSession session,
 				@RequestParam(value="dealNum") int dealNum,
 				@RequestParam(value="mode") int mode,
+				@RequestParam(value="price") int price,
 				Deal dto) throws Exception {
-
+				
+			Cash cdto = new Cash();
+			
 			SessionInfo info=(SessionInfo) session.getAttribute("member");
 			
 			String state="true";
@@ -464,10 +473,14 @@ public class DealController {
 					int result = 0;
 					if(mode==1){
 					
+						
 						dto.setNum(dealNum);
 						dto.setUserId(info.getUserId());
 						
-		
+						cdto.setPrice(price);
+						cdto.setUserId(info.getUserId());
+						
+						cservice.dealInCash(cdto);
 					 result=service.updateDealIn(dto);
 					}
 					if(mode==0){

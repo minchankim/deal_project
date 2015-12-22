@@ -10,7 +10,8 @@
    -->
 
    <link href="<%=cp%>/res/template/css/main/minchanmain.css" rel="stylesheet">
-   
+   <script src="<%=cp%>/res/template/js/moment.js"></script>
+<script src="<%=cp%>/res/template/js/livestamp.js"></script>
 <script type="text/javascript">
 var pageN=1;
 var dNum;
@@ -284,10 +285,11 @@ function countLike(id,count){
 	
 	$('#'+id+'-bs3').html(count); 
 }
-function dealjoin(Num,mode){
+function dealjoin(Num,mode,price){
 	
 	 var params="dealNum="+Num;
  	params+="&mode="+mode;
+ 	params+="&price="+price;
  	
  	$.ajax({
 		type:"POST"
@@ -730,9 +732,39 @@ color:rgb(0,0,0);
         <div class="panel-heading" style="padding-bottom: 15px;">
     </c:otherwise>
 </c:choose>
+
+
+
+<tr style="text-align: center;">
+	                                    <td class="a-center ">
+	                                       
+	                                    </td>
+	                                    <td class=" ">
+	                                    	<ul style="padding:0">
+	                                    	<li class="dropdown">
+									          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:black;" >  <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" /></a>
+									          <ul class="dropdown-menu">
+									            <li><a href="#"><span class="glyphicon glyphicon-plus"></span> 팔로우</a></li>
+									            <li class="divider"></li>
+									            <li ><a onclick="noteForm('${dto.userId}');"><span  class="glyphicon glyphicon-envelope"></span> 쪽지보내기</a></li>
+									            <li class="divider"></li>
+									            <li><a href="#"><span class="glyphicon glyphicon-minus-sign"></span> 차단하기</a></li>
+									             <li class="divider"></li>
+									             <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> 신고하기</a></li>
+									            
+									          </ul>
+									        </li></ul></td>
+	                                    <td class="even pointer"><a onclick="readForm("")></a>
+	                                    
+	                                    </td>
+	                                    <td class=" "></td>
+	                                  
+	                                  </tr>
+
+
                     
                
-                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" />
+                  
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
                 </div>
@@ -766,11 +798,11 @@ color:rgb(0,0,0);
                     <c:if test="${dto.num==dealdto.dealNum}"> 
                     
                   <c:set var="badId" value="1" />
-                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success pull-left">
+                        <label onclick="dealjoin('${dto.num}',0,'${dto.price}')" class="btn btn-md btn-success pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active pull-left">
+              <label onclick="dealjoin('${dto.num}',1,'${dto.price}')" class="btn btn-md btn-danger active pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>     
@@ -779,11 +811,11 @@ color:rgb(0,0,0);
                 
                     
                     <c:if test="${badId==0}">
-                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active pull-left">
+                                <label onclick="dealjoin('${dto.num}',0,'${dto.price}')" class="btn btn-md btn-success active pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger pull-left">
+              <label onclick="dealjoin('${dto.num}',1,'${dto.price}')" class="btn btn-md btn-danger pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>   
@@ -999,7 +1031,31 @@ color:rgb(0,0,0);
 </c:choose>
                     
                
-                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" />
+                    <tr style="text-align: center;">
+	                                    <td class="a-center ">
+	                                       
+	                                    </td>
+	                                    <td class=" ">
+	                                    	<ul style="padding:0">
+	                                    	<li class="dropdown">
+									          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:black;" >  <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" /></a>
+									          <ul class="dropdown-menu">
+									            <li><a href="#"><span class="glyphicon glyphicon-plus"></span> 팔로우</a></li>
+									            <li class="divider"></li>
+									            <li ><a onclick="noteForm('${dto.userId}');"><span  class="glyphicon glyphicon-envelope"></span> 쪽지보내기</a></li>
+									            <li class="divider"></li>
+									            <li><a href="#"><span class="glyphicon glyphicon-minus-sign"></span> 차단하기</a></li>
+									             <li class="divider"></li>
+									             <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> 신고하기</a></li>
+									            
+									          </ul>
+									        </li></ul></td>
+	                                    <td class="even pointer"><a onclick="readForm("")></a>
+	                                    
+	                                    </td>
+	                                    <td class=" "></td>
+	                                  
+	                                  </tr>
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
                 </div>
@@ -1033,11 +1089,11 @@ color:rgb(0,0,0);
                     <c:if test="${dto.num==dealdto.dealNum}"> 
                     
                   <c:set var="badId" value="1" />
-                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success pull-left">
+                        <label onclick="dealjoin('${dto.num}',0,'${dto.price}')" class="btn btn-md btn-success pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active pull-left">
+              <label onclick="dealjoin('${dto.num}',1,'${dto.price}')" class="btn btn-md btn-danger active pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>     
@@ -1046,11 +1102,11 @@ color:rgb(0,0,0);
                 
                     
                     <c:if test="${badId==0}">
-                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active pull-left">
+                                <label onclick="dealjoin('${dto.num}',0,'${dto.price}')" class="btn btn-md btn-success active pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger pull-left">
+              <label onclick="dealjoin('${dto.num}',1,'${dto.price}')" class="btn btn-md btn-danger pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>   
@@ -1271,7 +1327,31 @@ color:rgb(0,0,0);
 </c:choose>
                     
                
-                    <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" />
+                  <tr style="text-align: center;">
+	                                    <td class="a-center ">
+	                                       
+	                                    </td>
+	                                    <td class=" ">
+	                                    	<ul style="padding:0">
+	                                    	<li class="dropdown">
+									          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:black;" >  <img class="[ img-circle pull-left ]" src="<%=cp%>/uploads/photo/${dto.imageFilename}" style="width:60px;height:70px;" alt="Mouse0270" /></a>
+									          <ul class="dropdown-menu">
+									            <li><a href="#"><span class="glyphicon glyphicon-plus"></span> 팔로우</a></li>
+									            <li class="divider"></li>
+									            <li ><a onclick="noteForm('${dto.userId}');"><span  class="glyphicon glyphicon-envelope"></span> 쪽지보내기</a></li>
+									            <li class="divider"></li>
+									            <li><a href="#"><span class="glyphicon glyphicon-minus-sign"></span> 차단하기</a></li>
+									             <li class="divider"></li>
+									             <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> 신고하기</a></li>
+									            
+									          </ul>
+									        </li></ul></td>
+	                                    <td class="even pointer"><a onclick="readForm("")></a>
+	                                    
+	                                    </td>
+	                                    <td class=" "></td>
+	                                  
+	                                  </tr>
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
                 </div>
@@ -1305,11 +1385,11 @@ color:rgb(0,0,0);
                     <c:if test="${dto.num==dealdto.dealNum}"> 
                     
                   <c:set var="badId" value="1" />
-                        <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success pull-left">
+                        <label onclick="dealjoin('${dto.num}',0,'${dto.price}')" class="btn btn-md btn-success pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger active pull-left">
+              <label onclick="dealjoin('${dto.num}',1,'${dto.price}')" class="btn btn-md btn-danger active pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>     
@@ -1318,11 +1398,11 @@ color:rgb(0,0,0);
                 
                     
                     <c:if test="${badId==0}">
-                                <label onclick="dealjoin('${dto.num}',0)" class="btn btn-md btn-success active pull-left">
+                                <label onclick="dealjoin('${dto.num}',0,'${dto.price}')" class="btn btn-md btn-success active pull-left">
                 <input type="radio" name="options"  id="dealin${dto.num}" autocomplete="off" checked>
                 <i class="fa fa-check"></i> 참여
             </label>
-              <label onclick="dealjoin('${dto.num}',1)" class="btn btn-md btn-danger pull-left">
+              <label onclick="dealjoin('${dto.num}',1,'${dto.price}')" class="btn btn-md btn-danger pull-left">
                 <input type="radio" name="options"  id="dealout${dto.num}" autocomplete="off">
                 <i class="fa fa-check"></i> 미참여
             </label>   

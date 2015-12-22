@@ -9,150 +9,7 @@
 %>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
- <script>
- 
- // 출력해주기
-		 
-  	var receiveUserId;  // 답장을 받을 아이디
-	var sendUserId;
-	var sendDay;
-	var readNum;
-	var content;
- // 모달창열기(쪽지 보내기창)
 
- function noteForm(id) {
- 	
-	
-	 receiveUserId=id;
-	 $('#contact').modal('show');
-	
-			var s = receiveUserId;
-			$("#idWrite").change();
-			$("#idWrite").text(s); 
-	
-			// 보내는 날짜 찍기
-			var newDate = new Date();
-			var yy = newDate.getFullYear();
-			var mm = newDate.getMonth()+1;
-			var dd = newDate.getDate();
-			var toDay = yy + "-" + mm + "-" + dd;
-			
-			$("#sendDay").change();
-			$("#sendDay").text(toDay); 
-		
- }
- 
-function renoteForm(id) {
- 	
-	 receiveUserId=id;
-	
-
-	 $('#ModalArticle').modal('hide');
-		 
-	 $('#contact').modal('show');
-	// 보내는 날짜 찍기
-		var newDate = new Date();
-		var yy = newDate.getFullYear();
-		var mm = newDate.getMonth()+1;
-		var dd = newDate.getDate();
-		var toDay = yy + "-" + mm + "-" + dd;
-		
-		$("#sendDay").change();
-		$("#sendDay").text(toDay); 
-		
- }
- 
- function sendLetter() {
-		var content=$.trim($("#letterContent").val());
-		
-		
-		
-		 if(! content){
-			alert("내용을 입력하세요!!!!!!!!!!!");
-			$("#letterContent").focus();
-			return false;
-		 }
-		 
-		 var url="<%=cp%>/letter/send.do";
-		 var params="receiveUserId="+receiveUserId+"&content="+content;
-
-			 $.ajax({
-			    	type:"POST",
-			    	url:url,
-			    	data:params,
-			    	dataType:"json",
-			    	success:function(data){
-			        	var isLogin=data.isLogin;
-						if(isLogin=="false") {
-							location.href="<%=cp%>/member/member.do";
-							return false;
-						}
-						
-						
-						// var state=data.state;
-			    		$("#letterContent").val("");
-						$("#idWrite").text("");
-						$("#sendDay").text(""); 
-						// 여기에 받는 유저아이디를 받아야한다.?
-			    		alert("메시지를 전송 했습니다.");
-						 $('#contact').modal('hide');
-						
-						$("#letterCount").text(""); 
-						 var noticeletter=data.noticeletter;
-					
-						$("#letterCount").html(noticeletter); 
-			    	},
-			    	error:function(e) {
-			    		alert(e.responseText);
-			    	}
-			    });
-			 $('#contact').modal('hide');
-	}
- 
-
-	var resendUserId;	//답장받기 아이디
- 	function readForm(sendUserId ,sendDay, readNum, content){
-
-	 
-	 $("#ModalArticle").modal('show');
-	 	this.resendUserId=sendUserId;
-	
-		this.sendUserId=sendUserId;				
-	 	this.sendDay=sendDay;
-	 	this.readNum=readNum;
-	 	this.content=content;
-
-	 	// 읽은 상태로 만들기 Ajax 처리
-	 	var url="<%=cp%>/letter/updateIdentify.do";
-		var num=readNum;
-	 	
-		
-		$.post(url, {num:num}, function(data){
-			$("#idWrite2").text(sendUserId); 
-			$("#idWrite2").change();
-			
-			$("#idWrite").text(sendUserId); 
-			$("#idWrite").change();
-			
-			 $("#dateWrite").text(sendDay);
-			$("#dateWrite").change(); 
-
-			 $("#letterContent2").text(content);
-			 $("#letterContent2").change();
-			 
-		}, "json");
-		
-
-			
-			$("#letterClose").click(function(){
-				 
-				 $('#ModalArticle').modal('hide');
-			 });
-		
-	
- }
- 
- </script>
  
   					 <div class="right_col" role="main">
    							<div class="clearfix"></div>
@@ -162,43 +19,7 @@ Bootstrap Line Tabs by @keenthemes
 A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
 Licensed under MIT
 -->
-<!-- 쪽지 보내기창 -->
-<div class="modal fade" id="contact" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="panel panel-primary">
-                     <div class="panel-heading">
-                        <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span> 쪽지보내기</h4>
-                    </div>
-                    <div class="modal-body" style="padding: 5px;">
-                          <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                 <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px; margin-top: 10px">
-                            	 <div> 받는사람 </div> 
-                                </div> 
-                            
-                                <div class="col-lg-5 col-md-5 col-sm-5" style="padding-bottom: 10px;">
-                            	 <div style="margin-right: 20px;" class="form-control" id="idWrite">  </div> 
-                                </div>
-                                	</div>
-                              
-                                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                                    <div style="float: right" class="form-control" id="sendDay">보내는 날짜 : </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <textarea style="resize:vertical;" class="form-control" placeholder="메세지.." rows="6" id="letterContent"></textarea>
-                                </div>
-                            </div>
-                        </div>  
-                        <div class="panel-footer" style="margin-bottom:-14px;">
-                            <input type="submit" class="btn btn-success" value="전송" onclick="sendLetter();"/>
-                            <button style="float: right;" type="button" class="btn btn-default btn-close" data-dismiss="modal">닫기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<!-- 쪽지보내기창 -->
+
 
   <!--받은 쪽지 확인창-->
  
@@ -300,36 +121,36 @@ Licensed under MIT
 
                             <tbody>
                          <c:forEach var="dto" items="${list1}">
-                                 <tr style="text-align: center;">
-                                    <td class="a-center ">
-                                       
-                                    </td>
-                                    <td class=" ">
-                                    	<ul style="padding:0">
-                                    	<li class="dropdown">
-								          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >${dto.sendUserId}</a>
-								          <ul class="dropdown-menu">
-								            <li><a href="#"><span class="glyphicon glyphicon-plus"></span> 팔로우</a></li>
-								            <li class="divider"></li>
-								            <li ><a onclick="noteForm('${dto.sendUserId}');"><span  class="glyphicon glyphicon-envelope"></span> 쪽지보내기</a></li>
-								            <li class="divider"></li>
-								            <li><a href="#"><span class="glyphicon glyphicon-minus-sign"></span> 차단하기</a></li>
-								             <li class="divider"></li>
-								             <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> 신고하기</a></li>
-								            
-								          </ul>
-								        </li></ul></td>
-                                    <td class="even pointer"><a onclick="readForm('${dto.sendUserId}','${dto.sendDay}' ,'${dto.num}','${dto.content}')">${dto.content}</a>
-                                    
-                                    </td>
-                                    <td class=" ">${dto.sendDay}</td>
-                                    <c:if test="${dto.identifyDay==null}">
-                                    <td>읽지 않음</td>
-                                	</c:if>
-                                	 <c:if test="${dto.identifyDay!=null}">
-                                    <td>${dto.identifyDay}</td>
-                                	</c:if>
-                                  </tr>
+	                                 <tr style="text-align: center;">
+	                                    <td class="a-center ">
+	                                       
+	                                    </td>
+	                                    <td class=" ">
+	                                    	<ul style="padding:0">
+	                                    	<li class="dropdown">
+									          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >${dto.sendUserId}</a>
+									          <ul class="dropdown-menu">
+									            <li><a href="#"><span class="glyphicon glyphicon-plus"></span> 팔로우</a></li>
+									            <li class="divider"></li>
+									            <li ><a onclick="noteForm('${dto.sendUserId}');"><span  class="glyphicon glyphicon-envelope"></span> 쪽지보내기</a></li>
+									            <li class="divider"></li>
+									            <li><a href="#"><span class="glyphicon glyphicon-minus-sign"></span> 차단하기</a></li>
+									             <li class="divider"></li>
+									             <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span> 신고하기</a></li>
+									            
+									          </ul>
+									        </li></ul></td>
+	                                    <td class="even pointer"><a onclick="readForm('${dto.sendUserId}','${dto.sendDay}' ,'${dto.num}','${dto.content}')">${dto.content}</a>
+	                                    
+	                                    </td>
+	                                    <td class=" ">${dto.sendDay}</td>
+	                                    <c:if test="${dto.identifyDay==null}">
+	                                    <td>읽지 않음</td>
+	                                	</c:if>
+	                                	 <c:if test="${dto.identifyDay!=null}">
+	                                    <td>${dto.identifyDay}</td>
+	                                	</c:if>
+	                                  </tr>
                                   
                                   </c:forEach>
                              </tbody>
