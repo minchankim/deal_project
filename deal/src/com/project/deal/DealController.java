@@ -458,7 +458,7 @@ public class DealController {
 				@RequestParam(value="mode") int mode,
 				@RequestParam(value="price") int price,
 				Deal dto) throws Exception {
-				
+			int cash = 0;
 			Cash cdto = new Cash();
 			
 			SessionInfo info=(SessionInfo) session.getAttribute("member");
@@ -481,6 +481,12 @@ public class DealController {
 						cdto.setUserId(info.getUserId());
 						
 						cservice.dealInCash(cdto);
+						System.out.println(cservice.readCash(info.getUserId())+"dd");
+						cash=cservice.readCash(info.getUserId());
+					
+						info.setCash(cash);
+				
+						session.setAttribute("scash", info.getCash());
 					 result=service.updateDealIn(dto);
 					}
 					if(mode==0){
@@ -500,7 +506,8 @@ public class DealController {
 			// 작업 결과를 json으로 전송
 			JSONObject job=new JSONObject();
 			job.put("state", state);
-			
+			job.put("scash", info.getCash());
+			job.put("test","ddd" );
 			resp.setContentType("text/html;charset=utf-8");
 			PrintWriter out=resp.getWriter();
 			out.print(job.toString());

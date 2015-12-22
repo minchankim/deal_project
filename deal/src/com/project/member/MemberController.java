@@ -137,14 +137,14 @@ public class MemberController {
 			return mav;
 		}
 		
-		System.out.println(cdto);
-		System.out.println("쪽지알림"+ldto);
+	/*	System.out.println(cdto);
+		System.out.println("쪽지알림"+ldto);*/
 		SessionInfo info = new SessionInfo();
 		info.setUserId(dto.getUserId());
 		info.setUserName(dto.getUserName());
 		info.setDealInNoticeCount(dservice.readDealJoinCount(userId));
 		//info.setLetterNoticeCount(lserviere.readNewLetterCount(userId));
-		System.out.println(lserviere.readNewLetterCount(userId));
+		/*System.out.println(lserviere.readNewLetterCount(userId));*/
 		info.setMyDealTotal(dservice.readDealJoinCount(userId));
 		info.setBusinessNum(dto.getBusinessNum());
 		

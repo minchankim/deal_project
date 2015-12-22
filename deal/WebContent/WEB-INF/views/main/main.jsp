@@ -2,6 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
    request.setCharacterEncoding("utf-8");
    String cp = request.getContextPath();
@@ -299,11 +300,12 @@ function dealjoin(Num,mode,price){
 		,success:function(data) {
 			
 			var state=data.state;
+			alert(state);
 			if(state=="true") {
 				 if (!count) count = 0;
 				 count++;
 				countLike(id,count); 
-			   
+				
 			} else if(state=="false") {
 				alert("좋아요/싫어요는 한번만 가능합니다. !!!");
 				return false;
@@ -313,6 +315,11 @@ function dealjoin(Num,mode,price){
 			}else{
 				alert("로그인해");
 			}
+			var scash=data.scash;
+			var test = data.test;
+			alert(test);
+			$("#cashPrice").val("");
+			$("#myscash").html(scash);
 		}
 		,error:function(e) {
 			alert(e.responseText);
@@ -726,7 +733,7 @@ color:rgb(0,0,0);
                     
                     <c:choose>
     <c:when test="${success==1}">
-      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgb(239, 107, 57);">
+      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgba(243, 165, 73, 0.78);">
     </c:when>    
     <c:otherwise>
         <div class="panel-heading" style="padding-bottom: 15px;">
@@ -767,8 +774,10 @@ color:rgb(0,0,0);
                   
                     <h3 style="font-size:20px;">${dto.userId}</h3>
                     <h5><span>Shared publicly</span> - <span>Jun 25, 2014</span> </h5>
+                     <div style="text-align:right;"><span style="text-decoration: line-through;">${dto.instantPrice}원</span>&nbsp&nbsp=>&nbsp&nbsp <span style="font-size:15px;color:red;">${dto.price}원(▼<fmt:parseNumber var="var3" value="${100-dto.price/dto.instantPrice*100}" integerOnly="true" />${var3}%)</span></div> 
                 </div>
                 <div class="panel-body">
+               
                     <a href="<%=cp%>/deal/article.do?num=${dto.num}"><p style="color:black;font-size:20px;">${dto.subject}<!--  <a href="http://bootsnipp.com/snippets/MaWrA">http://bootsnipp.com/snippets/MaWrA</a> --></p></a>
            
                   
@@ -1023,7 +1032,7 @@ color:rgb(0,0,0);
                     
                     <c:choose>
     <c:when test="${success==1}">
-      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgb(239, 107, 57);">
+      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgba(243, 165, 73, 0.78);">
     </c:when>    
     <c:otherwise>
         <div class="panel-heading" style="padding-bottom: 15px;">
@@ -1319,7 +1328,7 @@ color:rgb(0,0,0);
                     
                     <c:choose>
     <c:when test="${success==1}">
-      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgb(239, 107, 57);">
+      <div class="panel-heading" style="padding-bottom: 15px; background-color:rgba(243, 165, 73, 0.78);">
     </c:when>    
     <c:otherwise>
         <div class="panel-heading" style="padding-bottom: 15px;">

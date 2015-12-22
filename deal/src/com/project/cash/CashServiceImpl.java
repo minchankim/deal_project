@@ -47,7 +47,7 @@ public class CashServiceImpl implements CashService{
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		System.out.println(myCash);
+	
 		return myCash;
 	}
 
@@ -100,6 +100,7 @@ public class CashServiceImpl implements CashService{
 			
 			
 			dao.updateData("cash.dealInCash", dto);
+			
 		} catch(Exception e) {
 			System.out.println(e.toString());
 		}
