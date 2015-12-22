@@ -483,7 +483,7 @@ public class DealController {
 						cservice.dealInCash(cdto);
 						System.out.println(cservice.readCash(info.getUserId())+"dd");
 						cash=cservice.readCash(info.getUserId());
-					
+						System.out.println(cash);
 						info.setCash(cash);
 				
 						session.setAttribute("scash", info.getCash());
@@ -506,7 +506,7 @@ public class DealController {
 			// 작업 결과를 json으로 전송
 			JSONObject job=new JSONObject();
 			job.put("state", state);
-			job.put("scash", info.getCash());
+			job.put("scash", cash);
 			job.put("test","ddd" );
 			resp.setContentType("text/html;charset=utf-8");
 			PrintWriter out=resp.getWriter();

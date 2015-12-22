@@ -300,7 +300,7 @@ function dealjoin(Num,mode,price){
 		,success:function(data) {
 			
 			var state=data.state;
-			alert(state);
+		
 			if(state=="true") {
 				 if (!count) count = 0;
 				 count++;
